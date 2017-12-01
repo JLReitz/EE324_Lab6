@@ -1,0 +1,67 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3.1 (win64) Build 2035080 Fri Oct 20 14:20:01 MDT 2017
+| Date         : Thu Nov 30 16:29:44 2017
+| Host         : Jensen-Surface running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'System_Zybo_VGA_CharROM_0_1'
+
+1. Summary
+----------
+
+SUCCESS in the conversion of System_Zybo_VGA_CharROM_0_1 (xilinx.com:user:Zybo_VGA_CharROM:1.0 (Rev. 2)) to Vivado generation flows.
+
+
+
+
+
+
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3.1 (win64) Build 2035080 Fri Oct 20 14:20:01 MDT 2017
+| Date         : Thu Nov 30 15:33:15 2017
+| Host         : Jensen-Surface running 64-bit major release  (build 9200)
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+--------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'System_Zybo_VGA_CharROM_0_1'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of System_Zybo_VGA_CharROM_0_1 (xilinx.com:user:Zybo_VGA_CharROM:1.0) from (Rev. 1) to (Rev. 2)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Interface Information
+------------------------
+
+Detected external interface differences while upgrading 'System_Zybo_VGA_CharROM_0_1'.
+
+
+-Upgrade has added interface 'pixel_clk' (xilinx.com:signal:clock:1.0)
+
+
+3. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'System_Zybo_VGA_CharROM_0_1'. These changes may impact your design.
+
+
+-Upgrade has added port 'VGA_B'
+
+-Upgrade has added port 'VGA_G'
+
+-Upgrade has added port 'VGA_HS'
+
+-Upgrade has added port 'VGA_R'
+
+-Upgrade has added port 'VGA_VS'
+
+-Upgrade has added port 'pixel_clk'
+
+

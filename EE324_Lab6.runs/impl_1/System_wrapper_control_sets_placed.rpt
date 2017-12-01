@@ -1,0 +1,42 @@
+Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2017.3.1 (win64) Build 2035080 Fri Oct 20 14:20:01 MDT 2017
+| Date         : Thu Nov 30 16:48:47 2017
+| Host         : Jensen-Surface running 64-bit major release  (build 9200)
+| Command      : report_control_sets -file System_wrapper_control_sets_placed.rpt
+| Design       : System_wrapper
+| Device       : xc7z010
+--------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Flip-Flop Distribution
+
+1. Summary
+----------
+
++-------------------------------+-------+
+|             Status            | Count |
++-------------------------------+-------+
+| Number of unique control sets |   150 |
++-------------------------------+-------+
+
+
+2. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             385 |          105 |
+| No           | No                    | Yes                    |             140 |           54 |
+| No           | Yes                   | No                     |             146 |           48 |
+| Yes          | No                    | No                     |             602 |          154 |
+| Yes          | No                    | Yes                    |             100 |           24 |
+| Yes          | Yes                   | No                     |             612 |          226 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+

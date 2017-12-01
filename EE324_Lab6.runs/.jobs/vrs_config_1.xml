@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<Runs Version="1" Minor="0">
+	<Run Id="System_auto_cc_0_synth_1" LaunchDir="C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.runs/System_auto_cc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_auto_pc_0_synth_1" LaunchDir="C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.runs/System_auto_pc_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_processing_system7_0_0_synth_1" LaunchDir="C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.runs/System_processing_system7_0_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_rst_ps7_0_50M_0_synth_1" LaunchDir="C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.runs/System_rst_ps7_0_50M_0_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_clk_wiz_0_1_synth_1" LaunchDir="C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.runs/System_clk_wiz_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_proc_sys_reset_0_1_synth_1" LaunchDir="C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.runs/System_proc_sys_reset_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="System_Zybo_VGA_CharROM_0_1_synth_1" LaunchDir="C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.runs/System_Zybo_VGA_CharROM_0_1_synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado"/>
+	<Run Id="synth_1" LaunchDir="C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.runs/synth_1" FlowId="Vivado_Synthesis" FromStepId="vivado" ToStepId="vivado">
+		<Parent Id="System_auto_cc_0_synth_1"/>
+		<Parent Id="System_auto_pc_0_synth_1"/>
+		<Parent Id="System_processing_system7_0_0_synth_1"/>
+		<Parent Id="System_rst_ps7_0_50M_0_synth_1"/>
+		<Parent Id="System_clk_wiz_0_1_synth_1"/>
+		<Parent Id="System_proc_sys_reset_0_1_synth_1"/>
+		<Parent Id="System_Zybo_VGA_CharROM_0_1_synth_1"/>
+	</Run>
+	<Run Id="impl_1" LaunchDir="C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.runs/impl_1" FlowId="Vivado_Implementation" FromStepId="init_design" ToStepId="write_bitstream">
+		<Parent Id="synth_1"/>
+		<Parent Id="System_auto_cc_0_synth_1"/>
+		<Parent Id="System_auto_pc_0_synth_1"/>
+		<Parent Id="System_processing_system7_0_0_synth_1"/>
+		<Parent Id="System_rst_ps7_0_50M_0_synth_1"/>
+		<Parent Id="System_clk_wiz_0_1_synth_1"/>
+		<Parent Id="System_proc_sys_reset_0_1_synth_1"/>
+		<Parent Id="System_Zybo_VGA_CharROM_0_1_synth_1"/>
+	</Run>
+</Runs>
+
