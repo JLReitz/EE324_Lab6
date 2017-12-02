@@ -1,7 +1,7 @@
 // Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2017.3.1 (win64) Build 2035080 Fri Oct 20 14:20:01 MDT 2017
-// Date        : Thu Nov 30 16:46:29 2017
+// Date        : Fri Dec  1 08:51:23 2017
 // Host        : Jensen-Surface running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode funcsim
 //               C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ip/System_Zybo_VGA_CharROM_0_1/System_Zybo_VGA_CharROM_0_1_sim_netlist.v
@@ -653,10 +653,10 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
     \H_Counter_reg[0]_0 ,
     VGA_HS,
     VGA_VS,
-    \Address_reg[2]_0 ,
-    \Address_reg[2]_1 ,
-    \Address_reg[2]_2 ,
+    \Address_reg[1]_0 ,
+    \Address_reg[1]_1 ,
     \Address_reg[3]_0 ,
+    \Address_reg[3]_1 ,
     \V_Counter_reg[4]_0 ,
     \V_Counter_reg[8]_0 ,
     \V_Counter_reg[8]_1 ,
@@ -681,6 +681,10 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
     \V_Counter_reg[28]_0 ,
     \V_Counter_reg[28]_1 ,
     \V_Counter_reg[28]_2 ,
+    \V_Counter_reg[28]_3 ,
+    \V_Counter_reg[31]_0 ,
+    \V_Counter_reg[31]_1 ,
+    \V_Counter_reg[31]_2 ,
     S,
     Shift_Rst_reg_0,
     Shift_Rst_reg_1,
@@ -719,13 +723,16 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
     \slv_reg1_reg[31] ,
     Q,
     \slv_reg6_reg[30] ,
-    \slv_reg15_reg[2] ,
-    \V_Counter_reg[22]_0 ,
+    \slv_reg15_reg[0] ,
     DI,
+    \V_Counter_reg[14]_0 ,
+    \V_Counter_reg[22]_0 ,
+    \V_Counter_reg[30]_0 ,
+    \V_Counter_reg[22]_1 ,
+    \V_Counter_reg[26]_0 ,
     \H_Counter_reg[22]_0 ,
     \H_Counter_reg[26]_0 ,
     \slv_reg11_reg[6] ,
-    \slv_reg15_reg[0] ,
     CO,
     \slv_reg13_reg[15] ,
     \slv_reg12_reg[15] );
@@ -763,10 +770,10 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   output \H_Counter_reg[0]_0 ;
   output VGA_HS;
   output VGA_VS;
-  output \Address_reg[2]_0 ;
-  output \Address_reg[2]_1 ;
-  output \Address_reg[2]_2 ;
+  output \Address_reg[1]_0 ;
+  output \Address_reg[1]_1 ;
   output \Address_reg[3]_0 ;
+  output \Address_reg[3]_1 ;
   output \V_Counter_reg[4]_0 ;
   output \V_Counter_reg[8]_0 ;
   output \V_Counter_reg[8]_1 ;
@@ -791,6 +798,10 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   output \V_Counter_reg[28]_0 ;
   output \V_Counter_reg[28]_1 ;
   output \V_Counter_reg[28]_2 ;
+  output \V_Counter_reg[28]_3 ;
+  output \V_Counter_reg[31]_0 ;
+  output \V_Counter_reg[31]_1 ;
+  output \V_Counter_reg[31]_2 ;
   output [3:0]S;
   output [3:0]Shift_Rst_reg_0;
   output [3:0]Shift_Rst_reg_1;
@@ -829,13 +840,16 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   input [31:0]\slv_reg1_reg[31] ;
   input [1:0]Q;
   input [0:0]\slv_reg6_reg[30] ;
-  input [1:0]\slv_reg15_reg[2] ;
-  input [0:0]\V_Counter_reg[22]_0 ;
-  input [1:0]DI;
+  input [0:0]\slv_reg15_reg[0] ;
+  input [2:0]DI;
+  input [3:0]\V_Counter_reg[14]_0 ;
+  input [3:0]\V_Counter_reg[22]_0 ;
+  input [3:0]\V_Counter_reg[30]_0 ;
+  input [0:0]\V_Counter_reg[22]_1 ;
+  input [1:0]\V_Counter_reg[26]_0 ;
   input [0:0]\H_Counter_reg[22]_0 ;
   input [1:0]\H_Counter_reg[26]_0 ;
   input [6:0]\slv_reg11_reg[6] ;
-  input \slv_reg15_reg[0] ;
   input [0:0]CO;
   input [15:0]\slv_reg13_reg[15] ;
   input [15:0]\slv_reg12_reg[15] ;
@@ -845,12 +859,9 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire Address33_in;
   wire Address34_in;
   wire [30:0]Address4;
+  wire \Address[0]_i_1_n_0 ;
   wire \Address[10]_i_100_n_0 ;
   wire \Address[10]_i_10_n_0 ;
-  wire \Address[10]_i_113_n_0 ;
-  wire \Address[10]_i_114_n_0 ;
-  wire \Address[10]_i_115_n_0 ;
-  wire \Address[10]_i_116_n_0 ;
   wire \Address[10]_i_117_n_0 ;
   wire \Address[10]_i_118_n_0 ;
   wire \Address[10]_i_119_n_0 ;
@@ -874,10 +885,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire \Address[10]_i_137_n_0 ;
   wire \Address[10]_i_138_n_0 ;
   wire \Address[10]_i_13_n_0 ;
-  wire \Address[10]_i_149_n_0 ;
   wire \Address[10]_i_14_n_0 ;
-  wire \Address[10]_i_150_n_0 ;
-  wire \Address[10]_i_151_n_0 ;
   wire \Address[10]_i_152_n_0 ;
   wire \Address[10]_i_153_n_0 ;
   wire \Address[10]_i_154_n_0 ;
@@ -892,10 +900,6 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire \Address[10]_i_21_n_0 ;
   wire \Address[10]_i_22_n_0 ;
   wire \Address[10]_i_23_n_0 ;
-  wire \Address[10]_i_34_n_0 ;
-  wire \Address[10]_i_35_n_0 ;
-  wire \Address[10]_i_36_n_0 ;
-  wire \Address[10]_i_37_n_0 ;
   wire \Address[10]_i_38_n_0 ;
   wire \Address[10]_i_39_n_0 ;
   wire \Address[10]_i_40_n_0 ;
@@ -916,10 +920,6 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire \Address[10]_i_57_n_0 ;
   wire \Address[10]_i_58_n_0 ;
   wire \Address[10]_i_59_n_0 ;
-  wire \Address[10]_i_72_n_0 ;
-  wire \Address[10]_i_73_n_0 ;
-  wire \Address[10]_i_74_n_0 ;
-  wire \Address[10]_i_75_n_0 ;
   wire \Address[10]_i_76_n_0 ;
   wire \Address[10]_i_77_n_0 ;
   wire \Address[10]_i_78_n_0 ;
@@ -942,6 +942,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire \Address[10]_i_98_n_0 ;
   wire \Address[10]_i_99_n_0 ;
   wire \Address[10]_i_9_n_0 ;
+  wire \Address[3]_i_2_n_0 ;
   wire \Address_reg[10]_i_112_n_0 ;
   wire \Address_reg[10]_i_112_n_1 ;
   wire \Address_reg[10]_i_112_n_2 ;
@@ -987,10 +988,10 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire \Address_reg[10]_i_92_n_1 ;
   wire \Address_reg[10]_i_92_n_2 ;
   wire \Address_reg[10]_i_92_n_3 ;
-  wire \Address_reg[2]_0 ;
-  wire \Address_reg[2]_1 ;
-  wire \Address_reg[2]_2 ;
+  wire \Address_reg[1]_0 ;
+  wire \Address_reg[1]_1 ;
   wire \Address_reg[3]_0 ;
+  wire \Address_reg[3]_1 ;
   wire [0:0]CO;
   wire CharROM_n_0;
   wire CharROM_n_1;
@@ -1008,7 +1009,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire CharROM_n_7;
   wire CharROM_n_8;
   wire CharROM_n_9;
-  wire [1:0]DI;
+  wire [2:0]DI;
   wire \H_Counter[0]_i_1_n_0 ;
   wire \H_Counter[10]_i_1_n_0 ;
   wire \H_Counter[11]_i_1_n_0 ;
@@ -1206,6 +1207,9 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire [1:0]Q;
   wire [3:0]S;
   wire \Shift_Counter[0]_i_2_n_0 ;
+  wire \Shift_Counter[0]_i_3_n_0 ;
+  wire \Shift_Counter[0]_i_4_n_0 ;
+  wire \Shift_Counter[0]_i_5_n_0 ;
   wire [3:0]Shift_Counter_reg;
   wire \Shift_Counter_reg[0]_i_1_n_1 ;
   wire \Shift_Counter_reg[0]_i_1_n_2 ;
@@ -1478,6 +1482,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire \V_Counter_reg[12]_i_2_n_1 ;
   wire \V_Counter_reg[12]_i_2_n_2 ;
   wire \V_Counter_reg[12]_i_2_n_3 ;
+  wire [3:0]\V_Counter_reg[14]_0 ;
   wire \V_Counter_reg[16]_0 ;
   wire \V_Counter_reg[16]_1 ;
   wire \V_Counter_reg[16]_2 ;
@@ -1494,7 +1499,8 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire \V_Counter_reg[20]_i_2_n_1 ;
   wire \V_Counter_reg[20]_i_2_n_2 ;
   wire \V_Counter_reg[20]_i_2_n_3 ;
-  wire [0:0]\V_Counter_reg[22]_0 ;
+  wire [3:0]\V_Counter_reg[22]_0 ;
+  wire [0:0]\V_Counter_reg[22]_1 ;
   wire \V_Counter_reg[24]_0 ;
   wire \V_Counter_reg[24]_1 ;
   wire \V_Counter_reg[24]_2 ;
@@ -1503,13 +1509,19 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire \V_Counter_reg[24]_i_2_n_1 ;
   wire \V_Counter_reg[24]_i_2_n_2 ;
   wire \V_Counter_reg[24]_i_2_n_3 ;
+  wire [1:0]\V_Counter_reg[26]_0 ;
   wire \V_Counter_reg[28]_0 ;
   wire \V_Counter_reg[28]_1 ;
   wire \V_Counter_reg[28]_2 ;
+  wire \V_Counter_reg[28]_3 ;
   wire \V_Counter_reg[28]_i_2_n_0 ;
   wire \V_Counter_reg[28]_i_2_n_1 ;
   wire \V_Counter_reg[28]_i_2_n_2 ;
   wire \V_Counter_reg[28]_i_2_n_3 ;
+  wire [3:0]\V_Counter_reg[30]_0 ;
+  wire \V_Counter_reg[31]_0 ;
+  wire \V_Counter_reg[31]_1 ;
+  wire \V_Counter_reg[31]_2 ;
   wire \V_Counter_reg[31]_i_12_n_2 ;
   wire \V_Counter_reg[31]_i_12_n_3 ;
   wire \V_Counter_reg[31]_i_139_n_0 ;
@@ -1555,10 +1567,6 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire \V_Counter_reg[8]_i_2_n_1 ;
   wire \V_Counter_reg[8]_i_2_n_2 ;
   wire \V_Counter_reg[8]_i_2_n_3 ;
-  wire \V_Counter_reg_n_0_[28] ;
-  wire \V_Counter_reg_n_0_[29] ;
-  wire \V_Counter_reg_n_0_[30] ;
-  wire \V_Counter_reg_n_0_[31] ;
   wire [31:0]V_End;
   wire V_InRange;
   wire V_InRange0;
@@ -1626,7 +1634,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire [31:0]V_Length;
   wire [31:0]V_Start;
   wire p_0_in;
-  wire [2:2]p_0_in__0;
+  wire [3:1]p_0_in__0;
   wire [31:1]p_1_in;
   wire p_2_in;
   wire pixel_clk;
@@ -1642,8 +1650,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire [3:0]\slv_reg14_reg[31] ;
   wire [31:0]\slv_reg14_reg[31]_0 ;
   wire [3:0]\slv_reg14_reg[7] ;
-  wire \slv_reg15_reg[0] ;
-  wire [1:0]\slv_reg15_reg[2] ;
+  wire [0:0]\slv_reg15_reg[0] ;
   wire [31:0]\slv_reg15_reg[31] ;
   wire [31:0]\slv_reg1_reg[31] ;
   wire [0:0]\slv_reg6_reg[30] ;
@@ -1695,6 +1702,12 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   wire [3:0]NLW_V_InRange_reg_i_4_O_UNCONNECTED;
   wire [3:0]NLW_V_InRange_reg_i_44_O_UNCONNECTED;
 
+  LUT2 #(
+    .INIT(4'h9)) 
+    \Address[0]_i_1 
+       (.I0(\Address_reg[1]_0 ),
+        .I1(\slv_reg15_reg[31] [0]),
+        .O(\Address[0]_i_1_n_0 ));
   LUT4 #(
     .INIT(16'h7FFF)) 
     \Address[10]_i_1 
@@ -1754,43 +1767,11 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h9009)) 
     \Address[10]_i_11 
-       (.I0(\V_Counter_reg_n_0_[30] ),
+       (.I0(\V_Counter_reg[31]_1 ),
         .I1(\slv_reg15_reg[31] [30]),
-        .I2(\V_Counter_reg_n_0_[31] ),
+        .I2(\V_Counter_reg[31]_2 ),
         .I3(\slv_reg15_reg[31] [31]),
         .O(\Address[10]_i_11_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_113 
-       (.I0(Address4[13]),
-        .I1(\V_Counter_reg[16]_1 ),
-        .I2(\V_Counter_reg[16]_2 ),
-        .I3(Address4[14]),
-        .O(\Address[10]_i_113_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_114 
-       (.I0(Address4[11]),
-        .I1(\V_Counter_reg[12]_3 ),
-        .I2(\V_Counter_reg[16]_0 ),
-        .I3(Address4[12]),
-        .O(\Address[10]_i_114_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_115 
-       (.I0(Address4[9]),
-        .I1(\V_Counter_reg[12]_1 ),
-        .I2(\V_Counter_reg[12]_2 ),
-        .I3(Address4[10]),
-        .O(\Address[10]_i_115_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_116 
-       (.I0(Address4[7]),
-        .I1(\V_Counter_reg[8]_3 ),
-        .I2(\V_Counter_reg[12]_0 ),
-        .I3(Address4[8]),
-        .O(\Address[10]_i_116_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \Address[10]_i_117 
@@ -1818,9 +1799,9 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h9009)) 
     \Address[10]_i_12 
-       (.I0(\V_Counter_reg_n_0_[28] ),
+       (.I0(\V_Counter_reg[28]_3 ),
         .I1(\slv_reg15_reg[31] [28]),
-        .I2(\V_Counter_reg_n_0_[29] ),
+        .I2(\V_Counter_reg[31]_0 ),
         .I3(\slv_reg15_reg[31] [29]),
         .O(\Address[10]_i_12_n_0 ));
   LUT4 #(
@@ -1850,18 +1831,18 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_125 
-       (.I0(\Address_reg[2]_2 ),
+       (.I0(\Address_reg[3]_0 ),
         .I1(\slv_reg15_reg[31] [2]),
         .I2(\slv_reg15_reg[31] [3]),
-        .I3(\Address_reg[3]_0 ),
+        .I3(\Address_reg[3]_1 ),
         .O(\Address[10]_i_125_n_0 ));
   LUT4 #(
-    .INIT(16'h20F2)) 
+    .INIT(16'h2F02)) 
     \Address[10]_i_126 
-       (.I0(\Address_reg[2]_0 ),
+       (.I0(\Address_reg[1]_0 ),
         .I1(\slv_reg15_reg[31] [0]),
-        .I2(\Address_reg[2]_1 ),
-        .I3(\slv_reg15_reg[31] [1]),
+        .I2(\slv_reg15_reg[31] [1]),
+        .I3(\Address_reg[1]_1 ),
         .O(\Address[10]_i_126_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
@@ -1882,9 +1863,9 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h9009)) 
     \Address[10]_i_129 
-       (.I0(\Address_reg[2]_2 ),
+       (.I0(\Address_reg[3]_0 ),
         .I1(\slv_reg15_reg[31] [2]),
-        .I2(\Address_reg[3]_0 ),
+        .I2(\Address_reg[3]_1 ),
         .I3(\slv_reg15_reg[31] [3]),
         .O(\Address[10]_i_129_n_0 ));
   LUT4 #(
@@ -1898,9 +1879,9 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h9009)) 
     \Address[10]_i_130 
-       (.I0(\Address_reg[2]_0 ),
+       (.I0(\Address_reg[1]_0 ),
         .I1(\slv_reg15_reg[31] [0]),
-        .I2(\Address_reg[2]_1 ),
+        .I2(\Address_reg[1]_1 ),
         .I3(\slv_reg15_reg[31] [1]),
         .O(\Address[10]_i_130_n_0 ));
   LUT4 #(
@@ -2008,35 +1989,11 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I3(\H_Counter_reg[4]_3 ),
         .O(S[0]));
   LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_149 
-       (.I0(Address4[5]),
-        .I1(\V_Counter_reg[8]_1 ),
-        .I2(\V_Counter_reg[8]_2 ),
-        .I3(Address4[6]),
-        .O(\Address[10]_i_149_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_150 
-       (.I0(Address4[3]),
-        .I1(\V_Counter_reg[4]_0 ),
-        .I2(\V_Counter_reg[8]_0 ),
-        .I3(Address4[4]),
-        .O(\Address[10]_i_150_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_151 
-       (.I0(Address4[1]),
-        .I1(\Address_reg[2]_2 ),
-        .I2(\Address_reg[3]_0 ),
-        .I3(Address4[2]),
-        .O(\Address[10]_i_151_n_0 ));
-  LUT4 #(
     .INIT(16'h1F01)) 
     \Address[10]_i_152 
-       (.I0(\Address_reg[2]_0 ),
+       (.I0(\Address_reg[1]_0 ),
         .I1(\slv_reg15_reg[31] [0]),
-        .I2(\Address_reg[2]_1 ),
+        .I2(\Address_reg[1]_1 ),
         .I3(Address4[0]),
         .O(\Address[10]_i_152_n_0 ));
   LUT4 #(
@@ -2059,17 +2016,17 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
     .INIT(16'h9009)) 
     \Address[10]_i_155 
        (.I0(Address4[1]),
-        .I1(\Address_reg[2]_2 ),
+        .I1(\Address_reg[3]_0 ),
         .I2(Address4[2]),
-        .I3(\Address_reg[3]_0 ),
+        .I3(\Address_reg[3]_1 ),
         .O(\Address[10]_i_155_n_0 ));
   LUT4 #(
     .INIT(16'h6006)) 
     \Address[10]_i_156 
        (.I0(\slv_reg15_reg[31] [0]),
-        .I1(\Address_reg[2]_0 ),
+        .I1(\Address_reg[1]_0 ),
         .I2(Address4[0]),
-        .I3(\Address_reg[2]_1 ),
+        .I3(\Address_reg[1]_1 ),
         .O(\Address[10]_i_156_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
@@ -2168,52 +2125,20 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I3(\H_Counter_reg[28]_3 ),
         .O(Shift_Rst_reg_2[0]));
   LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_34 
-       (.I0(Address4[29]),
-        .I1(\V_Counter_reg_n_0_[30] ),
-        .I2(\V_Counter_reg_n_0_[31] ),
-        .I3(Address4[30]),
-        .O(\Address[10]_i_34_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_35 
-       (.I0(Address4[27]),
-        .I1(\V_Counter_reg_n_0_[28] ),
-        .I2(\V_Counter_reg_n_0_[29] ),
-        .I3(Address4[28]),
-        .O(\Address[10]_i_35_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_36 
-       (.I0(Address4[25]),
-        .I1(\V_Counter_reg[28]_1 ),
-        .I2(\V_Counter_reg[28]_2 ),
-        .I3(Address4[26]),
-        .O(\Address[10]_i_36_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_37 
-       (.I0(Address4[23]),
-        .I1(\V_Counter_reg[24]_3 ),
-        .I2(\V_Counter_reg[28]_0 ),
-        .I3(Address4[24]),
-        .O(\Address[10]_i_37_n_0 ));
-  LUT4 #(
     .INIT(16'h9009)) 
     \Address[10]_i_38 
        (.I0(Address4[29]),
-        .I1(\V_Counter_reg_n_0_[30] ),
+        .I1(\V_Counter_reg[31]_1 ),
         .I2(Address4[30]),
-        .I3(\V_Counter_reg_n_0_[31] ),
+        .I3(\V_Counter_reg[31]_2 ),
         .O(\Address[10]_i_38_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \Address[10]_i_39 
        (.I0(Address4[27]),
-        .I1(\V_Counter_reg_n_0_[28] ),
+        .I1(\V_Counter_reg[28]_3 ),
         .I2(Address4[28]),
-        .I3(\V_Counter_reg_n_0_[29] ),
+        .I3(\V_Counter_reg[31]_0 ),
         .O(\Address[10]_i_39_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
@@ -2394,43 +2319,11 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_7 
-       (.I0(\V_Counter_reg_n_0_[30] ),
+       (.I0(\V_Counter_reg[31]_1 ),
         .I1(\slv_reg15_reg[31] [30]),
         .I2(\slv_reg15_reg[31] [31]),
-        .I3(\V_Counter_reg_n_0_[31] ),
+        .I3(\V_Counter_reg[31]_2 ),
         .O(\Address[10]_i_7_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_72 
-       (.I0(Address4[21]),
-        .I1(\V_Counter_reg[24]_1 ),
-        .I2(\V_Counter_reg[24]_2 ),
-        .I3(Address4[22]),
-        .O(\Address[10]_i_72_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_73 
-       (.I0(Address4[19]),
-        .I1(\V_Counter_reg[20]_3 ),
-        .I2(\V_Counter_reg[24]_0 ),
-        .I3(Address4[20]),
-        .O(\Address[10]_i_73_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_74 
-       (.I0(Address4[17]),
-        .I1(\V_Counter_reg[20]_1 ),
-        .I2(\V_Counter_reg[20]_2 ),
-        .I3(Address4[18]),
-        .O(\Address[10]_i_74_n_0 ));
-  LUT4 #(
-    .INIT(16'h2F02)) 
-    \Address[10]_i_75 
-       (.I0(Address4[15]),
-        .I1(\V_Counter_reg[16]_3 ),
-        .I2(\V_Counter_reg[20]_0 ),
-        .I3(Address4[16]),
-        .O(\Address[10]_i_75_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \Address[10]_i_76 
@@ -2466,10 +2359,10 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_8 
-       (.I0(\V_Counter_reg_n_0_[28] ),
+       (.I0(\V_Counter_reg[28]_3 ),
         .I1(\slv_reg15_reg[31] [28]),
         .I2(\slv_reg15_reg[31] [29]),
-        .I3(\V_Counter_reg_n_0_[29] ),
+        .I3(\V_Counter_reg[31]_0 ),
         .O(\Address[10]_i_8_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
@@ -2599,20 +2492,37 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(\H_Counter_reg[12]_1 ),
         .I3(\slv_reg14_reg[31]_0 [11]),
         .O(\Address[10]_i_99_n_0 ));
-  LUT6 #(
-    .INIT(64'h4F04B0FBB0FB4F04)) 
-    \Address[2]_i_1 
-       (.I0(\Address_reg[2]_0 ),
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  LUT4 #(
+    .INIT(16'hB44B)) 
+    \Address[1]_i_1 
+       (.I0(\Address_reg[1]_0 ),
         .I1(\slv_reg15_reg[31] [0]),
-        .I2(\Address_reg[2]_1 ),
-        .I3(\slv_reg15_reg[31] [1]),
-        .I4(\slv_reg15_reg[31] [2]),
-        .I5(\Address_reg[2]_2 ),
-        .O(p_0_in__0));
+        .I2(\slv_reg15_reg[31] [1]),
+        .I3(\Address_reg[1]_1 ),
+        .O(p_0_in__0[1]));
+  LUT5 #(
+    .INIT(32'h718E8E71)) 
+    \Address[3]_i_1 
+       (.I0(\Address[3]_i_2_n_0 ),
+        .I1(\slv_reg15_reg[31] [2]),
+        .I2(\Address_reg[3]_0 ),
+        .I3(\slv_reg15_reg[31] [3]),
+        .I4(\Address_reg[3]_1 ),
+        .O(p_0_in__0[3]));
+  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  LUT4 #(
+    .INIT(16'h4D44)) 
+    \Address[3]_i_2 
+       (.I0(\Address_reg[1]_1 ),
+        .I1(\slv_reg15_reg[31] [1]),
+        .I2(\Address_reg[1]_0 ),
+        .I3(\slv_reg15_reg[31] [0]),
+        .O(\Address[3]_i_2_n_0 ));
   FDRE \Address_reg[0] 
        (.C(pixel_clk),
         .CE(1'b1),
-        .D(\slv_reg15_reg[0] ),
+        .D(\Address[0]_i_1_n_0 ),
         .Q(Address[0]),
         .R(\Address[10]_i_1_n_0 ));
   FDRE \Address_reg[10] 
@@ -2625,7 +2535,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.CI(1'b0),
         .CO({\Address_reg[10]_i_112_n_0 ,\Address_reg[10]_i_112_n_1 ,\Address_reg[10]_i_112_n_2 ,\Address_reg[10]_i_112_n_3 }),
         .CYINIT(1'b1),
-        .DI({\Address[10]_i_149_n_0 ,\Address[10]_i_150_n_0 ,\Address[10]_i_151_n_0 ,\Address[10]_i_152_n_0 }),
+        .DI({DI,\Address[10]_i_152_n_0 }),
         .O(\NLW_Address_reg[10]_i_112_O_UNCONNECTED [3:0]),
         .S({\Address[10]_i_153_n_0 ,\Address[10]_i_154_n_0 ,\Address[10]_i_155_n_0 ,\Address[10]_i_156_n_0 }));
   CARRY4 \Address_reg[10]_i_15 
@@ -2653,7 +2563,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.CI(\Address_reg[10]_i_71_n_0 ),
         .CO({\Address_reg[10]_i_33_n_0 ,\Address_reg[10]_i_33_n_1 ,\Address_reg[10]_i_33_n_2 ,\Address_reg[10]_i_33_n_3 }),
         .CYINIT(1'b0),
-        .DI({\Address[10]_i_72_n_0 ,\Address[10]_i_73_n_0 ,\Address[10]_i_74_n_0 ,\Address[10]_i_75_n_0 }),
+        .DI(\V_Counter_reg[22]_0 ),
         .O(\NLW_Address_reg[10]_i_33_O_UNCONNECTED [3:0]),
         .S({\Address[10]_i_76_n_0 ,\Address[10]_i_77_n_0 ,\Address[10]_i_78_n_0 ,\Address[10]_i_79_n_0 }));
   CARRY4 \Address_reg[10]_i_42 
@@ -2667,7 +2577,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.CI(\Address_reg[10]_i_33_n_0 ),
         .CO({Address3,\Address_reg[10]_i_5_n_1 ,\Address_reg[10]_i_5_n_2 ,\Address_reg[10]_i_5_n_3 }),
         .CYINIT(1'b0),
-        .DI({\Address[10]_i_34_n_0 ,\Address[10]_i_35_n_0 ,\Address[10]_i_36_n_0 ,\Address[10]_i_37_n_0 }),
+        .DI(\V_Counter_reg[30]_0 ),
         .O(\NLW_Address_reg[10]_i_5_O_UNCONNECTED [3:0]),
         .S({\Address[10]_i_38_n_0 ,\Address[10]_i_39_n_0 ,\Address[10]_i_40_n_0 ,\Address[10]_i_41_n_0 }));
   CARRY4 \Address_reg[10]_i_51 
@@ -2688,7 +2598,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.CI(\Address_reg[10]_i_112_n_0 ),
         .CO({\Address_reg[10]_i_71_n_0 ,\Address_reg[10]_i_71_n_1 ,\Address_reg[10]_i_71_n_2 ,\Address_reg[10]_i_71_n_3 }),
         .CYINIT(1'b0),
-        .DI({\Address[10]_i_113_n_0 ,\Address[10]_i_114_n_0 ,\Address[10]_i_115_n_0 ,\Address[10]_i_116_n_0 }),
+        .DI(\V_Counter_reg[14]_0 ),
         .O(\NLW_Address_reg[10]_i_71_O_UNCONNECTED [3:0]),
         .S({\Address[10]_i_117_n_0 ,\Address[10]_i_118_n_0 ,\Address[10]_i_119_n_0 ,\Address[10]_i_120_n_0 }));
   CARRY4 \Address_reg[10]_i_83 
@@ -2708,19 +2618,19 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   FDRE \Address_reg[1] 
        (.C(pixel_clk),
         .CE(1'b1),
-        .D(\slv_reg15_reg[2] [0]),
+        .D(p_0_in__0[1]),
         .Q(Address[1]),
         .R(\Address[10]_i_1_n_0 ));
   FDRE \Address_reg[2] 
        (.C(pixel_clk),
         .CE(1'b1),
-        .D(p_0_in__0),
+        .D(\slv_reg15_reg[0] ),
         .Q(Address[2]),
         .R(\Address[10]_i_1_n_0 ));
   FDRE \Address_reg[3] 
        (.C(pixel_clk),
         .CE(1'b1),
-        .D(\slv_reg15_reg[2] [1]),
+        .D(p_0_in__0[3]),
         .Q(Address[3]),
         .R(\Address[10]_i_1_n_0 ));
   FDRE \Address_reg[4] 
@@ -2788,217 +2698,217 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.I0(p_2_in),
         .I1(\H_Counter_reg[0]_0 ),
         .O(\H_Counter[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair156" *) 
+  (* SOFT_HLUTNM = "soft_lutpair154" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[10]_i_1 
        (.I0(\H_Counter_reg[12]_i_2_n_6 ),
         .I1(p_2_in),
         .O(\H_Counter[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair155" *) 
+  (* SOFT_HLUTNM = "soft_lutpair153" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[11]_i_1 
        (.I0(\H_Counter_reg[12]_i_2_n_5 ),
         .I1(p_2_in),
         .O(\H_Counter[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair158" *) 
+  (* SOFT_HLUTNM = "soft_lutpair156" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[12]_i_1 
        (.I0(\H_Counter_reg[12]_i_2_n_4 ),
         .I1(p_2_in),
         .O(\H_Counter[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair157" *) 
+  (* SOFT_HLUTNM = "soft_lutpair155" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[13]_i_1 
        (.I0(\H_Counter_reg[16]_i_2_n_7 ),
         .I1(p_2_in),
         .O(\H_Counter[13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair159" *) 
+  (* SOFT_HLUTNM = "soft_lutpair158" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[14]_i_1 
        (.I0(\H_Counter_reg[16]_i_2_n_6 ),
         .I1(p_2_in),
         .O(\H_Counter[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair159" *) 
+  (* SOFT_HLUTNM = "soft_lutpair157" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[15]_i_1 
        (.I0(\H_Counter_reg[16]_i_2_n_5 ),
         .I1(p_2_in),
         .O(\H_Counter[15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair157" *) 
+  (* SOFT_HLUTNM = "soft_lutpair159" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[16]_i_1 
        (.I0(\H_Counter_reg[16]_i_2_n_4 ),
         .I1(p_2_in),
         .O(\H_Counter[16]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair158" *) 
+  (* SOFT_HLUTNM = "soft_lutpair159" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[17]_i_1 
        (.I0(\H_Counter_reg[20]_i_2_n_7 ),
         .I1(p_2_in),
         .O(\H_Counter[17]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair155" *) 
+  (* SOFT_HLUTNM = "soft_lutpair157" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[18]_i_1 
        (.I0(\H_Counter_reg[20]_i_2_n_6 ),
         .I1(p_2_in),
         .O(\H_Counter[18]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair156" *) 
+  (* SOFT_HLUTNM = "soft_lutpair158" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[19]_i_1 
        (.I0(\H_Counter_reg[20]_i_2_n_5 ),
         .I1(p_2_in),
         .O(\H_Counter[19]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair146" *) 
+  (* SOFT_HLUTNM = "soft_lutpair144" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[1]_i_1 
        (.I0(\H_Counter_reg[4]_i_2_n_7 ),
         .I1(p_2_in),
         .O(\H_Counter[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair153" *) 
+  (* SOFT_HLUTNM = "soft_lutpair155" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[20]_i_1 
        (.I0(\H_Counter_reg[20]_i_2_n_4 ),
         .I1(p_2_in),
         .O(\H_Counter[20]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair154" *) 
+  (* SOFT_HLUTNM = "soft_lutpair156" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[21]_i_1 
        (.I0(\H_Counter_reg[24]_i_2_n_7 ),
         .I1(p_2_in),
         .O(\H_Counter[21]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair151" *) 
+  (* SOFT_HLUTNM = "soft_lutpair153" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[22]_i_1 
        (.I0(\H_Counter_reg[24]_i_2_n_6 ),
         .I1(p_2_in),
         .O(\H_Counter[22]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair152" *) 
+  (* SOFT_HLUTNM = "soft_lutpair154" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[23]_i_1 
        (.I0(\H_Counter_reg[24]_i_2_n_5 ),
         .I1(p_2_in),
         .O(\H_Counter[23]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair149" *) 
+  (* SOFT_HLUTNM = "soft_lutpair151" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[24]_i_1 
        (.I0(\H_Counter_reg[24]_i_2_n_4 ),
         .I1(p_2_in),
         .O(\H_Counter[24]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair150" *) 
+  (* SOFT_HLUTNM = "soft_lutpair152" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[25]_i_1 
        (.I0(\H_Counter_reg[28]_i_2_n_7 ),
         .I1(p_2_in),
         .O(\H_Counter[25]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair147" *) 
+  (* SOFT_HLUTNM = "soft_lutpair149" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[26]_i_1 
        (.I0(\H_Counter_reg[28]_i_2_n_6 ),
         .I1(p_2_in),
         .O(\H_Counter[26]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair148" *) 
+  (* SOFT_HLUTNM = "soft_lutpair150" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[27]_i_1 
        (.I0(\H_Counter_reg[28]_i_2_n_5 ),
         .I1(p_2_in),
         .O(\H_Counter[27]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
+  (* SOFT_HLUTNM = "soft_lutpair147" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[28]_i_1 
        (.I0(\H_Counter_reg[28]_i_2_n_4 ),
         .I1(p_2_in),
         .O(\H_Counter[28]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair146" *) 
+  (* SOFT_HLUTNM = "soft_lutpair148" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[29]_i_1 
        (.I0(\H_Counter_reg[31]_i_2_n_7 ),
         .I1(p_2_in),
         .O(\H_Counter[29]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair148" *) 
+  (* SOFT_HLUTNM = "soft_lutpair146" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[2]_i_1 
        (.I0(\H_Counter_reg[4]_i_2_n_6 ),
         .I1(p_2_in),
         .O(\H_Counter[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair144" *) 
+  (* SOFT_HLUTNM = "soft_lutpair145" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[30]_i_1 
        (.I0(\H_Counter_reg[31]_i_2_n_6 ),
         .I1(p_2_in),
         .O(\H_Counter[30]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair145" *) 
+  (* SOFT_HLUTNM = "soft_lutpair146" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[31]_i_1 
        (.I0(\H_Counter_reg[31]_i_2_n_5 ),
         .I1(p_2_in),
         .O(\H_Counter[31]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair147" *) 
+  (* SOFT_HLUTNM = "soft_lutpair145" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[3]_i_1 
        (.I0(\H_Counter_reg[4]_i_2_n_5 ),
         .I1(p_2_in),
         .O(\H_Counter[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair150" *) 
+  (* SOFT_HLUTNM = "soft_lutpair148" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[4]_i_1 
        (.I0(\H_Counter_reg[4]_i_2_n_4 ),
         .I1(p_2_in),
         .O(\H_Counter[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair149" *) 
+  (* SOFT_HLUTNM = "soft_lutpair147" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[5]_i_1 
        (.I0(\H_Counter_reg[8]_i_2_n_7 ),
         .I1(p_2_in),
         .O(\H_Counter[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair152" *) 
+  (* SOFT_HLUTNM = "soft_lutpair150" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[6]_i_1 
        (.I0(\H_Counter_reg[8]_i_2_n_6 ),
         .I1(p_2_in),
         .O(\H_Counter[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair151" *) 
+  (* SOFT_HLUTNM = "soft_lutpair149" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[7]_i_1 
        (.I0(\H_Counter_reg[8]_i_2_n_5 ),
         .I1(p_2_in),
         .O(\H_Counter[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair154" *) 
+  (* SOFT_HLUTNM = "soft_lutpair152" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[8]_i_1 
        (.I0(\H_Counter_reg[8]_i_2_n_4 ),
         .I1(p_2_in),
         .O(\H_Counter[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair153" *) 
+  (* SOFT_HLUTNM = "soft_lutpair151" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \H_Counter[9]_i_1 
@@ -3769,39 +3679,54 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT1 #(
     .INIT(2'h1)) 
     \Shift_Counter[0]_i_2 
-       (.I0(Shift_Counter_reg[0]),
+       (.I0(Shift_Counter_reg[3]),
         .O(\Shift_Counter[0]_i_2_n_0 ));
-  FDRE \Shift_Counter_reg[0] 
+  LUT1 #(
+    .INIT(2'h1)) 
+    \Shift_Counter[0]_i_3 
+       (.I0(Shift_Counter_reg[2]),
+        .O(\Shift_Counter[0]_i_3_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \Shift_Counter[0]_i_4 
+       (.I0(Shift_Counter_reg[1]),
+        .O(\Shift_Counter[0]_i_4_n_0 ));
+  LUT1 #(
+    .INIT(2'h1)) 
+    \Shift_Counter[0]_i_5 
+       (.I0(Shift_Counter_reg[0]),
+        .O(\Shift_Counter[0]_i_5_n_0 ));
+  FDSE \Shift_Counter_reg[0] 
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\Shift_Counter_reg[0]_i_1_n_7 ),
         .Q(Shift_Counter_reg[0]),
-        .R(Shift_Rst));
+        .S(Shift_Rst));
   CARRY4 \Shift_Counter_reg[0]_i_1 
        (.CI(1'b0),
         .CO({\NLW_Shift_Counter_reg[0]_i_1_CO_UNCONNECTED [3],\Shift_Counter_reg[0]_i_1_n_1 ,\Shift_Counter_reg[0]_i_1_n_2 ,\Shift_Counter_reg[0]_i_1_n_3 }),
         .CYINIT(1'b0),
-        .DI({1'b0,1'b0,1'b0,1'b1}),
+        .DI({1'b0,1'b1,1'b1,1'b1}),
         .O({\Shift_Counter_reg[0]_i_1_n_4 ,\Shift_Counter_reg[0]_i_1_n_5 ,\Shift_Counter_reg[0]_i_1_n_6 ,\Shift_Counter_reg[0]_i_1_n_7 }),
-        .S({Shift_Counter_reg[3:1],\Shift_Counter[0]_i_2_n_0 }));
-  FDRE \Shift_Counter_reg[1] 
+        .S({\Shift_Counter[0]_i_2_n_0 ,\Shift_Counter[0]_i_3_n_0 ,\Shift_Counter[0]_i_4_n_0 ,\Shift_Counter[0]_i_5_n_0 }));
+  FDSE \Shift_Counter_reg[1] 
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\Shift_Counter_reg[0]_i_1_n_6 ),
         .Q(Shift_Counter_reg[1]),
-        .R(Shift_Rst));
-  FDRE \Shift_Counter_reg[2] 
+        .S(Shift_Rst));
+  FDSE \Shift_Counter_reg[2] 
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\Shift_Counter_reg[0]_i_1_n_5 ),
         .Q(Shift_Counter_reg[2]),
-        .R(Shift_Rst));
-  FDRE \Shift_Counter_reg[3] 
+        .S(Shift_Rst));
+  FDSE \Shift_Counter_reg[3] 
        (.C(pixel_clk),
         .CE(1'b1),
         .D(\Shift_Counter_reg[0]_i_1_n_4 ),
         .Q(Shift_Counter_reg[3]),
-        .R(Shift_Rst));
+        .S(Shift_Rst));
   FDRE Shift_Rst_reg
        (.C(pixel_clk),
         .CE(1'b1),
@@ -4533,14 +4458,14 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT6 #(
     .INIT(64'hFF050005FF053305)) 
     VGA_VS_i_10
-       (.I0(\V_Counter_reg_n_0_[28] ),
+       (.I0(\V_Counter_reg[28]_3 ),
         .I1(p_1_in[28]),
-        .I2(\V_Counter_reg_n_0_[29] ),
+        .I2(\V_Counter_reg[31]_0 ),
         .I3(p_2_in),
         .I4(p_0_in),
         .I5(p_1_in[29]),
         .O(VGA_VS_i_10_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_100
@@ -4549,7 +4474,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[4]_0 ),
         .O(VGA_VS_reg_1[2]));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_101
@@ -4558,32 +4483,32 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[8]_0 ),
         .O(VGA_VS_reg_1[3]));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_102
        (.I0(p_1_in[2]),
         .I1(p_0_in),
         .I2(p_2_in),
-        .I3(\Address_reg[2]_2 ),
+        .I3(\Address_reg[3]_0 ),
         .O(VGA_VS_reg_1[0]));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  (* SOFT_HLUTNM = "soft_lutpair141" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_103
        (.I0(p_1_in[3]),
         .I1(p_0_in),
         .I2(p_2_in),
-        .I3(\Address_reg[3]_0 ),
+        .I3(\Address_reg[3]_1 ),
         .O(VGA_VS_reg_1[1]));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
+  (* SOFT_HLUTNM = "soft_lutpair142" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_104
        (.I0(p_1_in[1]),
         .I1(p_0_in),
         .I2(p_2_in),
-        .I3(\Address_reg[2]_1 ),
+        .I3(\Address_reg[1]_1 ),
         .O(V_Counter));
   LUT6 #(
     .INIT(64'hFF050005FF053305)) 
@@ -4685,14 +4610,14 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I4(p_0_in),
         .I5(p_1_in[17]),
         .O(VGA_VS_i_30_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  (* SOFT_HLUTNM = "soft_lutpair143" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_40
        (.I0(p_1_in[30]),
         .I1(p_0_in),
         .I2(p_2_in),
-        .I3(\V_Counter_reg_n_0_[30] ),
+        .I3(\V_Counter_reg[31]_1 ),
         .O(VGA_VS_reg_1[28]));
   (* SOFT_HLUTNM = "soft_lutpair113" *) 
   LUT4 #(
@@ -4701,27 +4626,27 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.I0(p_1_in[31]),
         .I1(p_0_in),
         .I2(p_2_in),
-        .I3(\V_Counter_reg_n_0_[31] ),
+        .I3(\V_Counter_reg[31]_2 ),
         .O(VGA_VS_reg_1[29]));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_42
        (.I0(p_1_in[28]),
         .I1(p_0_in),
         .I2(p_2_in),
-        .I3(\V_Counter_reg_n_0_[28] ),
+        .I3(\V_Counter_reg[28]_3 ),
         .O(VGA_VS_reg_1[26]));
-  (* SOFT_HLUTNM = "soft_lutpair116" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_43
        (.I0(p_1_in[29]),
         .I1(p_0_in),
         .I2(p_2_in),
-        .I3(\V_Counter_reg_n_0_[29] ),
+        .I3(\V_Counter_reg[31]_0 ),
         .O(VGA_VS_reg_1[27]));
-  (* SOFT_HLUTNM = "soft_lutpair117" *) 
+  (* SOFT_HLUTNM = "soft_lutpair116" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_44
@@ -4730,7 +4655,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[28]_1 ),
         .O(VGA_VS_reg_1[24]));
-  (* SOFT_HLUTNM = "soft_lutpair118" *) 
+  (* SOFT_HLUTNM = "soft_lutpair117" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_45
@@ -4739,7 +4664,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[28]_2 ),
         .O(VGA_VS_reg_1[25]));
-  (* SOFT_HLUTNM = "soft_lutpair119" *) 
+  (* SOFT_HLUTNM = "soft_lutpair118" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_46
@@ -4748,7 +4673,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[24]_3 ),
         .O(VGA_VS_reg_1[22]));
-  (* SOFT_HLUTNM = "soft_lutpair120" *) 
+  (* SOFT_HLUTNM = "soft_lutpair119" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_47
@@ -4770,9 +4695,9 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT6 #(
     .INIT(64'h000A000A000ACC0A)) 
     VGA_VS_i_5
-       (.I0(\V_Counter_reg_n_0_[30] ),
+       (.I0(\V_Counter_reg[31]_1 ),
         .I1(p_1_in[30]),
-        .I2(\V_Counter_reg_n_0_[31] ),
+        .I2(\V_Counter_reg[31]_2 ),
         .I3(p_2_in),
         .I4(p_0_in),
         .I5(p_1_in[31]),
@@ -4851,13 +4776,13 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
     .INIT(64'h00FCFFFC00FCAAFC)) 
     VGA_VS_i_6
        (.I0(p_1_in[28]),
-        .I1(\V_Counter_reg_n_0_[28] ),
-        .I2(\V_Counter_reg_n_0_[29] ),
+        .I1(\V_Counter_reg[28]_3 ),
+        .I2(\V_Counter_reg[31]_0 ),
         .I3(p_2_in),
         .I4(p_0_in),
         .I5(p_1_in[29]),
         .O(VGA_VS_i_6_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair121" *) 
+  (* SOFT_HLUTNM = "soft_lutpair120" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_66
@@ -4866,7 +4791,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[24]_1 ),
         .O(VGA_VS_reg_1[20]));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
+  (* SOFT_HLUTNM = "soft_lutpair121" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_67
@@ -4875,7 +4800,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[24]_2 ),
         .O(VGA_VS_reg_1[21]));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_68
@@ -4884,7 +4809,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[20]_3 ),
         .O(VGA_VS_reg_1[18]));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_69
@@ -4903,7 +4828,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I4(p_0_in),
         .I5(p_1_in[27]),
         .O(VGA_VS_i_7_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_70
@@ -4912,7 +4837,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[20]_1 ),
         .O(VGA_VS_reg_1[16]));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_71
@@ -4921,7 +4846,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[20]_2 ),
         .O(VGA_VS_reg_1[17]));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_72
@@ -4930,7 +4855,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[16]_3 ),
         .O(VGA_VS_reg_1[14]));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_73
@@ -4963,8 +4888,8 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
     .INIT(64'h00FCFFFC00FCAAFC)) 
     VGA_VS_i_76
        (.I0(p_1_in[2]),
-        .I1(\Address_reg[2]_2 ),
-        .I2(\Address_reg[3]_0 ),
+        .I1(\Address_reg[3]_0 ),
+        .I2(\Address_reg[3]_1 ),
         .I3(p_2_in),
         .I4(p_0_in),
         .I5(p_1_in[3]),
@@ -4972,8 +4897,8 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT5 #(
     .INIT(32'h0EFE0E5E)) 
     VGA_VS_i_77
-       (.I0(\Address_reg[2]_0 ),
-        .I1(\Address_reg[2]_1 ),
+       (.I0(\Address_reg[1]_0 ),
+        .I1(\Address_reg[1]_1 ),
         .I2(p_2_in),
         .I3(p_0_in),
         .I4(p_1_in[1]),
@@ -5011,9 +4936,9 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT6 #(
     .INIT(64'hFF050005FF053305)) 
     VGA_VS_i_80
-       (.I0(\Address_reg[2]_2 ),
+       (.I0(\Address_reg[3]_0 ),
         .I1(p_1_in[2]),
-        .I2(\Address_reg[3]_0 ),
+        .I2(\Address_reg[3]_1 ),
         .I3(p_2_in),
         .I4(p_0_in),
         .I5(p_1_in[3]),
@@ -5021,8 +4946,8 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT5 #(
     .INIT(32'hF101F1A1)) 
     VGA_VS_i_81
-       (.I0(\Address_reg[2]_0 ),
-        .I1(\Address_reg[2]_1 ),
+       (.I0(\Address_reg[1]_0 ),
+        .I1(\Address_reg[1]_1 ),
         .I2(p_2_in),
         .I3(p_0_in),
         .I4(p_1_in[1]),
@@ -5031,7 +4956,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
     .INIT(64'hA282FFFF0000A282)) 
     VGA_VS_i_85
        (.I0(Q[0]),
-        .I1(\Address_reg[2]_0 ),
+        .I1(\Address_reg[1]_0 ),
         .I2(p_2_in),
         .I3(p_0_in),
         .I4(V_Counter),
@@ -5043,21 +4968,21 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.I0(Q[0]),
         .I1(p_0_in),
         .I2(p_2_in),
-        .I3(\Address_reg[2]_0 ),
+        .I3(\Address_reg[1]_0 ),
         .I4(Q[1]),
         .I5(V_Counter),
         .O(VGA_VS_reg_0));
   LUT6 #(
     .INIT(64'hFF050005FF053305)) 
     VGA_VS_i_9
-       (.I0(\V_Counter_reg_n_0_[30] ),
+       (.I0(\V_Counter_reg[31]_1 ),
         .I1(p_1_in[30]),
-        .I2(\V_Counter_reg_n_0_[31] ),
+        .I2(\V_Counter_reg[31]_2 ),
         .I3(p_2_in),
         .I4(p_0_in),
         .I5(p_1_in[31]),
         .O(VGA_VS_i_9_n_0));
-  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_90
@@ -5066,7 +4991,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[16]_1 ),
         .O(VGA_VS_reg_1[12]));
-  (* SOFT_HLUTNM = "soft_lutpair130" *) 
+  (* SOFT_HLUTNM = "soft_lutpair129" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_91
@@ -5075,7 +5000,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[16]_2 ),
         .O(VGA_VS_reg_1[13]));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  (* SOFT_HLUTNM = "soft_lutpair130" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_92
@@ -5084,7 +5009,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[12]_3 ),
         .O(VGA_VS_reg_1[10]));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_93
@@ -5093,7 +5018,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[16]_0 ),
         .O(VGA_VS_reg_1[11]));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_94
@@ -5102,7 +5027,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[12]_1 ),
         .O(VGA_VS_reg_1[8]));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_95
@@ -5111,7 +5036,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[12]_2 ),
         .O(VGA_VS_reg_1[9]));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_96
@@ -5120,7 +5045,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[8]_3 ),
         .O(VGA_VS_reg_1[6]));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_97
@@ -5129,7 +5054,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[12]_0 ),
         .O(VGA_VS_reg_1[7]));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_98
@@ -5138,7 +5063,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(p_2_in),
         .I3(\V_Counter_reg[8]_1 ),
         .O(VGA_VS_reg_1[4]));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT4 #(
     .INIT(16'h2F20)) 
     VGA_VS_i_99
@@ -5186,164 +5111,164 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT2 #(
     .INIT(4'h1)) 
     \V_Counter[0]_i_1 
-       (.I0(\Address_reg[2]_0 ),
+       (.I0(\Address_reg[1]_0 ),
         .I1(p_0_in),
         .O(\V_Counter[0]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair133" *) 
+  (* SOFT_HLUTNM = "soft_lutpair132" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[10]_i_1 
        (.I0(p_1_in[10]),
         .I1(p_0_in),
         .O(\V_Counter[10]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair134" *) 
+  (* SOFT_HLUTNM = "soft_lutpair133" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[11]_i_1 
        (.I0(p_1_in[11]),
         .I1(p_0_in),
         .O(\V_Counter[11]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair131" *) 
+  (* SOFT_HLUTNM = "soft_lutpair130" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[12]_i_1 
        (.I0(p_1_in[12]),
         .I1(p_0_in),
         .O(\V_Counter[12]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair132" *) 
+  (* SOFT_HLUTNM = "soft_lutpair131" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[13]_i_1 
        (.I0(p_1_in[13]),
         .I1(p_0_in),
         .O(\V_Counter[13]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair129" *) 
+  (* SOFT_HLUTNM = "soft_lutpair128" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[14]_i_1 
        (.I0(p_1_in[14]),
         .I1(p_0_in),
         .O(\V_Counter[14]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair130" *) 
+  (* SOFT_HLUTNM = "soft_lutpair129" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[15]_i_1 
        (.I0(p_1_in[15]),
         .I1(p_0_in),
         .O(\V_Counter[15]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair127" *) 
+  (* SOFT_HLUTNM = "soft_lutpair126" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[16]_i_1 
        (.I0(p_1_in[16]),
         .I1(p_0_in),
         .O(\V_Counter[16]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair128" *) 
+  (* SOFT_HLUTNM = "soft_lutpair127" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[17]_i_1 
        (.I0(p_1_in[17]),
         .I1(p_0_in),
         .O(\V_Counter[17]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair125" *) 
+  (* SOFT_HLUTNM = "soft_lutpair124" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[18]_i_1 
        (.I0(p_1_in[18]),
         .I1(p_0_in),
         .O(\V_Counter[18]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair126" *) 
+  (* SOFT_HLUTNM = "soft_lutpair125" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[19]_i_1 
        (.I0(p_1_in[19]),
         .I1(p_0_in),
         .O(\V_Counter[19]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair143" *) 
+  (* SOFT_HLUTNM = "soft_lutpair142" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[1]_i_1 
        (.I0(p_1_in[1]),
         .I1(p_0_in),
         .O(\V_Counter[1]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair123" *) 
+  (* SOFT_HLUTNM = "soft_lutpair122" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[20]_i_1 
        (.I0(p_1_in[20]),
         .I1(p_0_in),
         .O(\V_Counter[20]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair124" *) 
+  (* SOFT_HLUTNM = "soft_lutpair123" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[21]_i_1 
        (.I0(p_1_in[21]),
         .I1(p_0_in),
         .O(\V_Counter[21]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair121" *) 
+  (* SOFT_HLUTNM = "soft_lutpair120" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[22]_i_1 
        (.I0(p_1_in[22]),
         .I1(p_0_in),
         .O(\V_Counter[22]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair122" *) 
+  (* SOFT_HLUTNM = "soft_lutpair121" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[23]_i_1 
        (.I0(p_1_in[23]),
         .I1(p_0_in),
         .O(\V_Counter[23]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair119" *) 
+  (* SOFT_HLUTNM = "soft_lutpair118" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[24]_i_1 
        (.I0(p_1_in[24]),
         .I1(p_0_in),
         .O(\V_Counter[24]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair120" *) 
+  (* SOFT_HLUTNM = "soft_lutpair119" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[25]_i_1 
        (.I0(p_1_in[25]),
         .I1(p_0_in),
         .O(\V_Counter[25]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair117" *) 
+  (* SOFT_HLUTNM = "soft_lutpair116" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[26]_i_1 
        (.I0(p_1_in[26]),
         .I1(p_0_in),
         .O(\V_Counter[26]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair118" *) 
+  (* SOFT_HLUTNM = "soft_lutpair117" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[27]_i_1 
        (.I0(p_1_in[27]),
         .I1(p_0_in),
         .O(\V_Counter[27]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair115" *) 
+  (* SOFT_HLUTNM = "soft_lutpair114" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[28]_i_1 
        (.I0(p_1_in[28]),
         .I1(p_0_in),
         .O(\V_Counter[28]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair116" *) 
+  (* SOFT_HLUTNM = "soft_lutpair115" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[29]_i_1 
        (.I0(p_1_in[29]),
         .I1(p_0_in),
         .O(\V_Counter[29]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair141" *) 
+  (* SOFT_HLUTNM = "soft_lutpair140" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[2]_i_1 
        (.I0(p_1_in[2]),
         .I1(p_0_in),
         .O(\V_Counter[2]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair114" *) 
+  (* SOFT_HLUTNM = "soft_lutpair143" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[30]_i_1 
@@ -5520,18 +5445,18 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h2F02)) 
     \V_Counter[31]_i_239 
-       (.I0(\Address_reg[2]_2 ),
+       (.I0(\Address_reg[3]_0 ),
         .I1(V_Length[2]),
         .I2(V_Length[3]),
-        .I3(\Address_reg[3]_0 ),
+        .I3(\Address_reg[3]_1 ),
         .O(\V_Counter[31]_i_239_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \V_Counter[31]_i_240 
-       (.I0(\Address_reg[2]_0 ),
+       (.I0(\Address_reg[1]_0 ),
         .I1(V_Length[0]),
         .I2(V_Length[1]),
-        .I3(\Address_reg[2]_1 ),
+        .I3(\Address_reg[1]_1 ),
         .O(\V_Counter[31]_i_240_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
@@ -5552,34 +5477,34 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h9009)) 
     \V_Counter[31]_i_243 
-       (.I0(\Address_reg[2]_2 ),
+       (.I0(\Address_reg[3]_0 ),
         .I1(V_Length[2]),
-        .I2(\Address_reg[3]_0 ),
+        .I2(\Address_reg[3]_1 ),
         .I3(V_Length[3]),
         .O(\V_Counter[31]_i_243_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \V_Counter[31]_i_244 
-       (.I0(\Address_reg[2]_0 ),
+       (.I0(\Address_reg[1]_0 ),
         .I1(V_Length[0]),
-        .I2(\Address_reg[2]_1 ),
+        .I2(\Address_reg[1]_1 ),
         .I3(V_Length[1]),
         .O(\V_Counter[31]_i_244_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \V_Counter[31]_i_26 
-       (.I0(\V_Counter_reg_n_0_[30] ),
+       (.I0(\V_Counter_reg[31]_1 ),
         .I1(V_Length[30]),
         .I2(V_Length[31]),
-        .I3(\V_Counter_reg_n_0_[31] ),
+        .I3(\V_Counter_reg[31]_2 ),
         .O(\V_Counter[31]_i_26_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \V_Counter[31]_i_27 
-       (.I0(\V_Counter_reg_n_0_[28] ),
+       (.I0(\V_Counter_reg[28]_3 ),
         .I1(V_Length[28]),
         .I2(V_Length[29]),
-        .I3(\V_Counter_reg_n_0_[29] ),
+        .I3(\V_Counter_reg[31]_0 ),
         .O(\V_Counter[31]_i_27_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
@@ -5600,17 +5525,17 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h9009)) 
     \V_Counter[31]_i_30 
-       (.I0(\V_Counter_reg_n_0_[30] ),
+       (.I0(\V_Counter_reg[31]_1 ),
         .I1(V_Length[30]),
-        .I2(\V_Counter_reg_n_0_[31] ),
+        .I2(\V_Counter_reg[31]_2 ),
         .I3(V_Length[31]),
         .O(\V_Counter[31]_i_30_n_0 ));
   LUT4 #(
     .INIT(16'h9009)) 
     \V_Counter[31]_i_31 
-       (.I0(\V_Counter_reg_n_0_[28] ),
+       (.I0(\V_Counter_reg[28]_3 ),
         .I1(V_Length[28]),
-        .I2(\V_Counter_reg_n_0_[29] ),
+        .I2(\V_Counter_reg[31]_0 ),
         .I3(V_Length[29]),
         .O(\V_Counter[31]_i_31_n_0 ));
   LUT4 #(
@@ -5869,49 +5794,49 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .I2(\H_Counter_reg[31]_2 ),
         .I3(H_Length[29]),
         .O(\V_Counter[31]_i_9_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair142" *) 
+  (* SOFT_HLUTNM = "soft_lutpair141" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[3]_i_1 
        (.I0(p_1_in[3]),
         .I1(p_0_in),
         .O(\V_Counter[3]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair139" *) 
+  (* SOFT_HLUTNM = "soft_lutpair138" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[4]_i_1 
        (.I0(p_1_in[4]),
         .I1(p_0_in),
         .O(\V_Counter[4]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair140" *) 
+  (* SOFT_HLUTNM = "soft_lutpair139" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[5]_i_1 
        (.I0(p_1_in[5]),
         .I1(p_0_in),
         .O(\V_Counter[5]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair137" *) 
+  (* SOFT_HLUTNM = "soft_lutpair136" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[6]_i_1 
        (.I0(p_1_in[6]),
         .I1(p_0_in),
         .O(\V_Counter[6]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair138" *) 
+  (* SOFT_HLUTNM = "soft_lutpair137" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[7]_i_1 
        (.I0(p_1_in[7]),
         .I1(p_0_in),
         .O(\V_Counter[7]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair135" *) 
+  (* SOFT_HLUTNM = "soft_lutpair134" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[8]_i_1 
        (.I0(p_1_in[8]),
         .I1(p_0_in),
         .O(\V_Counter[8]_i_1_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair136" *) 
+  (* SOFT_HLUTNM = "soft_lutpair135" *) 
   LUT2 #(
     .INIT(4'h2)) 
     \V_Counter[9]_i_1 
@@ -5924,7 +5849,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.C(pixel_clk),
         .CE(p_2_in),
         .D(\V_Counter[0]_i_1_n_0 ),
-        .Q(\Address_reg[2]_0 ),
+        .Q(\Address_reg[1]_0 ),
         .R(\slv_reg0_reg[0] ));
   FDRE #(
     .INIT(1'b0)) 
@@ -6026,7 +5951,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.C(pixel_clk),
         .CE(p_2_in),
         .D(\V_Counter[1]_i_1_n_0 ),
-        .Q(\Address_reg[2]_1 ),
+        .Q(\Address_reg[1]_1 ),
         .R(\slv_reg0_reg[0] ));
   FDRE #(
     .INIT(1'b0)) 
@@ -6112,7 +6037,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.C(pixel_clk),
         .CE(p_2_in),
         .D(\V_Counter[28]_i_1_n_0 ),
-        .Q(\V_Counter_reg_n_0_[28] ),
+        .Q(\V_Counter_reg[28]_3 ),
         .R(\slv_reg0_reg[0] ));
   CARRY4 \V_Counter_reg[28]_i_2 
        (.CI(\V_Counter_reg[24]_i_2_n_0 ),
@@ -6120,14 +6045,14 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(p_1_in[28:25]),
-        .S({\V_Counter_reg_n_0_[28] ,\V_Counter_reg[28]_2 ,\V_Counter_reg[28]_1 ,\V_Counter_reg[28]_0 }));
+        .S({\V_Counter_reg[28]_3 ,\V_Counter_reg[28]_2 ,\V_Counter_reg[28]_1 ,\V_Counter_reg[28]_0 }));
   FDRE #(
     .INIT(1'b0)) 
     \V_Counter_reg[29] 
        (.C(pixel_clk),
         .CE(p_2_in),
         .D(\V_Counter[29]_i_1_n_0 ),
-        .Q(\V_Counter_reg_n_0_[29] ),
+        .Q(\V_Counter_reg[31]_0 ),
         .R(\slv_reg0_reg[0] ));
   FDRE #(
     .INIT(1'b0)) 
@@ -6135,7 +6060,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.C(pixel_clk),
         .CE(p_2_in),
         .D(\V_Counter[2]_i_1_n_0 ),
-        .Q(\Address_reg[2]_2 ),
+        .Q(\Address_reg[3]_0 ),
         .R(\slv_reg0_reg[0] ));
   FDRE #(
     .INIT(1'b0)) 
@@ -6143,7 +6068,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.C(pixel_clk),
         .CE(p_2_in),
         .D(\V_Counter[30]_i_1_n_0 ),
-        .Q(\V_Counter_reg_n_0_[30] ),
+        .Q(\V_Counter_reg[31]_1 ),
         .R(\slv_reg0_reg[0] ));
   FDRE #(
     .INIT(1'b0)) 
@@ -6151,7 +6076,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.C(pixel_clk),
         .CE(p_2_in),
         .D(\V_Counter[31]_i_2_n_0 ),
-        .Q(\V_Counter_reg_n_0_[31] ),
+        .Q(\V_Counter_reg[31]_2 ),
         .R(\slv_reg0_reg[0] ));
   CARRY4 \V_Counter_reg[31]_i_1 
        (.CI(\V_Counter_reg[31]_i_3_n_0 ),
@@ -6166,7 +6091,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O({\NLW_V_Counter_reg[31]_i_12_O_UNCONNECTED [3],p_1_in[31:29]}),
-        .S({1'b0,\V_Counter_reg_n_0_[31] ,\V_Counter_reg_n_0_[30] ,\V_Counter_reg_n_0_[29] }));
+        .S({1'b0,\V_Counter_reg[31]_2 ,\V_Counter_reg[31]_1 ,\V_Counter_reg[31]_0 }));
   CARRY4 \V_Counter_reg[31]_i_13 
        (.CI(\V_Counter_reg[31]_i_25_n_0 ),
         .CO({p_0_in,\V_Counter_reg[31]_i_13_n_1 ,\V_Counter_reg[31]_i_13_n_2 ,\V_Counter_reg[31]_i_13_n_3 }),
@@ -6222,7 +6147,7 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
        (.C(pixel_clk),
         .CE(p_2_in),
         .D(\V_Counter[3]_i_1_n_0 ),
-        .Q(\Address_reg[3]_0 ),
+        .Q(\Address_reg[3]_1 ),
         .R(\slv_reg0_reg[0] ));
   FDRE #(
     .INIT(1'b0)) 
@@ -6235,10 +6160,10 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   CARRY4 \V_Counter_reg[4]_i_2 
        (.CI(1'b0),
         .CO({\V_Counter_reg[4]_i_2_n_0 ,\V_Counter_reg[4]_i_2_n_1 ,\V_Counter_reg[4]_i_2_n_2 ,\V_Counter_reg[4]_i_2_n_3 }),
-        .CYINIT(\Address_reg[2]_0 ),
+        .CYINIT(\Address_reg[1]_0 ),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(p_1_in[4:1]),
-        .S({\V_Counter_reg[4]_0 ,\Address_reg[3]_0 ,\Address_reg[2]_2 ,\Address_reg[2]_1 }));
+        .S({\V_Counter_reg[4]_0 ,\Address_reg[3]_1 ,\Address_reg[3]_0 ,\Address_reg[1]_1 }));
   FDRE #(
     .INIT(1'b0)) 
     \V_Counter_reg[5] 
@@ -6295,9 +6220,9 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h9009)) 
     V_InRange_i_10
-       (.I0(\V_Counter_reg_n_0_[28] ),
+       (.I0(\V_Counter_reg[28]_3 ),
         .I1(V_Start[28]),
-        .I2(\V_Counter_reg_n_0_[29] ),
+        .I2(\V_Counter_reg[31]_0 ),
         .I3(V_Start[29]),
         .O(V_InRange_i_10_n_0));
   LUT4 #(
@@ -6336,49 +6261,49 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
     .INIT(16'h9009)) 
     V_InRange_i_121
        (.I0(V_End[2]),
-        .I1(\Address_reg[2]_2 ),
+        .I1(\Address_reg[3]_0 ),
         .I2(V_End[3]),
-        .I3(\Address_reg[3]_0 ),
+        .I3(\Address_reg[3]_1 ),
         .O(V_InRange_reg_0[1]));
   LUT4 #(
     .INIT(16'h9009)) 
     V_InRange_i_122
        (.I0(V_End[0]),
-        .I1(\Address_reg[2]_0 ),
+        .I1(\Address_reg[1]_0 ),
         .I2(V_End[1]),
-        .I3(\Address_reg[2]_1 ),
+        .I3(\Address_reg[1]_1 ),
         .O(V_InRange_reg_0[0]));
   LUT4 #(
     .INIT(16'h2F02)) 
     V_InRange_i_14
        (.I0(V_End[30]),
-        .I1(\V_Counter_reg_n_0_[30] ),
-        .I2(\V_Counter_reg_n_0_[31] ),
+        .I1(\V_Counter_reg[31]_1 ),
+        .I2(\V_Counter_reg[31]_2 ),
         .I3(V_End[31]),
         .O(V_InRange_i_14_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
     V_InRange_i_15
        (.I0(V_End[28]),
-        .I1(\V_Counter_reg_n_0_[28] ),
-        .I2(\V_Counter_reg_n_0_[29] ),
+        .I1(\V_Counter_reg[28]_3 ),
+        .I2(\V_Counter_reg[31]_0 ),
         .I3(V_End[29]),
         .O(V_InRange_i_15_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     V_InRange_i_18
        (.I0(V_End[30]),
-        .I1(\V_Counter_reg_n_0_[30] ),
+        .I1(\V_Counter_reg[31]_1 ),
         .I2(V_End[31]),
-        .I3(\V_Counter_reg_n_0_[31] ),
+        .I3(\V_Counter_reg[31]_2 ),
         .O(V_InRange_i_18_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     V_InRange_i_19
        (.I0(V_End[28]),
-        .I1(\V_Counter_reg_n_0_[28] ),
+        .I1(\V_Counter_reg[28]_3 ),
         .I2(V_End[29]),
-        .I3(\V_Counter_reg_n_0_[29] ),
+        .I3(\V_Counter_reg[31]_0 ),
         .O(V_InRange_i_19_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
@@ -6535,10 +6460,10 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h2F02)) 
     V_InRange_i_5
-       (.I0(\V_Counter_reg_n_0_[30] ),
+       (.I0(\V_Counter_reg[31]_1 ),
         .I1(V_Start[30]),
         .I2(V_Start[31]),
-        .I3(\V_Counter_reg_n_0_[31] ),
+        .I3(\V_Counter_reg[31]_2 ),
         .O(V_InRange_i_5_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
@@ -6567,10 +6492,10 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h2F02)) 
     V_InRange_i_6
-       (.I0(\V_Counter_reg_n_0_[28] ),
+       (.I0(\V_Counter_reg[28]_3 ),
         .I1(V_Start[28]),
         .I2(V_Start[29]),
-        .I3(\V_Counter_reg_n_0_[29] ),
+        .I3(\V_Counter_reg[31]_0 ),
         .O(V_InRange_i_6_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
@@ -6631,9 +6556,9 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h9009)) 
     V_InRange_i_9
-       (.I0(\V_Counter_reg_n_0_[30] ),
+       (.I0(\V_Counter_reg[31]_1 ),
         .I1(V_Start[30]),
-        .I2(\V_Counter_reg_n_0_[31] ),
+        .I2(\V_Counter_reg[31]_2 ),
         .I3(V_Start[31]),
         .O(V_InRange_i_9_n_0));
   LUT4 #(
@@ -6647,18 +6572,18 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h2F02)) 
     V_InRange_i_91
-       (.I0(\Address_reg[2]_2 ),
+       (.I0(\Address_reg[3]_0 ),
         .I1(V_Start[2]),
         .I2(V_Start[3]),
-        .I3(\Address_reg[3]_0 ),
+        .I3(\Address_reg[3]_1 ),
         .O(V_InRange_i_91_n_0));
   LUT4 #(
     .INIT(16'h2F02)) 
     V_InRange_i_92
-       (.I0(\Address_reg[2]_0 ),
+       (.I0(\Address_reg[1]_0 ),
         .I1(V_Start[0]),
         .I2(V_Start[1]),
-        .I3(\Address_reg[2]_1 ),
+        .I3(\Address_reg[1]_1 ),
         .O(V_InRange_i_92_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
@@ -6679,17 +6604,17 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
   LUT4 #(
     .INIT(16'h9009)) 
     V_InRange_i_95
-       (.I0(\Address_reg[2]_2 ),
+       (.I0(\Address_reg[3]_0 ),
         .I1(V_Start[2]),
-        .I2(\Address_reg[3]_0 ),
+        .I2(\Address_reg[3]_1 ),
         .I3(V_Start[3]),
         .O(V_InRange_i_95_n_0));
   LUT4 #(
     .INIT(16'h9009)) 
     V_InRange_i_96
-       (.I0(\Address_reg[2]_0 ),
+       (.I0(\Address_reg[1]_0 ),
         .I1(V_Start[0]),
-        .I2(\Address_reg[2]_1 ),
+        .I2(\Address_reg[1]_1 ),
         .I3(V_Start[1]),
         .O(V_InRange_i_96_n_0));
   FDRE #(
@@ -6715,10 +6640,10 @@ module System_Zybo_VGA_CharROM_0_1_VGA_Controller
         .O(NLW_V_InRange_reg_i_22_O_UNCONNECTED[3:0]),
         .S({V_InRange_i_49_n_0,V_InRange_i_50_n_0,V_InRange_i_51_n_0,V_InRange_i_52_n_0}));
   CARRY4 V_InRange_reg_i_3
-       (.CI(\V_Counter_reg[22]_0 ),
+       (.CI(\V_Counter_reg[22]_1 ),
         .CO({V_InRange1,V_InRange_reg_i_3_n_1,V_InRange_reg_i_3_n_2,V_InRange_reg_i_3_n_3}),
         .CYINIT(1'b0),
-        .DI({V_InRange_i_14_n_0,V_InRange_i_15_n_0,DI}),
+        .DI({V_InRange_i_14_n_0,V_InRange_i_15_n_0,\V_Counter_reg[26]_0 }),
         .O(NLW_V_InRange_reg_i_3_O_UNCONNECTED[3:0]),
         .S({V_InRange_i_18_n_0,V_InRange_i_19_n_0,V_InRange_i_20_n_0,V_InRange_i_21_n_0}));
   CARRY4 V_InRange_reg_i_4
@@ -6819,14 +6744,28 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
   wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_105;
   wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_106;
   wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_107;
-  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_204;
-  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_205;
-  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_270;
-  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_271;
-  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_368;
-  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_369;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_108;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_109;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_110;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_111;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_112;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_113;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_114;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_115;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_116;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_117;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_118;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_247;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_248;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_313;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_314;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_381;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_382;
   wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_4;
   wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_41;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_42;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_43;
+  wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_75;
   wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_76;
   wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_77;
   wire Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_78;
@@ -6862,10 +6801,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
   wire controller_n_100;
   wire controller_n_101;
   wire controller_n_102;
+  wire controller_n_103;
+  wire controller_n_104;
+  wire controller_n_105;
+  wire controller_n_106;
   wire controller_n_11;
   wire controller_n_12;
   wire controller_n_13;
-  wire controller_n_133;
+  wire controller_n_137;
   wire controller_n_14;
   wire controller_n_15;
   wire controller_n_16;
@@ -6958,7 +6901,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
   wire controller_n_97;
   wire controller_n_98;
   wire controller_n_99;
-  wire [3:1]p_0_in__0;
+  wire [2:2]p_0_in__0;
   wire pixel_clk;
   wire s_axi_aclk;
   wire [3:0]s_axi_araddr;
@@ -6978,10 +6921,9 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
 
   System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI Zybo_VGA_CharROM_v1_0_S_AXI_inst
        (.Address4(Address4),
-        .\Address_reg[0] (Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_8),
         .\Address_reg[10] (Character_w),
         .CO(Address32_in),
-        .DI({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_204,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_205}),
+        .DI({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_41,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_42,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_43}),
         .E(slv_reg_rden),
         .\H_Counter_reg[0] (controller_n_31),
         .\H_Counter_reg[10] (controller_n_21),
@@ -6989,8 +6931,8 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
         .\H_Counter_reg[12] (controller_n_19),
         .\H_Counter_reg[13] (controller_n_18),
         .\H_Counter_reg[14] (controller_n_17),
-        .\H_Counter_reg[14]_0 ({controller_n_66,controller_n_67,controller_n_68,controller_n_69}),
-        .\H_Counter_reg[14]_1 ({controller_n_94,controller_n_95,controller_n_96,controller_n_97}),
+        .\H_Counter_reg[14]_0 ({controller_n_70,controller_n_71,controller_n_72,controller_n_73}),
+        .\H_Counter_reg[14]_1 ({controller_n_98,controller_n_99,controller_n_100,controller_n_101}),
         .\H_Counter_reg[15] (controller_n_16),
         .\H_Counter_reg[16] (controller_n_15),
         .\H_Counter_reg[17] (controller_n_14),
@@ -7000,8 +6942,8 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
         .\H_Counter_reg[20] (controller_n_11),
         .\H_Counter_reg[21] (controller_n_10),
         .\H_Counter_reg[22] (controller_n_9),
-        .\H_Counter_reg[22]_0 ({controller_n_70,controller_n_71,controller_n_72,controller_n_73}),
-        .\H_Counter_reg[22]_1 ({controller_n_98,controller_n_99,controller_n_100,controller_n_101}),
+        .\H_Counter_reg[22]_0 ({controller_n_74,controller_n_75,controller_n_76,controller_n_77}),
+        .\H_Counter_reg[22]_1 ({controller_n_102,controller_n_103,controller_n_104,controller_n_105}),
         .\H_Counter_reg[23] (controller_n_8),
         .\H_Counter_reg[24] (controller_n_7),
         .\H_Counter_reg[25] (controller_n_6),
@@ -7011,33 +6953,36 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
         .\H_Counter_reg[29] (controller_n_2),
         .\H_Counter_reg[2] (controller_n_29),
         .\H_Counter_reg[30] (controller_n_1),
-        .\H_Counter_reg[30]_0 ({controller_n_74,controller_n_75,controller_n_76,controller_n_77}),
-        .\H_Counter_reg[31] (Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_41),
+        .\H_Counter_reg[30]_0 ({controller_n_78,controller_n_79,controller_n_80,controller_n_81}),
+        .\H_Counter_reg[31] (Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_8),
         .\H_Counter_reg[31]_0 (controller_n_0),
         .\H_Counter_reg[3] (controller_n_28),
         .\H_Counter_reg[4] (controller_n_27),
         .\H_Counter_reg[5] (controller_n_26),
         .\H_Counter_reg[6] (controller_n_25),
-        .\H_Counter_reg[6]_0 ({controller_n_90,controller_n_91,controller_n_92,controller_n_93}),
+        .\H_Counter_reg[6]_0 ({controller_n_94,controller_n_95,controller_n_96,controller_n_97}),
         .\H_Counter_reg[7] (controller_n_24),
         .\H_Counter_reg[8] (controller_n_23),
         .\H_Counter_reg[9] (controller_n_22),
         .H_End(H_End),
-        .H_InRange_reg({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_270,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_271}),
-        .H_InRange_reg_0(Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_369),
+        .H_InRange_reg({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_313,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_314}),
+        .H_InRange_reg_0(Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_382),
         .H_Length(H_Length),
         .H_Start(H_Start),
-        .O({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_76,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_77,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_78,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_79}),
+        .O({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_87,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_88,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_89,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_90}),
         .Q(V_Sync_w),
-        .S({controller_n_62,controller_n_63,controller_n_64,controller_n_65}),
+        .S({controller_n_66,controller_n_67,controller_n_68,controller_n_69}),
         .SR(axi_awready_i_1_n_0),
-        .Shift_Rst_reg({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_80,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_81,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_82,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_83}),
-        .Shift_Rst_reg_0({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_84,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_85,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_86,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_87}),
-        .Shift_Rst_reg_1({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_88,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_89,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_90,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_91}),
-        .Shift_Rst_reg_2({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_92,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_93,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_94,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_95}),
-        .Shift_Rst_reg_3({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_96,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_97,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_98,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_99}),
-        .Shift_Rst_reg_4({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_100,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_101,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_102,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_103}),
-        .Shift_Rst_reg_5({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_104,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_105,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_106,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_107}),
+        .Shift_Rst_reg({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_75,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_76,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_77,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_78}),
+        .Shift_Rst_reg_0({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_79,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_80,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_81,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_82}),
+        .Shift_Rst_reg_1({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_83,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_84,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_85,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_86}),
+        .Shift_Rst_reg_2({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_91,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_92,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_93,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_94}),
+        .Shift_Rst_reg_3({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_95,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_96,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_97,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_98}),
+        .Shift_Rst_reg_4({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_99,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_100,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_101,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_102}),
+        .Shift_Rst_reg_5({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_103,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_104,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_105,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_106}),
+        .Shift_Rst_reg_6({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_107,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_108,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_109,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_110}),
+        .Shift_Rst_reg_7({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_111,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_112,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_113,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_114}),
+        .Shift_Rst_reg_8({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_115,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_116,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_117,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_118}),
         .\VGA_G_reg[5] (Background_Color_w),
         .\VGA_G_reg[5]_0 (Font_Color_w),
         .VGA_VS_reg(VGA_VS1),
@@ -7048,7 +6993,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
         .\V_Counter_reg[12] (controller_n_46),
         .\V_Counter_reg[13] (controller_n_47),
         .\V_Counter_reg[14] (controller_n_48),
-        .\V_Counter_reg[14]_0 ({controller_n_82,controller_n_83,controller_n_84,controller_n_85}),
+        .\V_Counter_reg[14]_0 ({controller_n_86,controller_n_87,controller_n_88,controller_n_89}),
         .\V_Counter_reg[15] (controller_n_49),
         .\V_Counter_reg[16] (controller_n_50),
         .\V_Counter_reg[17] (controller_n_51),
@@ -7058,33 +7003,38 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
         .\V_Counter_reg[20] (controller_n_54),
         .\V_Counter_reg[21] (controller_n_55),
         .\V_Counter_reg[22] (controller_n_56),
-        .\V_Counter_reg[22]_0 ({controller_n_86,controller_n_87,controller_n_88,controller_n_89}),
+        .\V_Counter_reg[22]_0 ({controller_n_90,controller_n_91,controller_n_92,controller_n_93}),
         .\V_Counter_reg[23] (controller_n_57),
         .\V_Counter_reg[24] (controller_n_58),
         .\V_Counter_reg[25] (controller_n_59),
         .\V_Counter_reg[26] (controller_n_60),
         .\V_Counter_reg[27] (controller_n_61),
+        .\V_Counter_reg[28] (controller_n_62),
+        .\V_Counter_reg[29] (controller_n_63),
         .\V_Counter_reg[2] (controller_n_36),
+        .\V_Counter_reg[30] (controller_n_64),
+        .\V_Counter_reg[31] (controller_n_65),
         .\V_Counter_reg[3] (controller_n_37),
         .\V_Counter_reg[4] (controller_n_38),
         .\V_Counter_reg[5] (controller_n_39),
         .\V_Counter_reg[6] (controller_n_40),
-        .\V_Counter_reg[6]_0 ({controller_n_78,controller_n_79,controller_n_80,controller_n_81}),
+        .\V_Counter_reg[6]_0 ({controller_n_82,controller_n_83,controller_n_84,controller_n_85}),
         .\V_Counter_reg[7] (controller_n_41),
         .\V_Counter_reg[8] (controller_n_42),
         .\V_Counter_reg[9] (controller_n_43),
         .V_End(V_End),
-        .V_InRange_reg(Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_368),
+        .V_InRange_reg({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_247,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_248}),
+        .V_InRange_reg_0(Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_381),
         .V_Length(V_Length),
         .V_Start(V_Start),
         .aw_en_reg_0(aw_en_i_1_n_0),
         .axi_arready_reg_0(axi_rvalid_i_1_n_0),
-        .\axi_rdata_reg[31]_0 (Char_YLoc_w),
-        .\axi_rdata_reg[31]_1 (H_Sync_w),
+        .\axi_rdata_reg[31]_0 (H_Sync_w),
+        .\axi_rdata_reg[31]_1 (Char_YLoc_w),
         .\axi_rdata_reg[31]_2 (Char_XLoc_w),
         .axi_wready_reg_0(Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_4),
         .axi_wready_reg_1(axi_bvalid_i_1_n_0),
-        .p_0_in__0({p_0_in__0[3],p_0_in__0[1]}),
+        .p_0_in__0(p_0_in__0),
         .s_axi_aclk(s_axi_aclk),
         .s_axi_araddr(s_axi_araddr),
         .s_axi_arready(S_AXI_ARREADY),
@@ -7099,8 +7049,8 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
         .s_axi_wready(S_AXI_WREADY),
         .s_axi_wstrb(s_axi_wstrb),
         .s_axi_wvalid(s_axi_wvalid),
-        .\slv_reg6_reg[0]_0 (controller_n_133),
-        .\slv_reg6_reg[0]_1 (controller_n_102));
+        .\slv_reg6_reg[0]_0 (controller_n_137),
+        .\slv_reg6_reg[0]_1 (controller_n_106));
   LUT6 #(
     .INIT(64'hF7FFC4CCC4CCC4CC)) 
     aw_en_i_1
@@ -7145,12 +7095,12 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
         .O(axi_rvalid_i_1_n_0));
   System_Zybo_VGA_CharROM_0_1_VGA_Controller controller
        (.Address4(Address4),
-        .\Address_reg[2]_0 (controller_n_34),
-        .\Address_reg[2]_1 (controller_n_35),
-        .\Address_reg[2]_2 (controller_n_36),
-        .\Address_reg[3]_0 (controller_n_37),
+        .\Address_reg[1]_0 (controller_n_34),
+        .\Address_reg[1]_1 (controller_n_35),
+        .\Address_reg[3]_0 (controller_n_36),
+        .\Address_reg[3]_1 (controller_n_37),
         .CO(Address32_in),
-        .DI({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_204,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_205}),
+        .DI({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_41,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_42,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_43}),
         .\H_Counter_reg[0]_0 (controller_n_31),
         .\H_Counter_reg[12]_0 (controller_n_19),
         .\H_Counter_reg[12]_1 (controller_n_20),
@@ -7164,12 +7114,12 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
         .\H_Counter_reg[20]_1 (controller_n_12),
         .\H_Counter_reg[20]_2 (controller_n_13),
         .\H_Counter_reg[20]_3 (controller_n_14),
-        .\H_Counter_reg[22]_0 (Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_369),
+        .\H_Counter_reg[22]_0 (Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_382),
         .\H_Counter_reg[24]_0 (controller_n_7),
         .\H_Counter_reg[24]_1 (controller_n_8),
         .\H_Counter_reg[24]_2 (controller_n_9),
         .\H_Counter_reg[24]_3 (controller_n_10),
-        .\H_Counter_reg[26]_0 ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_270,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_271}),
+        .\H_Counter_reg[26]_0 ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_313,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_314}),
         .\H_Counter_reg[28]_0 (controller_n_3),
         .\H_Counter_reg[28]_1 (controller_n_4),
         .\H_Counter_reg[28]_2 (controller_n_5),
@@ -7186,29 +7136,30 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
         .\H_Counter_reg[8]_2 (controller_n_25),
         .\H_Counter_reg[8]_3 (controller_n_26),
         .H_End(H_End),
-        .H_InRange_reg_0({controller_n_90,controller_n_91,controller_n_92,controller_n_93}),
-        .H_InRange_reg_1({controller_n_94,controller_n_95,controller_n_96,controller_n_97}),
-        .H_InRange_reg_2({controller_n_98,controller_n_99,controller_n_100,controller_n_101}),
+        .H_InRange_reg_0({controller_n_94,controller_n_95,controller_n_96,controller_n_97}),
+        .H_InRange_reg_1({controller_n_98,controller_n_99,controller_n_100,controller_n_101}),
+        .H_InRange_reg_2({controller_n_102,controller_n_103,controller_n_104,controller_n_105}),
         .H_Length(H_Length),
         .H_Start(H_Start),
-        .O({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_76,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_77,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_78,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_79}),
+        .O({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_87,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_88,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_89,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_90}),
         .Q(V_Sync_w),
-        .S({controller_n_62,controller_n_63,controller_n_64,controller_n_65}),
-        .Shift_Rst_reg_0({controller_n_66,controller_n_67,controller_n_68,controller_n_69}),
-        .Shift_Rst_reg_1({controller_n_70,controller_n_71,controller_n_72,controller_n_73}),
-        .Shift_Rst_reg_2({controller_n_74,controller_n_75,controller_n_76,controller_n_77}),
+        .S({controller_n_66,controller_n_67,controller_n_68,controller_n_69}),
+        .Shift_Rst_reg_0({controller_n_70,controller_n_71,controller_n_72,controller_n_73}),
+        .Shift_Rst_reg_1({controller_n_74,controller_n_75,controller_n_76,controller_n_77}),
+        .Shift_Rst_reg_2({controller_n_78,controller_n_79,controller_n_80,controller_n_81}),
         .VGA_B(VGA_B),
         .VGA_G(VGA_G),
         .VGA_HS(VGA_HS),
         .VGA_R(VGA_R),
         .VGA_VS(VGA_VS),
-        .VGA_VS_reg_0(controller_n_102),
+        .VGA_VS_reg_0(controller_n_106),
         .VGA_VS_reg_1(V_Counter),
-        .VGA_VS_reg_2(controller_n_133),
+        .VGA_VS_reg_2(controller_n_137),
         .\V_Counter_reg[12]_0 (controller_n_43),
         .\V_Counter_reg[12]_1 (controller_n_44),
         .\V_Counter_reg[12]_2 (controller_n_45),
         .\V_Counter_reg[12]_3 (controller_n_46),
+        .\V_Counter_reg[14]_0 ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_75,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_76,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_77,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_78}),
         .\V_Counter_reg[16]_0 (controller_n_47),
         .\V_Counter_reg[16]_1 (controller_n_48),
         .\V_Counter_reg[16]_2 (controller_n_49),
@@ -7217,40 +7168,46 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0
         .\V_Counter_reg[20]_1 (controller_n_52),
         .\V_Counter_reg[20]_2 (controller_n_53),
         .\V_Counter_reg[20]_3 (controller_n_54),
-        .\V_Counter_reg[22]_0 (Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_368),
+        .\V_Counter_reg[22]_0 ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_79,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_80,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_81,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_82}),
+        .\V_Counter_reg[22]_1 (Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_381),
         .\V_Counter_reg[24]_0 (controller_n_55),
         .\V_Counter_reg[24]_1 (controller_n_56),
         .\V_Counter_reg[24]_2 (controller_n_57),
         .\V_Counter_reg[24]_3 (controller_n_58),
+        .\V_Counter_reg[26]_0 ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_247,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_248}),
         .\V_Counter_reg[28]_0 (controller_n_59),
         .\V_Counter_reg[28]_1 (controller_n_60),
         .\V_Counter_reg[28]_2 (controller_n_61),
+        .\V_Counter_reg[28]_3 (controller_n_62),
+        .\V_Counter_reg[30]_0 ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_83,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_84,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_85,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_86}),
+        .\V_Counter_reg[31]_0 (controller_n_63),
+        .\V_Counter_reg[31]_1 (controller_n_64),
+        .\V_Counter_reg[31]_2 (controller_n_65),
         .\V_Counter_reg[4]_0 (controller_n_38),
         .\V_Counter_reg[8]_0 (controller_n_39),
         .\V_Counter_reg[8]_1 (controller_n_40),
         .\V_Counter_reg[8]_2 (controller_n_41),
         .\V_Counter_reg[8]_3 (controller_n_42),
         .V_End(V_End),
-        .V_InRange_reg_0({controller_n_78,controller_n_79,controller_n_80,controller_n_81}),
-        .V_InRange_reg_1({controller_n_82,controller_n_83,controller_n_84,controller_n_85}),
-        .V_InRange_reg_2({controller_n_86,controller_n_87,controller_n_88,controller_n_89}),
+        .V_InRange_reg_0({controller_n_82,controller_n_83,controller_n_84,controller_n_85}),
+        .V_InRange_reg_1({controller_n_86,controller_n_87,controller_n_88,controller_n_89}),
+        .V_InRange_reg_2({controller_n_90,controller_n_91,controller_n_92,controller_n_93}),
         .V_Length(V_Length),
         .V_Start(V_Start),
         .pixel_clk(pixel_clk),
-        .\slv_reg0_reg[0] (Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_41),
+        .\slv_reg0_reg[0] (Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_8),
         .\slv_reg11_reg[6] (Character_w),
         .\slv_reg12_reg[15] (Background_Color_w),
         .\slv_reg13_reg[15] (Font_Color_w),
-        .\slv_reg14_reg[11] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_84,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_85,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_86,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_87}),
-        .\slv_reg14_reg[15] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_88,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_89,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_90,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_91}),
-        .\slv_reg14_reg[19] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_92,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_93,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_94,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_95}),
-        .\slv_reg14_reg[23] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_96,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_97,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_98,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_99}),
-        .\slv_reg14_reg[27] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_100,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_101,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_102,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_103}),
-        .\slv_reg14_reg[31] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_104,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_105,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_106,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_107}),
+        .\slv_reg14_reg[11] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_95,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_96,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_97,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_98}),
+        .\slv_reg14_reg[15] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_99,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_100,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_101,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_102}),
+        .\slv_reg14_reg[19] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_103,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_104,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_105,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_106}),
+        .\slv_reg14_reg[23] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_107,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_108,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_109,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_110}),
+        .\slv_reg14_reg[27] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_111,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_112,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_113,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_114}),
+        .\slv_reg14_reg[31] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_115,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_116,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_117,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_118}),
         .\slv_reg14_reg[31]_0 (Char_XLoc_w),
-        .\slv_reg14_reg[7] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_80,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_81,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_82,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_83}),
-        .\slv_reg15_reg[0] (Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_8),
-        .\slv_reg15_reg[2] ({p_0_in__0[3],p_0_in__0[1]}),
+        .\slv_reg14_reg[7] ({Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_91,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_92,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_93,Zybo_VGA_CharROM_v1_0_S_AXI_inst_n_94}),
+        .\slv_reg15_reg[0] (p_0_in__0),
         .\slv_reg15_reg[31] (Char_YLoc_w),
         .\slv_reg1_reg[31] (H_Sync_w),
         .\slv_reg6_reg[30] (VGA_VS1));
@@ -7265,31 +7222,34 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
     axi_wready_reg_0,
     s_axi_rvalid,
     Q,
-    \Address_reg[0] ,
-    \axi_rdata_reg[31]_0 ,
     \H_Counter_reg[31] ,
-    \axi_rdata_reg[31]_1 ,
-    p_0_in__0,
-    O,
+    \axi_rdata_reg[31]_0 ,
+    DI,
+    Address4,
     Shift_Rst_reg,
     Shift_Rst_reg_0,
     Shift_Rst_reg_1,
+    O,
     Shift_Rst_reg_2,
     Shift_Rst_reg_3,
     Shift_Rst_reg_4,
     Shift_Rst_reg_5,
+    Shift_Rst_reg_6,
+    Shift_Rst_reg_7,
+    Shift_Rst_reg_8,
+    \axi_rdata_reg[31]_1 ,
     \axi_rdata_reg[31]_2 ,
     V_Start,
     V_End,
-    DI,
+    V_InRange_reg,
     H_Start,
     H_End,
     H_InRange_reg,
+    p_0_in__0,
     H_Length,
-    Address4,
     V_Length,
     CO,
-    V_InRange_reg,
+    V_InRange_reg_0,
     H_InRange_reg_0,
     VGA_VS_reg,
     \Address_reg[10] ,
@@ -7304,10 +7264,36 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
     s_axi_wstrb,
     V_Counter,
     s_axi_arvalid,
-    \V_Counter_reg[0] ,
     \V_Counter_reg[2] ,
     \V_Counter_reg[3] ,
-    \V_Counter_reg[1] ,
+    \V_Counter_reg[4] ,
+    \V_Counter_reg[5] ,
+    \V_Counter_reg[6] ,
+    \V_Counter_reg[7] ,
+    \V_Counter_reg[8] ,
+    \V_Counter_reg[9] ,
+    \V_Counter_reg[10] ,
+    \V_Counter_reg[11] ,
+    \V_Counter_reg[12] ,
+    \V_Counter_reg[13] ,
+    \V_Counter_reg[14] ,
+    \V_Counter_reg[15] ,
+    \V_Counter_reg[16] ,
+    \V_Counter_reg[17] ,
+    \V_Counter_reg[18] ,
+    \V_Counter_reg[19] ,
+    \V_Counter_reg[20] ,
+    \V_Counter_reg[21] ,
+    \V_Counter_reg[22] ,
+    \V_Counter_reg[23] ,
+    \V_Counter_reg[24] ,
+    \V_Counter_reg[25] ,
+    \V_Counter_reg[26] ,
+    \V_Counter_reg[27] ,
+    \V_Counter_reg[28] ,
+    \V_Counter_reg[29] ,
+    \V_Counter_reg[30] ,
+    \V_Counter_reg[31] ,
     \H_Counter_reg[0] ,
     \H_Counter_reg[1] ,
     \H_Counter_reg[2] ,
@@ -7340,30 +7326,8 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
     \H_Counter_reg[29] ,
     \H_Counter_reg[30] ,
     \H_Counter_reg[31]_0 ,
-    \V_Counter_reg[4] ,
-    \V_Counter_reg[5] ,
-    \V_Counter_reg[6] ,
-    \V_Counter_reg[7] ,
-    \V_Counter_reg[8] ,
-    \V_Counter_reg[9] ,
-    \V_Counter_reg[10] ,
-    \V_Counter_reg[11] ,
-    \V_Counter_reg[12] ,
-    \V_Counter_reg[13] ,
-    \V_Counter_reg[14] ,
-    \V_Counter_reg[15] ,
-    \V_Counter_reg[16] ,
-    \V_Counter_reg[17] ,
-    \V_Counter_reg[18] ,
-    \V_Counter_reg[19] ,
-    \V_Counter_reg[20] ,
-    \V_Counter_reg[21] ,
-    \V_Counter_reg[22] ,
-    \V_Counter_reg[23] ,
-    \V_Counter_reg[24] ,
-    \V_Counter_reg[25] ,
-    \V_Counter_reg[26] ,
-    \V_Counter_reg[27] ,
+    \V_Counter_reg[0] ,
+    \V_Counter_reg[1] ,
     S,
     \H_Counter_reg[14]_0 ,
     \H_Counter_reg[22]_0 ,
@@ -7389,31 +7353,34 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   output axi_wready_reg_0;
   output s_axi_rvalid;
   output [1:0]Q;
-  output \Address_reg[0] ;
-  output [31:0]\axi_rdata_reg[31]_0 ;
   output \H_Counter_reg[31] ;
-  output [31:0]\axi_rdata_reg[31]_1 ;
-  output [1:0]p_0_in__0;
-  output [3:0]O;
+  output [31:0]\axi_rdata_reg[31]_0 ;
+  output [2:0]DI;
+  output [30:0]Address4;
   output [3:0]Shift_Rst_reg;
   output [3:0]Shift_Rst_reg_0;
   output [3:0]Shift_Rst_reg_1;
+  output [3:0]O;
   output [3:0]Shift_Rst_reg_2;
   output [3:0]Shift_Rst_reg_3;
   output [3:0]Shift_Rst_reg_4;
   output [3:0]Shift_Rst_reg_5;
+  output [3:0]Shift_Rst_reg_6;
+  output [3:0]Shift_Rst_reg_7;
+  output [3:0]Shift_Rst_reg_8;
+  output [31:0]\axi_rdata_reg[31]_1 ;
   output [31:0]\axi_rdata_reg[31]_2 ;
   output [31:0]V_Start;
   output [31:0]V_End;
-  output [1:0]DI;
+  output [1:0]V_InRange_reg;
   output [31:0]H_Start;
   output [31:0]H_End;
   output [1:0]H_InRange_reg;
+  output [0:0]p_0_in__0;
   output [31:0]H_Length;
-  output [30:0]Address4;
   output [31:0]V_Length;
   output [0:0]CO;
-  output [0:0]V_InRange_reg;
+  output [0:0]V_InRange_reg_0;
   output [0:0]H_InRange_reg_0;
   output [0:0]VGA_VS_reg;
   output [6:0]\Address_reg[10] ;
@@ -7428,10 +7395,36 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   input [3:0]s_axi_wstrb;
   input [29:0]V_Counter;
   input s_axi_arvalid;
-  input \V_Counter_reg[0] ;
   input \V_Counter_reg[2] ;
   input \V_Counter_reg[3] ;
-  input \V_Counter_reg[1] ;
+  input \V_Counter_reg[4] ;
+  input \V_Counter_reg[5] ;
+  input \V_Counter_reg[6] ;
+  input \V_Counter_reg[7] ;
+  input \V_Counter_reg[8] ;
+  input \V_Counter_reg[9] ;
+  input \V_Counter_reg[10] ;
+  input \V_Counter_reg[11] ;
+  input \V_Counter_reg[12] ;
+  input \V_Counter_reg[13] ;
+  input \V_Counter_reg[14] ;
+  input \V_Counter_reg[15] ;
+  input \V_Counter_reg[16] ;
+  input \V_Counter_reg[17] ;
+  input \V_Counter_reg[18] ;
+  input \V_Counter_reg[19] ;
+  input \V_Counter_reg[20] ;
+  input \V_Counter_reg[21] ;
+  input \V_Counter_reg[22] ;
+  input \V_Counter_reg[23] ;
+  input \V_Counter_reg[24] ;
+  input \V_Counter_reg[25] ;
+  input \V_Counter_reg[26] ;
+  input \V_Counter_reg[27] ;
+  input \V_Counter_reg[28] ;
+  input \V_Counter_reg[29] ;
+  input \V_Counter_reg[30] ;
+  input \V_Counter_reg[31] ;
   input \H_Counter_reg[0] ;
   input \H_Counter_reg[1] ;
   input \H_Counter_reg[2] ;
@@ -7464,30 +7457,8 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   input \H_Counter_reg[29] ;
   input \H_Counter_reg[30] ;
   input \H_Counter_reg[31]_0 ;
-  input \V_Counter_reg[4] ;
-  input \V_Counter_reg[5] ;
-  input \V_Counter_reg[6] ;
-  input \V_Counter_reg[7] ;
-  input \V_Counter_reg[8] ;
-  input \V_Counter_reg[9] ;
-  input \V_Counter_reg[10] ;
-  input \V_Counter_reg[11] ;
-  input \V_Counter_reg[12] ;
-  input \V_Counter_reg[13] ;
-  input \V_Counter_reg[14] ;
-  input \V_Counter_reg[15] ;
-  input \V_Counter_reg[16] ;
-  input \V_Counter_reg[17] ;
-  input \V_Counter_reg[18] ;
-  input \V_Counter_reg[19] ;
-  input \V_Counter_reg[20] ;
-  input \V_Counter_reg[21] ;
-  input \V_Counter_reg[22] ;
-  input \V_Counter_reg[23] ;
-  input \V_Counter_reg[24] ;
-  input \V_Counter_reg[25] ;
-  input \V_Counter_reg[26] ;
-  input \V_Counter_reg[27] ;
+  input \V_Counter_reg[0] ;
+  input \V_Counter_reg[1] ;
   input [3:0]S;
   input [3:0]\H_Counter_reg[14]_0 ;
   input [3:0]\H_Counter_reg[22]_0 ;
@@ -7530,8 +7501,6 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   wire \Address[10]_i_62_n_0 ;
   wire \Address[10]_i_63_n_0 ;
   wire \Address[10]_i_64_n_0 ;
-  wire \Address[3]_i_2_n_0 ;
-  wire \Address_reg[0] ;
   wire [6:0]\Address_reg[10] ;
   wire \Address_reg[10]_i_101_n_0 ;
   wire \Address_reg[10]_i_101_n_1 ;
@@ -7610,7 +7579,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   wire \Address_reg[10]_i_82_n_2 ;
   wire \Address_reg[10]_i_82_n_3 ;
   wire [0:0]CO;
-  wire [1:0]DI;
+  wire [2:0]DI;
   wire Disp_En_w;
   wire [0:0]E;
   wire [31:0]H_BP_w;
@@ -7852,6 +7821,9 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   wire [3:0]Shift_Rst_reg_3;
   wire [3:0]Shift_Rst_reg_4;
   wire [3:0]Shift_Rst_reg_5;
+  wire [3:0]Shift_Rst_reg_6;
+  wire [3:0]Shift_Rst_reg_7;
+  wire [3:0]Shift_Rst_reg_8;
   wire [15:0]\VGA_G_reg[5] ;
   wire [15:0]\VGA_G_reg[5]_0 ;
   wire VGA_VS_i_14_n_0;
@@ -8400,7 +8372,11 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   wire \V_Counter_reg[25] ;
   wire \V_Counter_reg[26] ;
   wire \V_Counter_reg[27] ;
+  wire \V_Counter_reg[28] ;
+  wire \V_Counter_reg[29] ;
   wire \V_Counter_reg[2] ;
+  wire \V_Counter_reg[30] ;
+  wire \V_Counter_reg[31] ;
   wire \V_Counter_reg[31]_i_100_n_0 ;
   wire \V_Counter_reg[31]_i_100_n_1 ;
   wire \V_Counter_reg[31]_i_100_n_2 ;
@@ -8642,7 +8618,8 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   wire V_InRange_i_87_n_0;
   wire V_InRange_i_88_n_0;
   wire V_InRange_i_99_n_0;
-  wire [0:0]V_InRange_reg;
+  wire [1:0]V_InRange_reg;
+  wire [0:0]V_InRange_reg_0;
   wire V_InRange_reg_i_123_n_0;
   wire V_InRange_reg_i_123_n_1;
   wire V_InRange_reg_i_123_n_2;
@@ -8926,7 +8903,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   wire [31:0]\controller/H_Length3 ;
   wire [31:0]\controller/V_Length3 ;
   wire [3:0]p_0_in;
-  wire [1:0]p_0_in__0;
+  wire [0:0]p_0_in__0;
   wire [31:0]reg_data_out__0;
   wire s_axi_aclk;
   wire [3:0]s_axi_araddr;
@@ -9040,59 +9017,85 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   wire [3:3]NLW_V_InRange_reg_i_42_CO_UNCONNECTED;
   wire [3:0]NLW_V_InRange_reg_i_70_O_UNCONNECTED;
 
-  LUT2 #(
-    .INIT(4'h6)) 
-    \Address[0]_i_1 
-       (.I0(\axi_rdata_reg[31]_0 [0]),
-        .I1(\V_Counter_reg[0] ),
-        .O(\Address_reg[0] ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_102 
-       (.I0(Shift_Rst_reg_1[2]),
+       (.I0(Shift_Rst_reg_4[2]),
         .I1(\H_Counter_reg[14] ),
         .I2(\H_Counter_reg[15] ),
-        .I3(Shift_Rst_reg_1[3]),
+        .I3(Shift_Rst_reg_4[3]),
         .O(\Address[10]_i_102_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_103 
-       (.I0(Shift_Rst_reg_1[0]),
+       (.I0(Shift_Rst_reg_4[0]),
         .I1(\H_Counter_reg[12] ),
         .I2(\H_Counter_reg[13] ),
-        .I3(Shift_Rst_reg_1[1]),
+        .I3(Shift_Rst_reg_4[1]),
         .O(\Address[10]_i_103_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_104 
-       (.I0(Shift_Rst_reg_0[2]),
+       (.I0(Shift_Rst_reg_3[2]),
         .I1(\H_Counter_reg[10] ),
         .I2(\H_Counter_reg[11] ),
-        .I3(Shift_Rst_reg_0[3]),
+        .I3(Shift_Rst_reg_3[3]),
         .O(\Address[10]_i_104_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_105 
-       (.I0(Shift_Rst_reg_0[0]),
+       (.I0(Shift_Rst_reg_3[0]),
         .I1(\H_Counter_reg[8] ),
         .I2(\H_Counter_reg[9] ),
-        .I3(Shift_Rst_reg_0[1]),
+        .I3(Shift_Rst_reg_3[1]),
         .O(\Address[10]_i_105_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
+    \Address[10]_i_113 
+       (.I0(Address4[13]),
+        .I1(\V_Counter_reg[14] ),
+        .I2(\V_Counter_reg[15] ),
+        .I3(Address4[14]),
+        .O(Shift_Rst_reg[3]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    \Address[10]_i_114 
+       (.I0(Address4[11]),
+        .I1(\V_Counter_reg[12] ),
+        .I2(\V_Counter_reg[13] ),
+        .I3(Address4[12]),
+        .O(Shift_Rst_reg[2]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    \Address[10]_i_115 
+       (.I0(Address4[9]),
+        .I1(\V_Counter_reg[10] ),
+        .I2(\V_Counter_reg[11] ),
+        .I3(Address4[10]),
+        .O(Shift_Rst_reg[1]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    \Address[10]_i_116 
+       (.I0(Address4[7]),
+        .I1(\V_Counter_reg[8] ),
+        .I2(\V_Counter_reg[9] ),
+        .I3(Address4[8]),
+        .O(Shift_Rst_reg[0]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
     \Address[10]_i_139 
-       (.I0(Shift_Rst_reg[2]),
+       (.I0(Shift_Rst_reg_2[2]),
         .I1(\H_Counter_reg[6] ),
         .I2(\H_Counter_reg[7] ),
-        .I3(Shift_Rst_reg[3]),
+        .I3(Shift_Rst_reg_2[3]),
         .O(\Address[10]_i_139_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_140 
-       (.I0(Shift_Rst_reg[0]),
+       (.I0(Shift_Rst_reg_2[0]),
         .I1(\H_Counter_reg[4] ),
         .I2(\H_Counter_reg[5] ),
-        .I3(Shift_Rst_reg[1]),
+        .I3(Shift_Rst_reg_2[1]),
         .O(\Address[10]_i_140_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
@@ -9110,6 +9113,30 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(\H_Counter_reg[1] ),
         .I3(O[1]),
         .O(\Address[10]_i_142_n_0 ));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    \Address[10]_i_149 
+       (.I0(Address4[5]),
+        .I1(\V_Counter_reg[6] ),
+        .I2(\V_Counter_reg[7] ),
+        .I3(Address4[6]),
+        .O(DI[2]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    \Address[10]_i_150 
+       (.I0(Address4[3]),
+        .I1(\V_Counter_reg[4] ),
+        .I2(\V_Counter_reg[5] ),
+        .I3(Address4[4]),
+        .O(DI[1]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    \Address[10]_i_151 
+       (.I0(Address4[1]),
+        .I1(\V_Counter_reg[2] ),
+        .I2(\V_Counter_reg[3] ),
+        .I3(Address4[2]),
+        .O(DI[0]));
   LUT1 #(
     .INIT(2'h1)) 
     \Address[10]_i_162 
@@ -9128,109 +9155,156 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT1 #(
     .INIT(2'h1)) 
     \Address[10]_i_165 
-       (.I0(\axi_rdata_reg[31]_0 [3]),
+       (.I0(\axi_rdata_reg[31]_1 [3]),
         .O(\Address[10]_i_165_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \Address[10]_i_166 
-       (.I0(\axi_rdata_reg[31]_0 [2]),
+       (.I0(\axi_rdata_reg[31]_1 [2]),
         .O(\Address[10]_i_166_n_0 ));
   LUT1 #(
     .INIT(2'h1)) 
     \Address[10]_i_167 
-       (.I0(\axi_rdata_reg[31]_0 [1]),
+       (.I0(\axi_rdata_reg[31]_1 [1]),
         .O(\Address[10]_i_167_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_25 
-       (.I0(Shift_Rst_reg_5[2]),
+       (.I0(Shift_Rst_reg_8[2]),
         .I1(\H_Counter_reg[30] ),
         .I2(\H_Counter_reg[31]_0 ),
-        .I3(Shift_Rst_reg_5[3]),
+        .I3(Shift_Rst_reg_8[3]),
         .O(\Address[10]_i_25_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_26 
-       (.I0(Shift_Rst_reg_5[0]),
+       (.I0(Shift_Rst_reg_8[0]),
         .I1(\H_Counter_reg[28] ),
         .I2(\H_Counter_reg[29] ),
-        .I3(Shift_Rst_reg_5[1]),
+        .I3(Shift_Rst_reg_8[1]),
         .O(\Address[10]_i_26_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_27 
-       (.I0(Shift_Rst_reg_4[2]),
+       (.I0(Shift_Rst_reg_7[2]),
         .I1(\H_Counter_reg[26] ),
         .I2(\H_Counter_reg[27] ),
-        .I3(Shift_Rst_reg_4[3]),
+        .I3(Shift_Rst_reg_7[3]),
         .O(\Address[10]_i_27_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_28 
-       (.I0(Shift_Rst_reg_4[0]),
+       (.I0(Shift_Rst_reg_7[0]),
         .I1(\H_Counter_reg[24] ),
         .I2(\H_Counter_reg[25] ),
-        .I3(Shift_Rst_reg_4[1]),
+        .I3(Shift_Rst_reg_7[1]),
         .O(\Address[10]_i_28_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
+    \Address[10]_i_34 
+       (.I0(Address4[29]),
+        .I1(\V_Counter_reg[30] ),
+        .I2(\V_Counter_reg[31] ),
+        .I3(Address4[30]),
+        .O(Shift_Rst_reg_1[3]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    \Address[10]_i_35 
+       (.I0(Address4[27]),
+        .I1(\V_Counter_reg[28] ),
+        .I2(\V_Counter_reg[29] ),
+        .I3(Address4[28]),
+        .O(Shift_Rst_reg_1[2]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    \Address[10]_i_36 
+       (.I0(Address4[25]),
+        .I1(\V_Counter_reg[26] ),
+        .I2(\V_Counter_reg[27] ),
+        .I3(Address4[26]),
+        .O(Shift_Rst_reg_1[1]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    \Address[10]_i_37 
+       (.I0(Address4[23]),
+        .I1(\V_Counter_reg[24] ),
+        .I2(\V_Counter_reg[25] ),
+        .I3(Address4[24]),
+        .O(Shift_Rst_reg_1[0]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
     \Address[10]_i_61 
-       (.I0(Shift_Rst_reg_3[2]),
+       (.I0(Shift_Rst_reg_6[2]),
         .I1(\H_Counter_reg[22] ),
         .I2(\H_Counter_reg[23] ),
-        .I3(Shift_Rst_reg_3[3]),
+        .I3(Shift_Rst_reg_6[3]),
         .O(\Address[10]_i_61_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_62 
-       (.I0(Shift_Rst_reg_3[0]),
+       (.I0(Shift_Rst_reg_6[0]),
         .I1(\H_Counter_reg[20] ),
         .I2(\H_Counter_reg[21] ),
-        .I3(Shift_Rst_reg_3[1]),
+        .I3(Shift_Rst_reg_6[1]),
         .O(\Address[10]_i_62_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_63 
-       (.I0(Shift_Rst_reg_2[2]),
+       (.I0(Shift_Rst_reg_5[2]),
         .I1(\H_Counter_reg[18] ),
         .I2(\H_Counter_reg[19] ),
-        .I3(Shift_Rst_reg_2[3]),
+        .I3(Shift_Rst_reg_5[3]),
         .O(\Address[10]_i_63_n_0 ));
   LUT4 #(
     .INIT(16'h2F02)) 
     \Address[10]_i_64 
-       (.I0(Shift_Rst_reg_2[0]),
+       (.I0(Shift_Rst_reg_5[0]),
         .I1(\H_Counter_reg[16] ),
         .I2(\H_Counter_reg[17] ),
-        .I3(Shift_Rst_reg_2[1]),
+        .I3(Shift_Rst_reg_5[1]),
         .O(\Address[10]_i_64_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT4 #(
-    .INIT(16'h2DD2)) 
-    \Address[1]_i_1 
-       (.I0(\axi_rdata_reg[31]_0 [0]),
+    .INIT(16'h2F02)) 
+    \Address[10]_i_72 
+       (.I0(Address4[21]),
+        .I1(\V_Counter_reg[22] ),
+        .I2(\V_Counter_reg[23] ),
+        .I3(Address4[22]),
+        .O(Shift_Rst_reg_0[3]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    \Address[10]_i_73 
+       (.I0(Address4[19]),
+        .I1(\V_Counter_reg[20] ),
+        .I2(\V_Counter_reg[21] ),
+        .I3(Address4[20]),
+        .O(Shift_Rst_reg_0[2]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    \Address[10]_i_74 
+       (.I0(Address4[17]),
+        .I1(\V_Counter_reg[18] ),
+        .I2(\V_Counter_reg[19] ),
+        .I3(Address4[18]),
+        .O(Shift_Rst_reg_0[1]));
+  LUT4 #(
+    .INIT(16'h2F02)) 
+    \Address[10]_i_75 
+       (.I0(Address4[15]),
+        .I1(\V_Counter_reg[16] ),
+        .I2(\V_Counter_reg[17] ),
+        .I3(Address4[16]),
+        .O(Shift_Rst_reg_0[0]));
+  LUT6 #(
+    .INIT(64'hDF0D20F220F2DF0D)) 
+    \Address[2]_i_1 
+       (.I0(\axi_rdata_reg[31]_1 [0]),
         .I1(\V_Counter_reg[0] ),
-        .I2(\axi_rdata_reg[31]_0 [1]),
+        .I2(\axi_rdata_reg[31]_1 [1]),
         .I3(\V_Counter_reg[1] ),
-        .O(p_0_in__0[0]));
-  LUT5 #(
-    .INIT(32'h4DB2B24D)) 
-    \Address[3]_i_1 
-       (.I0(\Address[3]_i_2_n_0 ),
-        .I1(\axi_rdata_reg[31]_0 [2]),
-        .I2(\V_Counter_reg[2] ),
-        .I3(\axi_rdata_reg[31]_0 [3]),
-        .I4(\V_Counter_reg[3] ),
-        .O(p_0_in__0[1]));
-  (* SOFT_HLUTNM = "soft_lutpair85" *) 
-  LUT4 #(
-    .INIT(16'hDD4D)) 
-    \Address[3]_i_2 
-       (.I0(\axi_rdata_reg[31]_0 [1]),
-        .I1(\V_Counter_reg[1] ),
-        .I2(\axi_rdata_reg[31]_0 [0]),
-        .I3(\V_Counter_reg[0] ),
-        .O(\Address[3]_i_2_n_0 ));
+        .I4(\axi_rdata_reg[31]_1 [2]),
+        .I5(\V_Counter_reg[2] ),
+        .O(p_0_in__0));
   CARRY4 \Address_reg[10]_i_101 
        (.CI(1'b0),
         .CO({\Address_reg[10]_i_101_n_0 ,\Address_reg[10]_i_101_n_1 ,\Address_reg[10]_i_101_n_2 ,\Address_reg[10]_i_101_n_3 }),
@@ -9243,14 +9317,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .CO({\Address_reg[10]_i_110_n_0 ,\Address_reg[10]_i_110_n_1 ,\Address_reg[10]_i_110_n_2 ,\Address_reg[10]_i_110_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(Shift_Rst_reg_3),
+        .O(Shift_Rst_reg_6),
         .S(\axi_rdata_reg[31]_2 [23:20]));
   CARRY4 \Address_reg[10]_i_111 
        (.CI(\Address_reg[10]_i_147_n_0 ),
         .CO({\Address_reg[10]_i_111_n_0 ,\Address_reg[10]_i_111_n_1 ,\Address_reg[10]_i_111_n_2 ,\Address_reg[10]_i_111_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(Shift_Rst_reg_2),
+        .O(Shift_Rst_reg_5),
         .S(\axi_rdata_reg[31]_2 [19:16]));
   CARRY4 \Address_reg[10]_i_121 
        (.CI(\Address_reg[10]_i_122_n_0 ),
@@ -9258,27 +9332,27 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(Address4[19:16]),
-        .S(\axi_rdata_reg[31]_0 [20:17]));
+        .S(\axi_rdata_reg[31]_1 [20:17]));
   CARRY4 \Address_reg[10]_i_122 
        (.CI(\Address_reg[10]_i_157_n_0 ),
         .CO({\Address_reg[10]_i_122_n_0 ,\Address_reg[10]_i_122_n_1 ,\Address_reg[10]_i_122_n_2 ,\Address_reg[10]_i_122_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(Address4[15:12]),
-        .S(\axi_rdata_reg[31]_0 [16:13]));
+        .S(\axi_rdata_reg[31]_1 [16:13]));
   CARRY4 \Address_reg[10]_i_147 
        (.CI(\Address_reg[10]_i_148_n_0 ),
         .CO({\Address_reg[10]_i_147_n_0 ,\Address_reg[10]_i_147_n_1 ,\Address_reg[10]_i_147_n_2 ,\Address_reg[10]_i_147_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(Shift_Rst_reg_1),
+        .O(Shift_Rst_reg_4),
         .S(\axi_rdata_reg[31]_2 [15:12]));
   CARRY4 \Address_reg[10]_i_148 
        (.CI(\Address_reg[10]_i_159_n_0 ),
         .CO({\Address_reg[10]_i_148_n_0 ,\Address_reg[10]_i_148_n_1 ,\Address_reg[10]_i_148_n_2 ,\Address_reg[10]_i_148_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(Shift_Rst_reg_0),
+        .O(Shift_Rst_reg_3),
         .S(\axi_rdata_reg[31]_2 [11:8]));
   CARRY4 \Address_reg[10]_i_157 
        (.CI(\Address_reg[10]_i_158_n_0 ),
@@ -9286,20 +9360,20 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(Address4[11:8]),
-        .S(\axi_rdata_reg[31]_0 [12:9]));
+        .S(\axi_rdata_reg[31]_1 [12:9]));
   CARRY4 \Address_reg[10]_i_158 
        (.CI(\Address_reg[10]_i_161_n_0 ),
         .CO({\Address_reg[10]_i_158_n_0 ,\Address_reg[10]_i_158_n_1 ,\Address_reg[10]_i_158_n_2 ,\Address_reg[10]_i_158_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(Address4[7:4]),
-        .S(\axi_rdata_reg[31]_0 [8:5]));
+        .S(\axi_rdata_reg[31]_1 [8:5]));
   CARRY4 \Address_reg[10]_i_159 
        (.CI(\Address_reg[10]_i_160_n_0 ),
         .CO({\Address_reg[10]_i_159_n_0 ,\Address_reg[10]_i_159_n_1 ,\Address_reg[10]_i_159_n_2 ,\Address_reg[10]_i_159_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(Shift_Rst_reg),
+        .O(Shift_Rst_reg_2),
         .S(\axi_rdata_reg[31]_2 [7:4]));
   CARRY4 \Address_reg[10]_i_160 
        (.CI(1'b0),
@@ -9311,10 +9385,10 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   CARRY4 \Address_reg[10]_i_161 
        (.CI(1'b0),
         .CO({\Address_reg[10]_i_161_n_0 ,\Address_reg[10]_i_161_n_1 ,\Address_reg[10]_i_161_n_2 ,\Address_reg[10]_i_161_n_3 }),
-        .CYINIT(\axi_rdata_reg[31]_0 [0]),
-        .DI({1'b0,\axi_rdata_reg[31]_0 [3:1]}),
+        .CYINIT(\axi_rdata_reg[31]_1 [0]),
+        .DI({1'b0,\axi_rdata_reg[31]_1 [3:1]}),
         .O(Address4[3:0]),
-        .S({\axi_rdata_reg[31]_0 [4],\Address[10]_i_165_n_0 ,\Address[10]_i_166_n_0 ,\Address[10]_i_167_n_0 }));
+        .S({\axi_rdata_reg[31]_1 [4],\Address[10]_i_165_n_0 ,\Address[10]_i_166_n_0 ,\Address[10]_i_167_n_0 }));
   CARRY4 \Address_reg[10]_i_24 
        (.CI(\Address_reg[10]_i_60_n_0 ),
         .CO({\Address_reg[10]_i_24_n_0 ,\Address_reg[10]_i_24_n_1 ,\Address_reg[10]_i_24_n_2 ,\Address_reg[10]_i_24_n_3 }),
@@ -9341,14 +9415,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .CO({\NLW_Address_reg[10]_i_69_CO_UNCONNECTED [3],\Address_reg[10]_i_69_n_1 ,\Address_reg[10]_i_69_n_2 ,\Address_reg[10]_i_69_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(Shift_Rst_reg_5),
+        .O(Shift_Rst_reg_8),
         .S(\axi_rdata_reg[31]_2 [31:28]));
   CARRY4 \Address_reg[10]_i_70 
        (.CI(\Address_reg[10]_i_110_n_0 ),
         .CO({\Address_reg[10]_i_70_n_0 ,\Address_reg[10]_i_70_n_1 ,\Address_reg[10]_i_70_n_2 ,\Address_reg[10]_i_70_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
-        .O(Shift_Rst_reg_4),
+        .O(Shift_Rst_reg_7),
         .S(\axi_rdata_reg[31]_2 [27:24]));
   CARRY4 \Address_reg[10]_i_80 
        (.CI(\Address_reg[10]_i_81_n_0 ),
@@ -9356,21 +9430,21 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O({\NLW_Address_reg[10]_i_80_O_UNCONNECTED [3],Address4[30:28]}),
-        .S({1'b0,\axi_rdata_reg[31]_0 [31:29]}));
+        .S({1'b0,\axi_rdata_reg[31]_1 [31:29]}));
   CARRY4 \Address_reg[10]_i_81 
        (.CI(\Address_reg[10]_i_82_n_0 ),
         .CO({\Address_reg[10]_i_81_n_0 ,\Address_reg[10]_i_81_n_1 ,\Address_reg[10]_i_81_n_2 ,\Address_reg[10]_i_81_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(Address4[27:24]),
-        .S(\axi_rdata_reg[31]_0 [28:25]));
+        .S(\axi_rdata_reg[31]_1 [28:25]));
   CARRY4 \Address_reg[10]_i_82 
        (.CI(\Address_reg[10]_i_121_n_0 ),
         .CO({\Address_reg[10]_i_82_n_0 ,\Address_reg[10]_i_82_n_1 ,\Address_reg[10]_i_82_n_2 ,\Address_reg[10]_i_82_n_3 }),
         .CYINIT(1'b0),
         .DI({1'b0,1'b0,1'b0,1'b0}),
         .O(Address4[23:20]),
-        .S(\axi_rdata_reg[31]_0 [24:21]));
+        .S(\axi_rdata_reg[31]_1 [24:21]));
   LUT2 #(
     .INIT(4'hE)) 
     H_InRange_i_100
@@ -10521,7 +10595,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .DI({VGA_VS_i_82_n_0,VGA_VS_i_83_n_0,VGA_VS_i_84_n_0,\slv_reg6_reg[0]_0 }),
         .O(NLW_VGA_VS_reg_i_57_O_UNCONNECTED[3:0]),
         .S({VGA_VS_i_86_n_0,VGA_VS_i_87_n_0,VGA_VS_i_88_n_0,\slv_reg6_reg[0]_1 }));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_101 
@@ -10540,7 +10614,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I4(H_FP_w[31]),
         .I5(H_Range_w[31]),
         .O(\V_Counter[31]_i_102_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_103 
@@ -10549,7 +10623,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_FP_w[29]),
         .I3(H_Range_w[29]),
         .O(\V_Counter[31]_i_103_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_104 
@@ -10562,7 +10636,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[29]),
         .I1(H_FP_w[29]),
         .O(\V_Counter[31]_i_105_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_106 
@@ -10577,7 +10651,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[28]),
         .I1(H_FP_w[28]),
         .O(\V_Counter[31]_i_107_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair28" *) 
+  (* SOFT_HLUTNM = "soft_lutpair29" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_108 
@@ -10587,14 +10661,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[30]),
         .I4(H_Range_w[30]),
         .O(\V_Counter[31]_i_108_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair58" *) 
+  (* SOFT_HLUTNM = "soft_lutpair61" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_109 
        (.I0(H_Range_w[29]),
         .I1(H_FP_w[29]),
         .O(\V_Counter[31]_i_109_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_110 
@@ -10609,7 +10683,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[27]),
         .I1(H_FP_w[27]),
         .O(\V_Counter[31]_i_111_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_112 
@@ -10619,14 +10693,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[29]),
         .I4(H_Range_w[29]),
         .O(\V_Counter[31]_i_112_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair59" *) 
+  (* SOFT_HLUTNM = "soft_lutpair63" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_113 
        (.I0(H_Range_w[28]),
         .I1(H_FP_w[28]),
         .O(\V_Counter[31]_i_113_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_114 
@@ -10641,7 +10715,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[26]),
         .I1(H_FP_w[26]),
         .O(\V_Counter[31]_i_115_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_116 
@@ -10651,14 +10725,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[28]),
         .I4(H_Range_w[28]),
         .O(\V_Counter[31]_i_116_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair64" *) 
+  (* SOFT_HLUTNM = "soft_lutpair66" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_117 
        (.I0(H_Range_w[27]),
         .I1(H_FP_w[27]),
         .O(\V_Counter[31]_i_117_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_118 
@@ -10667,7 +10741,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[26]),
         .I3(\controller/H_Length3 [26]),
         .O(\V_Counter[31]_i_118_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_119 
@@ -10676,7 +10750,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[25]),
         .I3(\controller/H_Length3 [25]),
         .O(\V_Counter[31]_i_119_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_120 
@@ -10685,7 +10759,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[24]),
         .I3(\controller/H_Length3 [24]),
         .O(\V_Counter[31]_i_120_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_122 
@@ -10694,7 +10768,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[23]),
         .I3(\controller/H_Length3 [23]),
         .O(\V_Counter[31]_i_122_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_123 
@@ -10709,7 +10783,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[25]),
         .I1(H_FP_w[25]),
         .O(\V_Counter[31]_i_124_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair31" *) 
+  (* SOFT_HLUTNM = "soft_lutpair32" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_125 
@@ -10719,14 +10793,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[27]),
         .I4(H_Range_w[27]),
         .O(\V_Counter[31]_i_125_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair67" *) 
+  (* SOFT_HLUTNM = "soft_lutpair69" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_126 
        (.I0(H_Range_w[26]),
         .I1(H_FP_w[26]),
         .O(\V_Counter[31]_i_126_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_127 
@@ -10741,7 +10815,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[24]),
         .I1(H_FP_w[24]),
         .O(\V_Counter[31]_i_128_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair32" *) 
+  (* SOFT_HLUTNM = "soft_lutpair33" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_129 
@@ -10751,14 +10825,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[26]),
         .I4(H_Range_w[26]),
         .O(\V_Counter[31]_i_129_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair70" *) 
+  (* SOFT_HLUTNM = "soft_lutpair72" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_130 
        (.I0(H_Range_w[25]),
         .I1(H_FP_w[25]),
         .O(\V_Counter[31]_i_130_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_131 
@@ -10773,7 +10847,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[23]),
         .I1(H_FP_w[23]),
         .O(\V_Counter[31]_i_132_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair33" *) 
+  (* SOFT_HLUTNM = "soft_lutpair34" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_133 
@@ -10783,14 +10857,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[25]),
         .I4(H_Range_w[25]),
         .O(\V_Counter[31]_i_133_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair73" *) 
+  (* SOFT_HLUTNM = "soft_lutpair75" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_134 
        (.I0(H_Range_w[24]),
         .I1(H_FP_w[24]),
         .O(\V_Counter[31]_i_134_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_135 
@@ -10805,7 +10879,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[22]),
         .I1(H_FP_w[22]),
         .O(\V_Counter[31]_i_136_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair34" *) 
+  (* SOFT_HLUTNM = "soft_lutpair35" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_137 
@@ -10815,7 +10889,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[24]),
         .I4(H_Range_w[24]),
         .O(\V_Counter[31]_i_137_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair76" *) 
+  (* SOFT_HLUTNM = "soft_lutpair78" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_138 
@@ -11117,7 +11191,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I4(\controller/H_Length3 [7]),
         .I5(\V_Counter[31]_i_362_n_0 ),
         .O(\V_Counter[31]_i_182_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_183 
@@ -11126,7 +11200,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[22]),
         .I3(\controller/H_Length3 [22]),
         .O(\V_Counter[31]_i_183_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_184 
@@ -11135,7 +11209,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[21]),
         .I3(\controller/H_Length3 [21]),
         .O(\V_Counter[31]_i_184_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_185 
@@ -11144,7 +11218,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[20]),
         .I3(\controller/H_Length3 [20]),
         .O(\V_Counter[31]_i_185_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_187 
@@ -11153,7 +11227,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[19]),
         .I3(\controller/H_Length3 [19]),
         .O(\V_Counter[31]_i_187_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_188 
@@ -11168,7 +11242,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[21]),
         .I1(H_FP_w[21]),
         .O(\V_Counter[31]_i_189_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair35" *) 
+  (* SOFT_HLUTNM = "soft_lutpair36" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_190 
@@ -11178,7 +11252,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[23]),
         .I4(H_Range_w[23]),
         .O(\V_Counter[31]_i_190_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair79" *) 
+  (* SOFT_HLUTNM = "soft_lutpair81" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_191 
@@ -11200,7 +11274,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[20]),
         .I1(H_FP_w[20]),
         .O(\V_Counter[31]_i_193_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair36" *) 
+  (* SOFT_HLUTNM = "soft_lutpair37" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_194 
@@ -11210,7 +11284,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[22]),
         .I4(H_Range_w[22]),
         .O(\V_Counter[31]_i_194_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair82" *) 
+  (* SOFT_HLUTNM = "soft_lutpair83" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_195 
@@ -11232,7 +11306,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[19]),
         .I1(H_FP_w[19]),
         .O(\V_Counter[31]_i_197_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair37" *) 
+  (* SOFT_HLUTNM = "soft_lutpair38" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_198 
@@ -11264,7 +11338,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[18]),
         .I1(H_FP_w[18]),
         .O(\V_Counter[31]_i_201_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair38" *) 
+  (* SOFT_HLUTNM = "soft_lutpair39" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_202 
@@ -11281,7 +11355,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[19]),
         .I1(H_FP_w[19]),
         .O(\V_Counter[31]_i_203_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_204 
@@ -11290,7 +11364,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[18]),
         .I3(\controller/H_Length3 [18]),
         .O(\V_Counter[31]_i_204_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_205 
@@ -11299,7 +11373,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[17]),
         .I3(\controller/H_Length3 [17]),
         .O(\V_Counter[31]_i_205_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_206 
@@ -11308,7 +11382,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[16]),
         .I3(\controller/H_Length3 [16]),
         .O(\V_Counter[31]_i_206_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_208 
@@ -11332,7 +11406,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[17]),
         .I1(H_FP_w[17]),
         .O(\V_Counter[31]_i_210_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair39" *) 
+  (* SOFT_HLUTNM = "soft_lutpair40" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_211 
@@ -11364,7 +11438,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[16]),
         .I1(H_FP_w[16]),
         .O(\V_Counter[31]_i_214_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair40" *) 
+  (* SOFT_HLUTNM = "soft_lutpair41" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_215 
@@ -11396,7 +11470,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[15]),
         .I1(H_FP_w[15]),
         .O(\V_Counter[31]_i_218_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair41" *) 
+  (* SOFT_HLUTNM = "soft_lutpair42" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_219 
@@ -11428,7 +11502,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[14]),
         .I1(H_FP_w[14]),
         .O(\V_Counter[31]_i_222_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair42" *) 
+  (* SOFT_HLUTNM = "soft_lutpair43" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_223 
@@ -11448,73 +11522,73 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_225 
-       (.I0(\axi_rdata_reg[31]_1 [31]),
+       (.I0(\axi_rdata_reg[31]_0 [31]),
         .I1(H_BP_w[31]),
         .O(\V_Counter[31]_i_225_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_226 
-       (.I0(\axi_rdata_reg[31]_1 [30]),
+       (.I0(\axi_rdata_reg[31]_0 [30]),
         .I1(H_BP_w[30]),
         .O(\V_Counter[31]_i_226_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_227 
-       (.I0(\axi_rdata_reg[31]_1 [29]),
+       (.I0(\axi_rdata_reg[31]_0 [29]),
         .I1(H_BP_w[29]),
         .O(\V_Counter[31]_i_227_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_228 
-       (.I0(\axi_rdata_reg[31]_1 [28]),
+       (.I0(\axi_rdata_reg[31]_0 [28]),
         .I1(H_BP_w[28]),
         .O(\V_Counter[31]_i_228_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_229 
-       (.I0(\axi_rdata_reg[31]_1 [27]),
+       (.I0(\axi_rdata_reg[31]_0 [27]),
         .I1(H_BP_w[27]),
         .O(\V_Counter[31]_i_229_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_230 
-       (.I0(\axi_rdata_reg[31]_1 [26]),
+       (.I0(\axi_rdata_reg[31]_0 [26]),
         .I1(H_BP_w[26]),
         .O(\V_Counter[31]_i_230_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_231 
-       (.I0(\axi_rdata_reg[31]_1 [25]),
+       (.I0(\axi_rdata_reg[31]_0 [25]),
         .I1(H_BP_w[25]),
         .O(\V_Counter[31]_i_231_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_232 
-       (.I0(\axi_rdata_reg[31]_1 [24]),
+       (.I0(\axi_rdata_reg[31]_0 [24]),
         .I1(H_BP_w[24]),
         .O(\V_Counter[31]_i_232_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_233 
-       (.I0(\axi_rdata_reg[31]_1 [23]),
+       (.I0(\axi_rdata_reg[31]_0 [23]),
         .I1(H_BP_w[23]),
         .O(\V_Counter[31]_i_233_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_234 
-       (.I0(\axi_rdata_reg[31]_1 [22]),
+       (.I0(\axi_rdata_reg[31]_0 [22]),
         .I1(H_BP_w[22]),
         .O(\V_Counter[31]_i_234_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_235 
-       (.I0(\axi_rdata_reg[31]_1 [21]),
+       (.I0(\axi_rdata_reg[31]_0 [21]),
         .I1(H_BP_w[21]),
         .O(\V_Counter[31]_i_235_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_236 
-       (.I0(\axi_rdata_reg[31]_1 [20]),
+       (.I0(\axi_rdata_reg[31]_0 [20]),
         .I1(H_BP_w[20]),
         .O(\V_Counter[31]_i_236_n_0 ));
   LUT5 #(
@@ -11669,7 +11743,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I4(\controller/V_Length3 [15]),
         .I5(\V_Counter[31]_i_430_n_0 ),
         .O(\V_Counter[31]_i_262_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_263 
@@ -11678,7 +11752,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[29]),
         .I3(\controller/V_Length3 [29]),
         .O(\V_Counter[31]_i_263_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_265 
@@ -11687,7 +11761,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[28]),
         .I3(\controller/V_Length3 [28]),
         .O(\V_Counter[31]_i_265_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_267 
@@ -11706,7 +11780,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I4(V_FP_w[31]),
         .I5(V_Range_w[31]),
         .O(\V_Counter[31]_i_268_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_269 
@@ -11728,7 +11802,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[29]),
         .I1(V_FP_w[29]),
         .O(\V_Counter[31]_i_271_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair111" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_272 
@@ -11753,14 +11827,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[30]),
         .I4(V_Range_w[30]),
         .O(\V_Counter[31]_i_274_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair90" *) 
+  (* SOFT_HLUTNM = "soft_lutpair84" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_275 
        (.I0(V_Range_w[29]),
         .I1(V_FP_w[29]),
         .O(\V_Counter[31]_i_275_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_276 
@@ -11775,7 +11849,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[27]),
         .I1(V_FP_w[27]),
         .O(\V_Counter[31]_i_277_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair1" *) 
+  (* SOFT_HLUTNM = "soft_lutpair2" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_278 
@@ -11785,14 +11859,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[29]),
         .I4(V_Range_w[29]),
         .O(\V_Counter[31]_i_278_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair111" *) 
+  (* SOFT_HLUTNM = "soft_lutpair86" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_279 
        (.I0(V_Range_w[28]),
         .I1(V_FP_w[28]),
         .O(\V_Counter[31]_i_279_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_280 
@@ -11807,7 +11881,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[26]),
         .I1(V_FP_w[26]),
         .O(\V_Counter[31]_i_281_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair2" *) 
+  (* SOFT_HLUTNM = "soft_lutpair3" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_282 
@@ -11817,14 +11891,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[28]),
         .I4(V_Range_w[28]),
         .O(\V_Counter[31]_i_282_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair62" *) 
+  (* SOFT_HLUTNM = "soft_lutpair87" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_283 
        (.I0(V_Range_w[27]),
         .I1(V_FP_w[27]),
         .O(\V_Counter[31]_i_283_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_284 
@@ -11833,7 +11907,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[26]),
         .I3(\controller/V_Length3 [26]),
         .O(\V_Counter[31]_i_284_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_285 
@@ -11842,7 +11916,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[25]),
         .I3(\controller/V_Length3 [25]),
         .O(\V_Counter[31]_i_285_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_286 
@@ -11851,7 +11925,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[24]),
         .I3(\controller/V_Length3 [24]),
         .O(\V_Counter[31]_i_286_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_288 
@@ -11860,7 +11934,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[23]),
         .I3(\controller/V_Length3 [23]),
         .O(\V_Counter[31]_i_288_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_289 
@@ -11875,7 +11949,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[25]),
         .I1(V_FP_w[25]),
         .O(\V_Counter[31]_i_290_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair3" *) 
+  (* SOFT_HLUTNM = "soft_lutpair4" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_291 
@@ -11885,14 +11959,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[27]),
         .I4(V_Range_w[27]),
         .O(\V_Counter[31]_i_291_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair61" *) 
+  (* SOFT_HLUTNM = "soft_lutpair89" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_292 
        (.I0(V_Range_w[26]),
         .I1(V_FP_w[26]),
         .O(\V_Counter[31]_i_292_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_293 
@@ -11907,7 +11981,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[24]),
         .I1(V_FP_w[24]),
         .O(\V_Counter[31]_i_294_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair4" *) 
+  (* SOFT_HLUTNM = "soft_lutpair5" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_295 
@@ -11917,14 +11991,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[26]),
         .I4(V_Range_w[26]),
         .O(\V_Counter[31]_i_295_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair112" *) 
+  (* SOFT_HLUTNM = "soft_lutpair90" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_296 
        (.I0(V_Range_w[25]),
         .I1(V_FP_w[25]),
         .O(\V_Counter[31]_i_296_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_297 
@@ -11939,7 +12013,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[23]),
         .I1(V_FP_w[23]),
         .O(\V_Counter[31]_i_298_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair5" *) 
+  (* SOFT_HLUTNM = "soft_lutpair6" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_299 
@@ -11949,14 +12023,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[25]),
         .I4(V_Range_w[25]),
         .O(\V_Counter[31]_i_299_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair92" *) 
+  (* SOFT_HLUTNM = "soft_lutpair64" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_300 
        (.I0(V_Range_w[24]),
         .I1(V_FP_w[24]),
         .O(\V_Counter[31]_i_300_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_301 
@@ -11971,7 +12045,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[22]),
         .I1(V_FP_w[22]),
         .O(\V_Counter[31]_i_302_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair6" *) 
+  (* SOFT_HLUTNM = "soft_lutpair7" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_303 
@@ -11981,7 +12055,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[24]),
         .I4(V_Range_w[24]),
         .O(\V_Counter[31]_i_303_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair93" *) 
+  (* SOFT_HLUTNM = "soft_lutpair92" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_304 
@@ -12131,7 +12205,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[0]),
         .I3(\controller/H_Length3 [0]),
         .O(\V_Counter[31]_i_320_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_321 
@@ -12140,7 +12214,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[14]),
         .I3(\controller/H_Length3 [14]),
         .O(\V_Counter[31]_i_321_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_322 
@@ -12149,7 +12223,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[13]),
         .I3(\controller/H_Length3 [13]),
         .O(\V_Counter[31]_i_322_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_323 
@@ -12158,7 +12232,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[12]),
         .I3(\controller/H_Length3 [12]),
         .O(\V_Counter[31]_i_323_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_325 
@@ -12182,7 +12256,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[13]),
         .I1(H_FP_w[13]),
         .O(\V_Counter[31]_i_327_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair43" *) 
+  (* SOFT_HLUTNM = "soft_lutpair44" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_328 
@@ -12199,7 +12273,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[14]),
         .I1(H_FP_w[14]),
         .O(\V_Counter[31]_i_329_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_330 
@@ -12214,7 +12288,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[12]),
         .I1(H_FP_w[12]),
         .O(\V_Counter[31]_i_331_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair44" *) 
+  (* SOFT_HLUTNM = "soft_lutpair45" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_332 
@@ -12231,7 +12305,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[13]),
         .I1(H_FP_w[13]),
         .O(\V_Counter[31]_i_333_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_334 
@@ -12246,7 +12320,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[11]),
         .I1(H_FP_w[11]),
         .O(\V_Counter[31]_i_335_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair45" *) 
+  (* SOFT_HLUTNM = "soft_lutpair46" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_336 
@@ -12256,14 +12330,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[13]),
         .I4(H_Range_w[13]),
         .O(\V_Counter[31]_i_336_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair87" *) 
+  (* SOFT_HLUTNM = "soft_lutpair85" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_337 
        (.I0(H_Range_w[12]),
         .I1(H_FP_w[12]),
         .O(\V_Counter[31]_i_337_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_338 
@@ -12278,7 +12352,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[10]),
         .I1(H_FP_w[10]),
         .O(\V_Counter[31]_i_339_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair46" *) 
+  (* SOFT_HLUTNM = "soft_lutpair47" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_340 
@@ -12288,14 +12362,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[12]),
         .I4(H_Range_w[12]),
         .O(\V_Counter[31]_i_340_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair84" *) 
+  (* SOFT_HLUTNM = "soft_lutpair58" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_341 
        (.I0(H_Range_w[11]),
         .I1(H_FP_w[11]),
         .O(\V_Counter[31]_i_341_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_342 
@@ -12304,7 +12378,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[10]),
         .I3(\controller/H_Length3 [10]),
         .O(\V_Counter[31]_i_342_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_343 
@@ -12313,7 +12387,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[9]),
         .I3(\controller/H_Length3 [9]),
         .O(\V_Counter[31]_i_343_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_344 
@@ -12322,7 +12396,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[8]),
         .I3(\controller/H_Length3 [8]),
         .O(\V_Counter[31]_i_344_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_346 
@@ -12331,7 +12405,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[7]),
         .I3(\controller/H_Length3 [7]),
         .O(\V_Counter[31]_i_346_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_347 
@@ -12346,7 +12420,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[9]),
         .I1(H_FP_w[9]),
         .O(\V_Counter[31]_i_348_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair47" *) 
+  (* SOFT_HLUTNM = "soft_lutpair48" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_349 
@@ -12356,14 +12430,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[11]),
         .I4(H_Range_w[11]),
         .O(\V_Counter[31]_i_349_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair81" *) 
+  (* SOFT_HLUTNM = "soft_lutpair80" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_350 
        (.I0(H_Range_w[10]),
         .I1(H_FP_w[10]),
         .O(\V_Counter[31]_i_350_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_351 
@@ -12378,7 +12452,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[8]),
         .I1(H_FP_w[8]),
         .O(\V_Counter[31]_i_352_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair48" *) 
+  (* SOFT_HLUTNM = "soft_lutpair49" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_353 
@@ -12388,14 +12462,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[10]),
         .I4(H_Range_w[10]),
         .O(\V_Counter[31]_i_353_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair78" *) 
+  (* SOFT_HLUTNM = "soft_lutpair77" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_354 
        (.I0(H_Range_w[9]),
         .I1(H_FP_w[9]),
         .O(\V_Counter[31]_i_354_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_355 
@@ -12410,7 +12484,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[7]),
         .I1(H_FP_w[7]),
         .O(\V_Counter[31]_i_356_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair49" *) 
+  (* SOFT_HLUTNM = "soft_lutpair50" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_357 
@@ -12420,14 +12494,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[9]),
         .I4(H_Range_w[9]),
         .O(\V_Counter[31]_i_357_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair75" *) 
+  (* SOFT_HLUTNM = "soft_lutpair74" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_358 
        (.I0(H_Range_w[8]),
         .I1(H_FP_w[8]),
         .O(\V_Counter[31]_i_358_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_359 
@@ -12442,7 +12516,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[6]),
         .I1(H_FP_w[6]),
         .O(\V_Counter[31]_i_360_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair50" *) 
+  (* SOFT_HLUTNM = "soft_lutpair51" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_361 
@@ -12452,7 +12526,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[8]),
         .I4(H_Range_w[8]),
         .O(\V_Counter[31]_i_361_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair72" *) 
+  (* SOFT_HLUTNM = "soft_lutpair71" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_362 
@@ -12462,49 +12536,49 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_363 
-       (.I0(\axi_rdata_reg[31]_1 [19]),
+       (.I0(\axi_rdata_reg[31]_0 [19]),
         .I1(H_BP_w[19]),
         .O(\V_Counter[31]_i_363_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_364 
-       (.I0(\axi_rdata_reg[31]_1 [18]),
+       (.I0(\axi_rdata_reg[31]_0 [18]),
         .I1(H_BP_w[18]),
         .O(\V_Counter[31]_i_364_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_365 
-       (.I0(\axi_rdata_reg[31]_1 [17]),
+       (.I0(\axi_rdata_reg[31]_0 [17]),
         .I1(H_BP_w[17]),
         .O(\V_Counter[31]_i_365_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_366 
-       (.I0(\axi_rdata_reg[31]_1 [16]),
+       (.I0(\axi_rdata_reg[31]_0 [16]),
         .I1(H_BP_w[16]),
         .O(\V_Counter[31]_i_366_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_367 
-       (.I0(\axi_rdata_reg[31]_1 [15]),
+       (.I0(\axi_rdata_reg[31]_0 [15]),
         .I1(H_BP_w[15]),
         .O(\V_Counter[31]_i_367_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_368 
-       (.I0(\axi_rdata_reg[31]_1 [14]),
+       (.I0(\axi_rdata_reg[31]_0 [14]),
         .I1(H_BP_w[14]),
         .O(\V_Counter[31]_i_368_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_369 
-       (.I0(\axi_rdata_reg[31]_1 [13]),
+       (.I0(\axi_rdata_reg[31]_0 [13]),
         .I1(H_BP_w[13]),
         .O(\V_Counter[31]_i_369_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_370 
-       (.I0(\axi_rdata_reg[31]_1 [12]),
+       (.I0(\axi_rdata_reg[31]_0 [12]),
         .I1(H_BP_w[12]),
         .O(\V_Counter[31]_i_370_n_0 ));
   LUT5 #(
@@ -12659,7 +12733,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I4(\controller/V_Length3 [7]),
         .I5(\V_Counter[31]_i_533_n_0 ),
         .O(\V_Counter[31]_i_388_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_389 
@@ -12668,7 +12742,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[22]),
         .I3(\controller/V_Length3 [22]),
         .O(\V_Counter[31]_i_389_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_390 
@@ -12677,7 +12751,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[21]),
         .I3(\controller/V_Length3 [21]),
         .O(\V_Counter[31]_i_390_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_391 
@@ -12686,7 +12760,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[20]),
         .I3(\controller/V_Length3 [20]),
         .O(\V_Counter[31]_i_391_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_393 
@@ -12695,7 +12769,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[19]),
         .I3(\controller/V_Length3 [19]),
         .O(\V_Counter[31]_i_393_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_394 
@@ -12710,7 +12784,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[21]),
         .I1(V_FP_w[21]),
         .O(\V_Counter[31]_i_395_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair7" *) 
+  (* SOFT_HLUTNM = "soft_lutpair8" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_396 
@@ -12720,14 +12794,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[23]),
         .I4(V_Range_w[23]),
         .O(\V_Counter[31]_i_396_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair65" *) 
+  (* SOFT_HLUTNM = "soft_lutpair93" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_397 
        (.I0(V_Range_w[22]),
         .I1(V_FP_w[22]),
         .O(\V_Counter[31]_i_397_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_398 
@@ -12742,7 +12816,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[20]),
         .I1(V_FP_w[20]),
         .O(\V_Counter[31]_i_399_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair8" *) 
+  (* SOFT_HLUTNM = "soft_lutpair9" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_400 
@@ -12752,14 +12826,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[22]),
         .I4(V_Range_w[22]),
         .O(\V_Counter[31]_i_400_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair95" *) 
+  (* SOFT_HLUTNM = "soft_lutpair67" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_401 
        (.I0(V_Range_w[21]),
         .I1(V_FP_w[21]),
         .O(\V_Counter[31]_i_401_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_402 
@@ -12774,7 +12848,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[19]),
         .I1(V_FP_w[19]),
         .O(\V_Counter[31]_i_403_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair9" *) 
+  (* SOFT_HLUTNM = "soft_lutpair10" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_404 
@@ -12784,14 +12858,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[21]),
         .I4(V_Range_w[21]),
         .O(\V_Counter[31]_i_404_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair96" *) 
+  (* SOFT_HLUTNM = "soft_lutpair95" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_405 
        (.I0(V_Range_w[20]),
         .I1(V_FP_w[20]),
         .O(\V_Counter[31]_i_405_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_406 
@@ -12806,7 +12880,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[18]),
         .I1(V_FP_w[18]),
         .O(\V_Counter[31]_i_407_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair10" *) 
+  (* SOFT_HLUTNM = "soft_lutpair11" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_408 
@@ -12816,14 +12890,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[20]),
         .I4(V_Range_w[20]),
         .O(\V_Counter[31]_i_408_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair68" *) 
+  (* SOFT_HLUTNM = "soft_lutpair96" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_409 
        (.I0(V_Range_w[19]),
         .I1(V_FP_w[19]),
         .O(\V_Counter[31]_i_409_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_410 
@@ -12832,7 +12906,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[18]),
         .I3(\controller/V_Length3 [18]),
         .O(\V_Counter[31]_i_410_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_411 
@@ -12841,7 +12915,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[17]),
         .I3(\controller/V_Length3 [17]),
         .O(\V_Counter[31]_i_411_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_412 
@@ -12850,7 +12924,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[16]),
         .I3(\controller/V_Length3 [16]),
         .O(\V_Counter[31]_i_412_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_414 
@@ -12859,7 +12933,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[15]),
         .I3(\controller/V_Length3 [15]),
         .O(\V_Counter[31]_i_414_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_415 
@@ -12874,7 +12948,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[17]),
         .I1(V_FP_w[17]),
         .O(\V_Counter[31]_i_416_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair11" *) 
+  (* SOFT_HLUTNM = "soft_lutpair12" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_417 
@@ -12884,14 +12958,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[19]),
         .I4(V_Range_w[19]),
         .O(\V_Counter[31]_i_417_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair98" *) 
+  (* SOFT_HLUTNM = "soft_lutpair70" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_418 
        (.I0(V_Range_w[18]),
         .I1(V_FP_w[18]),
         .O(\V_Counter[31]_i_418_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_419 
@@ -12906,7 +12980,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[16]),
         .I1(V_FP_w[16]),
         .O(\V_Counter[31]_i_420_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair12" *) 
+  (* SOFT_HLUTNM = "soft_lutpair13" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_421 
@@ -12916,14 +12990,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[18]),
         .I4(V_Range_w[18]),
         .O(\V_Counter[31]_i_421_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair99" *) 
+  (* SOFT_HLUTNM = "soft_lutpair98" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_422 
        (.I0(V_Range_w[17]),
         .I1(V_FP_w[17]),
         .O(\V_Counter[31]_i_422_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair101" *) 
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_423 
@@ -12938,7 +13012,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[15]),
         .I1(V_FP_w[15]),
         .O(\V_Counter[31]_i_424_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair13" *) 
+  (* SOFT_HLUTNM = "soft_lutpair14" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_425 
@@ -12948,14 +13022,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[17]),
         .I4(V_Range_w[17]),
         .O(\V_Counter[31]_i_425_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair71" *) 
+  (* SOFT_HLUTNM = "soft_lutpair99" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_426 
        (.I0(V_Range_w[16]),
         .I1(V_FP_w[16]),
         .O(\V_Counter[31]_i_426_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair102" *) 
+  (* SOFT_HLUTNM = "soft_lutpair101" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_427 
@@ -12970,7 +13044,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[14]),
         .I1(V_FP_w[14]),
         .O(\V_Counter[31]_i_428_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair14" *) 
+  (* SOFT_HLUTNM = "soft_lutpair15" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_429 
@@ -12980,7 +13054,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[16]),
         .I4(V_Range_w[16]),
         .O(\V_Counter[31]_i_429_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair101" *) 
+  (* SOFT_HLUTNM = "soft_lutpair73" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_430 
@@ -13059,7 +13133,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Sync_w[20]),
         .I1(V_BP_w[20]),
         .O(\V_Counter[31]_i_442_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_443 
@@ -13068,7 +13142,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[6]),
         .I3(\controller/H_Length3 [6]),
         .O(\V_Counter[31]_i_443_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_444 
@@ -13077,7 +13151,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[5]),
         .I3(\controller/H_Length3 [5]),
         .O(\V_Counter[31]_i_444_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_445 
@@ -13086,7 +13160,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[4]),
         .I3(\controller/H_Length3 [4]),
         .O(\V_Counter[31]_i_445_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_447 
@@ -13095,7 +13169,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[3]),
         .I3(\controller/H_Length3 [3]),
         .O(\V_Counter[31]_i_447_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_448 
@@ -13119,7 +13193,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(\controller/H_Length3 [28]),
         .I4(H_LR_Border_w[28]),
         .O(\V_Counter[31]_i_45_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair51" *) 
+  (* SOFT_HLUTNM = "soft_lutpair52" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_450 
@@ -13129,14 +13203,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[7]),
         .I4(H_Range_w[7]),
         .O(\V_Counter[31]_i_450_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair69" *) 
+  (* SOFT_HLUTNM = "soft_lutpair68" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_451 
        (.I0(H_Range_w[6]),
         .I1(H_FP_w[6]),
         .O(\V_Counter[31]_i_451_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_452 
@@ -13151,7 +13225,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[4]),
         .I1(H_FP_w[4]),
         .O(\V_Counter[31]_i_453_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair52" *) 
+  (* SOFT_HLUTNM = "soft_lutpair53" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_454 
@@ -13161,14 +13235,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[6]),
         .I4(H_Range_w[6]),
         .O(\V_Counter[31]_i_454_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair66" *) 
+  (* SOFT_HLUTNM = "soft_lutpair65" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_455 
        (.I0(H_Range_w[5]),
         .I1(H_FP_w[5]),
         .O(\V_Counter[31]_i_455_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_456 
@@ -13183,7 +13257,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[3]),
         .I1(H_FP_w[3]),
         .O(\V_Counter[31]_i_457_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair53" *) 
+  (* SOFT_HLUTNM = "soft_lutpair54" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_458 
@@ -13193,7 +13267,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[5]),
         .I4(H_Range_w[5]),
         .O(\V_Counter[31]_i_458_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair63" *) 
+  (* SOFT_HLUTNM = "soft_lutpair62" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_459 
@@ -13224,7 +13298,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_Range_w[2]),
         .I1(H_FP_w[2]),
         .O(\V_Counter[31]_i_461_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair54" *) 
+  (* SOFT_HLUTNM = "soft_lutpair55" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_462 
@@ -13234,7 +13308,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(H_FP_w[4]),
         .I4(H_Range_w[4]),
         .O(\V_Counter[31]_i_462_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair60" *) 
+  (* SOFT_HLUTNM = "soft_lutpair59" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_463 
@@ -13260,7 +13334,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I4(H_FP_w[1]),
         .I5(H_Range_w[1]),
         .O(\V_Counter[31]_i_465_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair55" *) 
+  (* SOFT_HLUTNM = "soft_lutpair1" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_466 
@@ -13279,13 +13353,13 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_468 
-       (.I0(\axi_rdata_reg[31]_1 [11]),
+       (.I0(\axi_rdata_reg[31]_0 [11]),
         .I1(H_BP_w[11]),
         .O(\V_Counter[31]_i_468_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_469 
-       (.I0(\axi_rdata_reg[31]_1 [10]),
+       (.I0(\axi_rdata_reg[31]_0 [10]),
         .I1(H_BP_w[10]),
         .O(\V_Counter[31]_i_469_n_0 ));
   LUT5 #(
@@ -13300,37 +13374,37 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_470 
-       (.I0(\axi_rdata_reg[31]_1 [9]),
+       (.I0(\axi_rdata_reg[31]_0 [9]),
         .I1(H_BP_w[9]),
         .O(\V_Counter[31]_i_470_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_471 
-       (.I0(\axi_rdata_reg[31]_1 [8]),
+       (.I0(\axi_rdata_reg[31]_0 [8]),
         .I1(H_BP_w[8]),
         .O(\V_Counter[31]_i_471_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_472 
-       (.I0(\axi_rdata_reg[31]_1 [7]),
+       (.I0(\axi_rdata_reg[31]_0 [7]),
         .I1(H_BP_w[7]),
         .O(\V_Counter[31]_i_472_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_473 
-       (.I0(\axi_rdata_reg[31]_1 [6]),
+       (.I0(\axi_rdata_reg[31]_0 [6]),
         .I1(H_BP_w[6]),
         .O(\V_Counter[31]_i_473_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_474 
-       (.I0(\axi_rdata_reg[31]_1 [5]),
+       (.I0(\axi_rdata_reg[31]_0 [5]),
         .I1(H_BP_w[5]),
         .O(\V_Counter[31]_i_474_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_475 
-       (.I0(\axi_rdata_reg[31]_1 [4]),
+       (.I0(\axi_rdata_reg[31]_0 [4]),
         .I1(H_BP_w[4]),
         .O(\V_Counter[31]_i_475_n_0 ));
   LUT5 #(
@@ -13496,7 +13570,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[0]),
         .I3(\controller/V_Length3 [0]),
         .O(\V_Counter[31]_i_491_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_492 
@@ -13505,7 +13579,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[14]),
         .I3(\controller/V_Length3 [14]),
         .O(\V_Counter[31]_i_492_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_493 
@@ -13514,7 +13588,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[13]),
         .I3(\controller/V_Length3 [13]),
         .O(\V_Counter[31]_i_493_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_494 
@@ -13523,7 +13597,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[12]),
         .I3(\controller/V_Length3 [12]),
         .O(\V_Counter[31]_i_494_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_496 
@@ -13532,7 +13606,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[11]),
         .I3(\controller/V_Length3 [11]),
         .O(\V_Counter[31]_i_496_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair102" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_497 
@@ -13547,7 +13621,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[13]),
         .I1(V_FP_w[13]),
         .O(\V_Counter[31]_i_498_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair15" *) 
+  (* SOFT_HLUTNM = "soft_lutpair16" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_499 
@@ -13567,14 +13641,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I4(\controller/H_Length3 [28]),
         .I5(\V_Counter[31]_i_113_n_0 ),
         .O(\V_Counter[31]_i_50_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair102" *) 
+  (* SOFT_HLUTNM = "soft_lutpair101" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_500 
        (.I0(V_Range_w[14]),
         .I1(V_FP_w[14]),
         .O(\V_Counter[31]_i_500_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair104" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_501 
@@ -13589,7 +13663,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[12]),
         .I1(V_FP_w[12]),
         .O(\V_Counter[31]_i_502_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair16" *) 
+  (* SOFT_HLUTNM = "soft_lutpair17" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_503 
@@ -13599,14 +13673,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[14]),
         .I4(V_Range_w[14]),
         .O(\V_Counter[31]_i_503_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair74" *) 
+  (* SOFT_HLUTNM = "soft_lutpair102" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_504 
        (.I0(V_Range_w[13]),
         .I1(V_FP_w[13]),
         .O(\V_Counter[31]_i_504_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair105" *) 
+  (* SOFT_HLUTNM = "soft_lutpair104" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_505 
@@ -13621,7 +13695,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[11]),
         .I1(V_FP_w[11]),
         .O(\V_Counter[31]_i_506_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair17" *) 
+  (* SOFT_HLUTNM = "soft_lutpair18" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_507 
@@ -13631,14 +13705,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[13]),
         .I4(V_Range_w[13]),
         .O(\V_Counter[31]_i_507_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair104" *) 
+  (* SOFT_HLUTNM = "soft_lutpair76" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_508 
        (.I0(V_Range_w[12]),
         .I1(V_FP_w[12]),
         .O(\V_Counter[31]_i_508_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_509 
@@ -13663,7 +13737,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[10]),
         .I1(V_FP_w[10]),
         .O(\V_Counter[31]_i_510_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair18" *) 
+  (* SOFT_HLUTNM = "soft_lutpair19" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_511 
@@ -13673,14 +13747,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[12]),
         .I4(V_Range_w[12]),
         .O(\V_Counter[31]_i_511_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair105" *) 
+  (* SOFT_HLUTNM = "soft_lutpair104" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_512 
        (.I0(V_Range_w[11]),
         .I1(V_FP_w[11]),
         .O(\V_Counter[31]_i_512_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_513 
@@ -13689,7 +13763,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[10]),
         .I3(\controller/V_Length3 [10]),
         .O(\V_Counter[31]_i_513_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_514 
@@ -13698,7 +13772,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[9]),
         .I3(\controller/V_Length3 [9]),
         .O(\V_Counter[31]_i_514_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_515 
@@ -13707,7 +13781,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[8]),
         .I3(\controller/V_Length3 [8]),
         .O(\V_Counter[31]_i_515_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_517 
@@ -13716,7 +13790,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[7]),
         .I3(\controller/V_Length3 [7]),
         .O(\V_Counter[31]_i_517_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair107" *) 
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_518 
@@ -13740,7 +13814,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(\controller/H_Length3 [25]),
         .I4(H_LR_Border_w[25]),
         .O(\V_Counter[31]_i_52_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair19" *) 
+  (* SOFT_HLUTNM = "soft_lutpair20" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_520 
@@ -13750,14 +13824,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[11]),
         .I4(V_Range_w[11]),
         .O(\V_Counter[31]_i_520_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair77" *) 
+  (* SOFT_HLUTNM = "soft_lutpair105" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_521 
        (.I0(V_Range_w[10]),
         .I1(V_FP_w[10]),
         .O(\V_Counter[31]_i_521_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair108" *) 
+  (* SOFT_HLUTNM = "soft_lutpair107" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_522 
@@ -13772,7 +13846,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[8]),
         .I1(V_FP_w[8]),
         .O(\V_Counter[31]_i_523_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair20" *) 
+  (* SOFT_HLUTNM = "soft_lutpair21" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_524 
@@ -13782,14 +13856,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[10]),
         .I4(V_Range_w[10]),
         .O(\V_Counter[31]_i_524_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair107" *) 
+  (* SOFT_HLUTNM = "soft_lutpair79" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_525 
        (.I0(V_Range_w[9]),
         .I1(V_FP_w[9]),
         .O(\V_Counter[31]_i_525_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_526 
@@ -13804,7 +13878,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[7]),
         .I1(V_FP_w[7]),
         .O(\V_Counter[31]_i_527_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair21" *) 
+  (* SOFT_HLUTNM = "soft_lutpair22" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_528 
@@ -13814,7 +13888,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[9]),
         .I4(V_Range_w[9]),
         .O(\V_Counter[31]_i_528_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair108" *) 
+  (* SOFT_HLUTNM = "soft_lutpair107" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_529 
@@ -13830,7 +13904,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(\controller/H_Length3 [24]),
         .I4(H_LR_Border_w[24]),
         .O(\V_Counter[31]_i_53_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair110" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_530 
@@ -13845,7 +13919,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[6]),
         .I1(V_FP_w[6]),
         .O(\V_Counter[31]_i_531_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair22" *) 
+  (* SOFT_HLUTNM = "soft_lutpair23" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_532 
@@ -13855,7 +13929,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[8]),
         .I4(V_Range_w[8]),
         .O(\V_Counter[31]_i_532_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair80" *) 
+  (* SOFT_HLUTNM = "soft_lutpair108" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_533 
@@ -13922,28 +13996,28 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_542 
-       (.I0(\axi_rdata_reg[31]_1 [3]),
+       (.I0(\axi_rdata_reg[31]_0 [3]),
         .I1(H_BP_w[3]),
         .O(\V_Counter[31]_i_542_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_543 
-       (.I0(\axi_rdata_reg[31]_1 [2]),
+       (.I0(\axi_rdata_reg[31]_0 [2]),
         .I1(H_BP_w[2]),
         .O(\V_Counter[31]_i_543_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_544 
-       (.I0(\axi_rdata_reg[31]_1 [1]),
+       (.I0(\axi_rdata_reg[31]_0 [1]),
         .I1(H_BP_w[1]),
         .O(\V_Counter[31]_i_544_n_0 ));
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_545 
-       (.I0(\axi_rdata_reg[31]_1 [0]),
+       (.I0(\axi_rdata_reg[31]_0 [0]),
         .I1(H_BP_w[0]),
         .O(\V_Counter[31]_i_545_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_546 
@@ -13952,7 +14026,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[6]),
         .I3(\controller/V_Length3 [6]),
         .O(\V_Counter[31]_i_546_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_547 
@@ -13961,7 +14035,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[5]),
         .I3(\controller/V_Length3 [5]),
         .O(\V_Counter[31]_i_547_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_548 
@@ -13979,7 +14053,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(\controller/H_Length3 [22]),
         .I4(H_LR_Border_w[22]),
         .O(\V_Counter[31]_i_55_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_550 
@@ -13988,7 +14062,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(V_TB_Border_w[3]),
         .I3(\controller/V_Length3 [3]),
         .O(\V_Counter[31]_i_550_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  (* SOFT_HLUTNM = "soft_lutpair110" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_551 
@@ -14003,7 +14077,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[5]),
         .I1(V_FP_w[5]),
         .O(\V_Counter[31]_i_552_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair23" *) 
+  (* SOFT_HLUTNM = "soft_lutpair24" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_553 
@@ -14013,14 +14087,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[7]),
         .I4(V_Range_w[7]),
         .O(\V_Counter[31]_i_553_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair110" *) 
+  (* SOFT_HLUTNM = "soft_lutpair82" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_554 
        (.I0(V_Range_w[6]),
         .I1(V_FP_w[6]),
         .O(\V_Counter[31]_i_554_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_555 
@@ -14035,7 +14109,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[4]),
         .I1(V_FP_w[4]),
         .O(\V_Counter[31]_i_556_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair24" *) 
+  (* SOFT_HLUTNM = "soft_lutpair25" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_557 
@@ -14045,14 +14119,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[6]),
         .I4(V_Range_w[6]),
         .O(\V_Counter[31]_i_557_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair89" *) 
+  (* SOFT_HLUTNM = "soft_lutpair110" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_558 
        (.I0(V_Range_w[5]),
         .I1(V_FP_w[5]),
         .O(\V_Counter[31]_i_558_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT4 #(
     .INIT(16'hE88E)) 
     \V_Counter[31]_i_559 
@@ -14077,7 +14151,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[3]),
         .I1(V_FP_w[3]),
         .O(\V_Counter[31]_i_560_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair25" *) 
+  (* SOFT_HLUTNM = "soft_lutpair26" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_561 
@@ -14087,7 +14161,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[5]),
         .I4(V_Range_w[5]),
         .O(\V_Counter[31]_i_561_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair83" *) 
+  (* SOFT_HLUTNM = "soft_lutpair111" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_562 
@@ -14109,7 +14183,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(V_Range_w[2]),
         .I1(V_FP_w[2]),
         .O(\V_Counter[31]_i_564_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair26" *) 
+  (* SOFT_HLUTNM = "soft_lutpair27" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_565 
@@ -14119,7 +14193,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I3(V_FP_w[4]),
         .I4(V_Range_w[4]),
         .O(\V_Counter[31]_i_565_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair86" *) 
+  (* SOFT_HLUTNM = "soft_lutpair60" *) 
   LUT2 #(
     .INIT(4'h6)) 
     \V_Counter[31]_i_566 
@@ -14145,7 +14219,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I4(V_FP_w[1]),
         .I5(V_Range_w[1]),
         .O(\V_Counter[31]_i_568_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair27" *) 
+  (* SOFT_HLUTNM = "soft_lutpair28" *) 
   LUT5 #(
     .INIT(32'h69969669)) 
     \V_Counter[31]_i_569 
@@ -14415,7 +14489,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I4(\controller/H_Length3 [15]),
         .I5(\V_Counter[31]_i_224_n_0 ),
         .O(\V_Counter[31]_i_96_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair29" *) 
+  (* SOFT_HLUTNM = "soft_lutpair30" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_97 
@@ -14424,7 +14498,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I2(H_LR_Border_w[29]),
         .I3(\controller/H_Length3 [29]),
         .O(\V_Counter[31]_i_97_n_0 ));
-  (* SOFT_HLUTNM = "soft_lutpair30" *) 
+  (* SOFT_HLUTNM = "soft_lutpair31" *) 
   LUT4 #(
     .INIT(16'h9669)) 
     \V_Counter[31]_i_99 
@@ -14437,14 +14511,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.CI(\V_Counter_reg[31]_i_121_n_0 ),
         .CO({\V_Counter_reg[31]_i_100_n_0 ,\V_Counter_reg[31]_i_100_n_1 ,\V_Counter_reg[31]_i_100_n_2 ,\V_Counter_reg[31]_i_100_n_3 }),
         .CYINIT(1'b0),
-        .DI(\axi_rdata_reg[31]_1 [27:24]),
+        .DI(\axi_rdata_reg[31]_0 [27:24]),
         .O(\controller/H_Length3 [27:24]),
         .S({\V_Counter[31]_i_229_n_0 ,\V_Counter[31]_i_230_n_0 ,\V_Counter[31]_i_231_n_0 ,\V_Counter[31]_i_232_n_0 }));
   CARRY4 \V_Counter_reg[31]_i_121 
        (.CI(\V_Counter_reg[31]_i_186_n_0 ),
         .CO({\V_Counter_reg[31]_i_121_n_0 ,\V_Counter_reg[31]_i_121_n_1 ,\V_Counter_reg[31]_i_121_n_2 ,\V_Counter_reg[31]_i_121_n_3 }),
         .CYINIT(1'b0),
-        .DI(\axi_rdata_reg[31]_1 [23:20]),
+        .DI(\axi_rdata_reg[31]_0 [23:20]),
         .O(\controller/H_Length3 [23:20]),
         .S({\V_Counter[31]_i_233_n_0 ,\V_Counter[31]_i_234_n_0 ,\V_Counter[31]_i_235_n_0 ,\V_Counter[31]_i_236_n_0 }));
   CARRY4 \V_Counter_reg[31]_i_148 
@@ -14479,14 +14553,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.CI(\V_Counter_reg[31]_i_207_n_0 ),
         .CO({\V_Counter_reg[31]_i_186_n_0 ,\V_Counter_reg[31]_i_186_n_1 ,\V_Counter_reg[31]_i_186_n_2 ,\V_Counter_reg[31]_i_186_n_3 }),
         .CYINIT(1'b0),
-        .DI(\axi_rdata_reg[31]_1 [19:16]),
+        .DI(\axi_rdata_reg[31]_0 [19:16]),
         .O(\controller/H_Length3 [19:16]),
         .S({\V_Counter[31]_i_363_n_0 ,\V_Counter[31]_i_364_n_0 ,\V_Counter[31]_i_365_n_0 ,\V_Counter[31]_i_366_n_0 }));
   CARRY4 \V_Counter_reg[31]_i_207 
        (.CI(\V_Counter_reg[31]_i_324_n_0 ),
         .CO({\V_Counter_reg[31]_i_207_n_0 ,\V_Counter_reg[31]_i_207_n_1 ,\V_Counter_reg[31]_i_207_n_2 ,\V_Counter_reg[31]_i_207_n_3 }),
         .CYINIT(1'b0),
-        .DI(\axi_rdata_reg[31]_1 [15:12]),
+        .DI(\axi_rdata_reg[31]_0 [15:12]),
         .O(\controller/H_Length3 [15:12]),
         .S({\V_Counter[31]_i_367_n_0 ,\V_Counter[31]_i_368_n_0 ,\V_Counter[31]_i_369_n_0 ,\V_Counter[31]_i_370_n_0 }));
   CARRY4 \V_Counter_reg[31]_i_23 
@@ -14542,14 +14616,14 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.CI(\V_Counter_reg[31]_i_345_n_0 ),
         .CO({\V_Counter_reg[31]_i_324_n_0 ,\V_Counter_reg[31]_i_324_n_1 ,\V_Counter_reg[31]_i_324_n_2 ,\V_Counter_reg[31]_i_324_n_3 }),
         .CYINIT(1'b0),
-        .DI(\axi_rdata_reg[31]_1 [11:8]),
+        .DI(\axi_rdata_reg[31]_0 [11:8]),
         .O(\controller/H_Length3 [11:8]),
         .S({\V_Counter[31]_i_468_n_0 ,\V_Counter[31]_i_469_n_0 ,\V_Counter[31]_i_470_n_0 ,\V_Counter[31]_i_471_n_0 }));
   CARRY4 \V_Counter_reg[31]_i_345 
        (.CI(\V_Counter_reg[31]_i_446_n_0 ),
         .CO({\V_Counter_reg[31]_i_345_n_0 ,\V_Counter_reg[31]_i_345_n_1 ,\V_Counter_reg[31]_i_345_n_2 ,\V_Counter_reg[31]_i_345_n_3 }),
         .CYINIT(1'b0),
-        .DI(\axi_rdata_reg[31]_1 [7:4]),
+        .DI(\axi_rdata_reg[31]_0 [7:4]),
         .O(\controller/H_Length3 [7:4]),
         .S({\V_Counter[31]_i_472_n_0 ,\V_Counter[31]_i_473_n_0 ,\V_Counter[31]_i_474_n_0 ,\V_Counter[31]_i_475_n_0 }));
   CARRY4 \V_Counter_reg[31]_i_371 
@@ -14598,7 +14672,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.CI(1'b0),
         .CO({\V_Counter_reg[31]_i_446_n_0 ,\V_Counter_reg[31]_i_446_n_1 ,\V_Counter_reg[31]_i_446_n_2 ,\V_Counter_reg[31]_i_446_n_3 }),
         .CYINIT(1'b0),
-        .DI(\axi_rdata_reg[31]_1 [3:0]),
+        .DI(\axi_rdata_reg[31]_0 [3:0]),
         .O(\controller/H_Length3 [3:0]),
         .S({\V_Counter[31]_i_542_n_0 ,\V_Counter[31]_i_543_n_0 ,\V_Counter[31]_i_544_n_0 ,\V_Counter[31]_i_545_n_0 }));
   CARRY4 \V_Counter_reg[31]_i_495 
@@ -14654,7 +14728,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.CI(\V_Counter_reg[31]_i_100_n_0 ),
         .CO({\NLW_V_Counter_reg[31]_i_98_CO_UNCONNECTED [3],\V_Counter_reg[31]_i_98_n_1 ,\V_Counter_reg[31]_i_98_n_2 ,\V_Counter_reg[31]_i_98_n_3 }),
         .CYINIT(1'b0),
-        .DI({1'b0,\axi_rdata_reg[31]_1 [30:28]}),
+        .DI({1'b0,\axi_rdata_reg[31]_0 [30:28]}),
         .O(\controller/H_Length3 [31:28]),
         .S({\V_Counter[31]_i_225_n_0 ,\V_Counter[31]_i_226_n_0 ,\V_Counter[31]_i_227_n_0 ,\V_Counter[31]_i_228_n_0 }));
   LUT2 #(
@@ -15004,7 +15078,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I1(\V_Counter_reg[26] ),
         .I2(\V_Counter_reg[27] ),
         .I3(V_End[27]),
-        .O(DI[1]));
+        .O(V_InRange_reg[1]));
   LUT2 #(
     .INIT(4'h6)) 
     V_InRange_i_160
@@ -15080,7 +15154,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .I1(\V_Counter_reg[24] ),
         .I2(\V_Counter_reg[25] ),
         .I3(V_End[25]),
-        .O(DI[0]));
+        .O(V_InRange_reg[0]));
   LUT2 #(
     .INIT(4'h9)) 
     V_InRange_i_170
@@ -15417,7 +15491,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
         .S({V_InRange_i_157_n_0,V_InRange_i_158_n_0,V_InRange_i_159_n_0,V_InRange_i_160_n_0}));
   CARRY4 V_InRange_reg_i_13
        (.CI(V_InRange_reg_i_33_n_0),
-        .CO({V_InRange_reg,V_InRange_reg_i_13_n_1,V_InRange_reg_i_13_n_2,V_InRange_reg_i_13_n_3}),
+        .CO({V_InRange_reg_0,V_InRange_reg_i_13_n_1,V_InRange_reg_i_13_n_2,V_InRange_reg_i_13_n_3}),
         .CYINIT(1'b0),
         .DI({V_InRange_i_34_n_0,V_InRange_i_35_n_0,V_InRange_i_36_n_0,V_InRange_i_37_n_0}),
         .O(NLW_V_InRange_reg_i_13_O_UNCONNECTED[3:0]),
@@ -15626,7 +15700,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[0]),
         .I1(H_BP_w[0]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [0]),
+        .I3(\axi_rdata_reg[31]_0 [0]),
         .I4(sel0[0]),
         .I5(Disp_En_w),
         .O(\axi_rdata[0]_i_4_n_0 ));
@@ -15653,7 +15727,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[0]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [0]),
+       (.I0(\axi_rdata_reg[31]_1 [0]),
         .I1(\axi_rdata_reg[31]_2 [0]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [0]),
@@ -15666,7 +15740,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[10]),
         .I1(H_BP_w[10]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [10]),
+        .I3(\axi_rdata_reg[31]_0 [10]),
         .I4(sel0[0]),
         .I5(slv_reg0[10]),
         .O(\axi_rdata[10]_i_4_n_0 ));
@@ -15693,7 +15767,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[10]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [10]),
+       (.I0(\axi_rdata_reg[31]_1 [10]),
         .I1(\axi_rdata_reg[31]_2 [10]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [10]),
@@ -15706,7 +15780,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[11]),
         .I1(H_BP_w[11]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [11]),
+        .I3(\axi_rdata_reg[31]_0 [11]),
         .I4(sel0[0]),
         .I5(slv_reg0[11]),
         .O(\axi_rdata[11]_i_4_n_0 ));
@@ -15733,7 +15807,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[11]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [11]),
+       (.I0(\axi_rdata_reg[31]_1 [11]),
         .I1(\axi_rdata_reg[31]_2 [11]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [11]),
@@ -15746,7 +15820,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[12]),
         .I1(H_BP_w[12]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [12]),
+        .I3(\axi_rdata_reg[31]_0 [12]),
         .I4(sel0[0]),
         .I5(slv_reg0[12]),
         .O(\axi_rdata[12]_i_4_n_0 ));
@@ -15773,7 +15847,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[12]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [12]),
+       (.I0(\axi_rdata_reg[31]_1 [12]),
         .I1(\axi_rdata_reg[31]_2 [12]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [12]),
@@ -15786,7 +15860,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[13]),
         .I1(H_BP_w[13]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [13]),
+        .I3(\axi_rdata_reg[31]_0 [13]),
         .I4(sel0[0]),
         .I5(slv_reg0[13]),
         .O(\axi_rdata[13]_i_4_n_0 ));
@@ -15813,7 +15887,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[13]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [13]),
+       (.I0(\axi_rdata_reg[31]_1 [13]),
         .I1(\axi_rdata_reg[31]_2 [13]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [13]),
@@ -15826,7 +15900,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[14]),
         .I1(H_BP_w[14]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [14]),
+        .I3(\axi_rdata_reg[31]_0 [14]),
         .I4(sel0[0]),
         .I5(slv_reg0[14]),
         .O(\axi_rdata[14]_i_4_n_0 ));
@@ -15853,7 +15927,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[14]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [14]),
+       (.I0(\axi_rdata_reg[31]_1 [14]),
         .I1(\axi_rdata_reg[31]_2 [14]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [14]),
@@ -15866,7 +15940,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[15]),
         .I1(H_BP_w[15]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [15]),
+        .I3(\axi_rdata_reg[31]_0 [15]),
         .I4(sel0[0]),
         .I5(slv_reg0[15]),
         .O(\axi_rdata[15]_i_4_n_0 ));
@@ -15893,7 +15967,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[15]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [15]),
+       (.I0(\axi_rdata_reg[31]_1 [15]),
         .I1(\axi_rdata_reg[31]_2 [15]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [15]),
@@ -15906,7 +15980,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[16]),
         .I1(H_BP_w[16]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [16]),
+        .I3(\axi_rdata_reg[31]_0 [16]),
         .I4(sel0[0]),
         .I5(slv_reg0[16]),
         .O(\axi_rdata[16]_i_4_n_0 ));
@@ -15933,7 +16007,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[16]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [16]),
+       (.I0(\axi_rdata_reg[31]_1 [16]),
         .I1(\axi_rdata_reg[31]_2 [16]),
         .I2(sel0[1]),
         .I3(slv_reg13[16]),
@@ -15946,7 +16020,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[17]),
         .I1(H_BP_w[17]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [17]),
+        .I3(\axi_rdata_reg[31]_0 [17]),
         .I4(sel0[0]),
         .I5(slv_reg0[17]),
         .O(\axi_rdata[17]_i_4_n_0 ));
@@ -15973,7 +16047,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[17]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [17]),
+       (.I0(\axi_rdata_reg[31]_1 [17]),
         .I1(\axi_rdata_reg[31]_2 [17]),
         .I2(sel0[1]),
         .I3(slv_reg13[17]),
@@ -15986,7 +16060,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[18]),
         .I1(H_BP_w[18]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [18]),
+        .I3(\axi_rdata_reg[31]_0 [18]),
         .I4(sel0[0]),
         .I5(slv_reg0[18]),
         .O(\axi_rdata[18]_i_4_n_0 ));
@@ -16013,7 +16087,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[18]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [18]),
+       (.I0(\axi_rdata_reg[31]_1 [18]),
         .I1(\axi_rdata_reg[31]_2 [18]),
         .I2(sel0[1]),
         .I3(slv_reg13[18]),
@@ -16026,7 +16100,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[19]),
         .I1(H_BP_w[19]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [19]),
+        .I3(\axi_rdata_reg[31]_0 [19]),
         .I4(sel0[0]),
         .I5(slv_reg0[19]),
         .O(\axi_rdata[19]_i_4_n_0 ));
@@ -16053,7 +16127,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[19]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [19]),
+       (.I0(\axi_rdata_reg[31]_1 [19]),
         .I1(\axi_rdata_reg[31]_2 [19]),
         .I2(sel0[1]),
         .I3(slv_reg13[19]),
@@ -16066,7 +16140,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[1]),
         .I1(H_BP_w[1]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [1]),
+        .I3(\axi_rdata_reg[31]_0 [1]),
         .I4(sel0[0]),
         .I5(slv_reg0[1]),
         .O(\axi_rdata[1]_i_4_n_0 ));
@@ -16093,7 +16167,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[1]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [1]),
+       (.I0(\axi_rdata_reg[31]_1 [1]),
         .I1(\axi_rdata_reg[31]_2 [1]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [1]),
@@ -16106,7 +16180,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[20]),
         .I1(H_BP_w[20]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [20]),
+        .I3(\axi_rdata_reg[31]_0 [20]),
         .I4(sel0[0]),
         .I5(slv_reg0[20]),
         .O(\axi_rdata[20]_i_4_n_0 ));
@@ -16133,7 +16207,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[20]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [20]),
+       (.I0(\axi_rdata_reg[31]_1 [20]),
         .I1(\axi_rdata_reg[31]_2 [20]),
         .I2(sel0[1]),
         .I3(slv_reg13[20]),
@@ -16146,7 +16220,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[21]),
         .I1(H_BP_w[21]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [21]),
+        .I3(\axi_rdata_reg[31]_0 [21]),
         .I4(sel0[0]),
         .I5(slv_reg0[21]),
         .O(\axi_rdata[21]_i_4_n_0 ));
@@ -16173,7 +16247,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[21]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [21]),
+       (.I0(\axi_rdata_reg[31]_1 [21]),
         .I1(\axi_rdata_reg[31]_2 [21]),
         .I2(sel0[1]),
         .I3(slv_reg13[21]),
@@ -16186,7 +16260,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[22]),
         .I1(H_BP_w[22]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [22]),
+        .I3(\axi_rdata_reg[31]_0 [22]),
         .I4(sel0[0]),
         .I5(slv_reg0[22]),
         .O(\axi_rdata[22]_i_4_n_0 ));
@@ -16213,7 +16287,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[22]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [22]),
+       (.I0(\axi_rdata_reg[31]_1 [22]),
         .I1(\axi_rdata_reg[31]_2 [22]),
         .I2(sel0[1]),
         .I3(slv_reg13[22]),
@@ -16226,7 +16300,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[23]),
         .I1(H_BP_w[23]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [23]),
+        .I3(\axi_rdata_reg[31]_0 [23]),
         .I4(sel0[0]),
         .I5(slv_reg0[23]),
         .O(\axi_rdata[23]_i_4_n_0 ));
@@ -16253,7 +16327,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[23]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [23]),
+       (.I0(\axi_rdata_reg[31]_1 [23]),
         .I1(\axi_rdata_reg[31]_2 [23]),
         .I2(sel0[1]),
         .I3(slv_reg13[23]),
@@ -16266,7 +16340,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[24]),
         .I1(H_BP_w[24]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [24]),
+        .I3(\axi_rdata_reg[31]_0 [24]),
         .I4(sel0[0]),
         .I5(slv_reg0[24]),
         .O(\axi_rdata[24]_i_4_n_0 ));
@@ -16293,7 +16367,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[24]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [24]),
+       (.I0(\axi_rdata_reg[31]_1 [24]),
         .I1(\axi_rdata_reg[31]_2 [24]),
         .I2(sel0[1]),
         .I3(slv_reg13[24]),
@@ -16306,7 +16380,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[25]),
         .I1(H_BP_w[25]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [25]),
+        .I3(\axi_rdata_reg[31]_0 [25]),
         .I4(sel0[0]),
         .I5(slv_reg0[25]),
         .O(\axi_rdata[25]_i_4_n_0 ));
@@ -16333,7 +16407,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[25]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [25]),
+       (.I0(\axi_rdata_reg[31]_1 [25]),
         .I1(\axi_rdata_reg[31]_2 [25]),
         .I2(sel0[1]),
         .I3(slv_reg13[25]),
@@ -16346,7 +16420,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[26]),
         .I1(H_BP_w[26]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [26]),
+        .I3(\axi_rdata_reg[31]_0 [26]),
         .I4(sel0[0]),
         .I5(slv_reg0[26]),
         .O(\axi_rdata[26]_i_4_n_0 ));
@@ -16373,7 +16447,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[26]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [26]),
+       (.I0(\axi_rdata_reg[31]_1 [26]),
         .I1(\axi_rdata_reg[31]_2 [26]),
         .I2(sel0[1]),
         .I3(slv_reg13[26]),
@@ -16386,7 +16460,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[27]),
         .I1(H_BP_w[27]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [27]),
+        .I3(\axi_rdata_reg[31]_0 [27]),
         .I4(sel0[0]),
         .I5(slv_reg0[27]),
         .O(\axi_rdata[27]_i_4_n_0 ));
@@ -16413,7 +16487,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[27]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [27]),
+       (.I0(\axi_rdata_reg[31]_1 [27]),
         .I1(\axi_rdata_reg[31]_2 [27]),
         .I2(sel0[1]),
         .I3(slv_reg13[27]),
@@ -16426,7 +16500,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[28]),
         .I1(H_BP_w[28]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [28]),
+        .I3(\axi_rdata_reg[31]_0 [28]),
         .I4(sel0[0]),
         .I5(slv_reg0[28]),
         .O(\axi_rdata[28]_i_4_n_0 ));
@@ -16453,7 +16527,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[28]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [28]),
+       (.I0(\axi_rdata_reg[31]_1 [28]),
         .I1(\axi_rdata_reg[31]_2 [28]),
         .I2(sel0[1]),
         .I3(slv_reg13[28]),
@@ -16466,7 +16540,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[29]),
         .I1(H_BP_w[29]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [29]),
+        .I3(\axi_rdata_reg[31]_0 [29]),
         .I4(sel0[0]),
         .I5(slv_reg0[29]),
         .O(\axi_rdata[29]_i_4_n_0 ));
@@ -16493,7 +16567,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[29]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [29]),
+       (.I0(\axi_rdata_reg[31]_1 [29]),
         .I1(\axi_rdata_reg[31]_2 [29]),
         .I2(sel0[1]),
         .I3(slv_reg13[29]),
@@ -16506,7 +16580,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[2]),
         .I1(H_BP_w[2]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [2]),
+        .I3(\axi_rdata_reg[31]_0 [2]),
         .I4(sel0[0]),
         .I5(slv_reg0[2]),
         .O(\axi_rdata[2]_i_4_n_0 ));
@@ -16533,7 +16607,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[2]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [2]),
+       (.I0(\axi_rdata_reg[31]_1 [2]),
         .I1(\axi_rdata_reg[31]_2 [2]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [2]),
@@ -16546,7 +16620,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[30]),
         .I1(H_BP_w[30]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [30]),
+        .I3(\axi_rdata_reg[31]_0 [30]),
         .I4(sel0[0]),
         .I5(slv_reg0[30]),
         .O(\axi_rdata[30]_i_4_n_0 ));
@@ -16573,7 +16647,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[30]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [30]),
+       (.I0(\axi_rdata_reg[31]_1 [30]),
         .I1(\axi_rdata_reg[31]_2 [30]),
         .I2(sel0[1]),
         .I3(slv_reg13[30]),
@@ -16586,7 +16660,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[31]),
         .I1(H_BP_w[31]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [31]),
+        .I3(\axi_rdata_reg[31]_0 [31]),
         .I4(sel0[0]),
         .I5(slv_reg0[31]),
         .O(\axi_rdata[31]_i_5_n_0 ));
@@ -16613,7 +16687,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[31]_i_8 
-       (.I0(\axi_rdata_reg[31]_0 [31]),
+       (.I0(\axi_rdata_reg[31]_1 [31]),
         .I1(\axi_rdata_reg[31]_2 [31]),
         .I2(sel0[1]),
         .I3(slv_reg13[31]),
@@ -16626,7 +16700,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[3]),
         .I1(H_BP_w[3]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [3]),
+        .I3(\axi_rdata_reg[31]_0 [3]),
         .I4(sel0[0]),
         .I5(slv_reg0[3]),
         .O(\axi_rdata[3]_i_4_n_0 ));
@@ -16653,7 +16727,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[3]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [3]),
+       (.I0(\axi_rdata_reg[31]_1 [3]),
         .I1(\axi_rdata_reg[31]_2 [3]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [3]),
@@ -16666,7 +16740,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[4]),
         .I1(H_BP_w[4]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [4]),
+        .I3(\axi_rdata_reg[31]_0 [4]),
         .I4(sel0[0]),
         .I5(slv_reg0[4]),
         .O(\axi_rdata[4]_i_4_n_0 ));
@@ -16693,7 +16767,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[4]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [4]),
+       (.I0(\axi_rdata_reg[31]_1 [4]),
         .I1(\axi_rdata_reg[31]_2 [4]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [4]),
@@ -16706,7 +16780,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[5]),
         .I1(H_BP_w[5]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [5]),
+        .I3(\axi_rdata_reg[31]_0 [5]),
         .I4(sel0[0]),
         .I5(slv_reg0[5]),
         .O(\axi_rdata[5]_i_4_n_0 ));
@@ -16733,7 +16807,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[5]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [5]),
+       (.I0(\axi_rdata_reg[31]_1 [5]),
         .I1(\axi_rdata_reg[31]_2 [5]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [5]),
@@ -16746,7 +16820,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[6]),
         .I1(H_BP_w[6]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [6]),
+        .I3(\axi_rdata_reg[31]_0 [6]),
         .I4(sel0[0]),
         .I5(slv_reg0[6]),
         .O(\axi_rdata[6]_i_4_n_0 ));
@@ -16773,7 +16847,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[6]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [6]),
+       (.I0(\axi_rdata_reg[31]_1 [6]),
         .I1(\axi_rdata_reg[31]_2 [6]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [6]),
@@ -16786,7 +16860,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[7]),
         .I1(H_BP_w[7]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [7]),
+        .I3(\axi_rdata_reg[31]_0 [7]),
         .I4(sel0[0]),
         .I5(slv_reg0[7]),
         .O(\axi_rdata[7]_i_4_n_0 ));
@@ -16813,7 +16887,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[7]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [7]),
+       (.I0(\axi_rdata_reg[31]_1 [7]),
         .I1(\axi_rdata_reg[31]_2 [7]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [7]),
@@ -16826,7 +16900,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[8]),
         .I1(H_BP_w[8]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [8]),
+        .I3(\axi_rdata_reg[31]_0 [8]),
         .I4(sel0[0]),
         .I5(slv_reg0[8]),
         .O(\axi_rdata[8]_i_4_n_0 ));
@@ -16853,7 +16927,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[8]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [8]),
+       (.I0(\axi_rdata_reg[31]_1 [8]),
         .I1(\axi_rdata_reg[31]_2 [8]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [8]),
@@ -16866,7 +16940,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.I0(H_FP_w[9]),
         .I1(H_BP_w[9]),
         .I2(sel0[1]),
-        .I3(\axi_rdata_reg[31]_1 [9]),
+        .I3(\axi_rdata_reg[31]_0 [9]),
         .I4(sel0[0]),
         .I5(slv_reg0[9]),
         .O(\axi_rdata[9]_i_4_n_0 ));
@@ -16893,7 +16967,7 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
   LUT6 #(
     .INIT(64'hAFA0CFCFAFA0C0C0)) 
     \axi_rdata[9]_i_7 
-       (.I0(\axi_rdata_reg[31]_0 [9]),
+       (.I0(\axi_rdata_reg[31]_1 [9]),
         .I1(\axi_rdata_reg[31]_2 [9]),
         .I2(sel0[1]),
         .I3(\VGA_G_reg[5]_0 [9]),
@@ -19036,193 +19110,193 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.C(s_axi_aclk),
         .CE(\slv_reg15[7]_i_1_n_0 ),
         .D(s_axi_wdata[0]),
-        .Q(\axi_rdata_reg[31]_0 [0]),
+        .Q(\axi_rdata_reg[31]_1 [0]),
         .R(SR));
   FDRE \slv_reg15_reg[10] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[15]_i_1_n_0 ),
         .D(s_axi_wdata[10]),
-        .Q(\axi_rdata_reg[31]_0 [10]),
+        .Q(\axi_rdata_reg[31]_1 [10]),
         .R(SR));
   FDRE \slv_reg15_reg[11] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[15]_i_1_n_0 ),
         .D(s_axi_wdata[11]),
-        .Q(\axi_rdata_reg[31]_0 [11]),
+        .Q(\axi_rdata_reg[31]_1 [11]),
         .R(SR));
   FDRE \slv_reg15_reg[12] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[15]_i_1_n_0 ),
         .D(s_axi_wdata[12]),
-        .Q(\axi_rdata_reg[31]_0 [12]),
+        .Q(\axi_rdata_reg[31]_1 [12]),
         .R(SR));
   FDRE \slv_reg15_reg[13] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[15]_i_1_n_0 ),
         .D(s_axi_wdata[13]),
-        .Q(\axi_rdata_reg[31]_0 [13]),
+        .Q(\axi_rdata_reg[31]_1 [13]),
         .R(SR));
   FDRE \slv_reg15_reg[14] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[15]_i_1_n_0 ),
         .D(s_axi_wdata[14]),
-        .Q(\axi_rdata_reg[31]_0 [14]),
+        .Q(\axi_rdata_reg[31]_1 [14]),
         .R(SR));
   FDRE \slv_reg15_reg[15] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[15]_i_1_n_0 ),
         .D(s_axi_wdata[15]),
-        .Q(\axi_rdata_reg[31]_0 [15]),
+        .Q(\axi_rdata_reg[31]_1 [15]),
         .R(SR));
   FDRE \slv_reg15_reg[16] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[23]_i_1_n_0 ),
         .D(s_axi_wdata[16]),
-        .Q(\axi_rdata_reg[31]_0 [16]),
+        .Q(\axi_rdata_reg[31]_1 [16]),
         .R(SR));
   FDRE \slv_reg15_reg[17] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[23]_i_1_n_0 ),
         .D(s_axi_wdata[17]),
-        .Q(\axi_rdata_reg[31]_0 [17]),
+        .Q(\axi_rdata_reg[31]_1 [17]),
         .R(SR));
   FDRE \slv_reg15_reg[18] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[23]_i_1_n_0 ),
         .D(s_axi_wdata[18]),
-        .Q(\axi_rdata_reg[31]_0 [18]),
+        .Q(\axi_rdata_reg[31]_1 [18]),
         .R(SR));
   FDRE \slv_reg15_reg[19] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[23]_i_1_n_0 ),
         .D(s_axi_wdata[19]),
-        .Q(\axi_rdata_reg[31]_0 [19]),
+        .Q(\axi_rdata_reg[31]_1 [19]),
         .R(SR));
   FDRE \slv_reg15_reg[1] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[7]_i_1_n_0 ),
         .D(s_axi_wdata[1]),
-        .Q(\axi_rdata_reg[31]_0 [1]),
+        .Q(\axi_rdata_reg[31]_1 [1]),
         .R(SR));
   FDRE \slv_reg15_reg[20] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[23]_i_1_n_0 ),
         .D(s_axi_wdata[20]),
-        .Q(\axi_rdata_reg[31]_0 [20]),
+        .Q(\axi_rdata_reg[31]_1 [20]),
         .R(SR));
   FDRE \slv_reg15_reg[21] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[23]_i_1_n_0 ),
         .D(s_axi_wdata[21]),
-        .Q(\axi_rdata_reg[31]_0 [21]),
+        .Q(\axi_rdata_reg[31]_1 [21]),
         .R(SR));
   FDRE \slv_reg15_reg[22] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[23]_i_1_n_0 ),
         .D(s_axi_wdata[22]),
-        .Q(\axi_rdata_reg[31]_0 [22]),
+        .Q(\axi_rdata_reg[31]_1 [22]),
         .R(SR));
   FDRE \slv_reg15_reg[23] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[23]_i_1_n_0 ),
         .D(s_axi_wdata[23]),
-        .Q(\axi_rdata_reg[31]_0 [23]),
+        .Q(\axi_rdata_reg[31]_1 [23]),
         .R(SR));
   FDRE \slv_reg15_reg[24] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[31]_i_1_n_0 ),
         .D(s_axi_wdata[24]),
-        .Q(\axi_rdata_reg[31]_0 [24]),
+        .Q(\axi_rdata_reg[31]_1 [24]),
         .R(SR));
   FDRE \slv_reg15_reg[25] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[31]_i_1_n_0 ),
         .D(s_axi_wdata[25]),
-        .Q(\axi_rdata_reg[31]_0 [25]),
+        .Q(\axi_rdata_reg[31]_1 [25]),
         .R(SR));
   FDRE \slv_reg15_reg[26] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[31]_i_1_n_0 ),
         .D(s_axi_wdata[26]),
-        .Q(\axi_rdata_reg[31]_0 [26]),
+        .Q(\axi_rdata_reg[31]_1 [26]),
         .R(SR));
   FDRE \slv_reg15_reg[27] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[31]_i_1_n_0 ),
         .D(s_axi_wdata[27]),
-        .Q(\axi_rdata_reg[31]_0 [27]),
+        .Q(\axi_rdata_reg[31]_1 [27]),
         .R(SR));
   FDRE \slv_reg15_reg[28] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[31]_i_1_n_0 ),
         .D(s_axi_wdata[28]),
-        .Q(\axi_rdata_reg[31]_0 [28]),
+        .Q(\axi_rdata_reg[31]_1 [28]),
         .R(SR));
   FDRE \slv_reg15_reg[29] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[31]_i_1_n_0 ),
         .D(s_axi_wdata[29]),
-        .Q(\axi_rdata_reg[31]_0 [29]),
+        .Q(\axi_rdata_reg[31]_1 [29]),
         .R(SR));
   FDRE \slv_reg15_reg[2] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[7]_i_1_n_0 ),
         .D(s_axi_wdata[2]),
-        .Q(\axi_rdata_reg[31]_0 [2]),
+        .Q(\axi_rdata_reg[31]_1 [2]),
         .R(SR));
   FDRE \slv_reg15_reg[30] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[31]_i_1_n_0 ),
         .D(s_axi_wdata[30]),
-        .Q(\axi_rdata_reg[31]_0 [30]),
+        .Q(\axi_rdata_reg[31]_1 [30]),
         .R(SR));
   FDRE \slv_reg15_reg[31] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[31]_i_1_n_0 ),
         .D(s_axi_wdata[31]),
-        .Q(\axi_rdata_reg[31]_0 [31]),
+        .Q(\axi_rdata_reg[31]_1 [31]),
         .R(SR));
   FDRE \slv_reg15_reg[3] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[7]_i_1_n_0 ),
         .D(s_axi_wdata[3]),
-        .Q(\axi_rdata_reg[31]_0 [3]),
+        .Q(\axi_rdata_reg[31]_1 [3]),
         .R(SR));
   FDRE \slv_reg15_reg[4] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[7]_i_1_n_0 ),
         .D(s_axi_wdata[4]),
-        .Q(\axi_rdata_reg[31]_0 [4]),
+        .Q(\axi_rdata_reg[31]_1 [4]),
         .R(SR));
   FDRE \slv_reg15_reg[5] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[7]_i_1_n_0 ),
         .D(s_axi_wdata[5]),
-        .Q(\axi_rdata_reg[31]_0 [5]),
+        .Q(\axi_rdata_reg[31]_1 [5]),
         .R(SR));
   FDRE \slv_reg15_reg[6] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[7]_i_1_n_0 ),
         .D(s_axi_wdata[6]),
-        .Q(\axi_rdata_reg[31]_0 [6]),
+        .Q(\axi_rdata_reg[31]_1 [6]),
         .R(SR));
   FDRE \slv_reg15_reg[7] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[7]_i_1_n_0 ),
         .D(s_axi_wdata[7]),
-        .Q(\axi_rdata_reg[31]_0 [7]),
+        .Q(\axi_rdata_reg[31]_1 [7]),
         .R(SR));
   FDRE \slv_reg15_reg[8] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[15]_i_1_n_0 ),
         .D(s_axi_wdata[8]),
-        .Q(\axi_rdata_reg[31]_0 [8]),
+        .Q(\axi_rdata_reg[31]_1 [8]),
         .R(SR));
   FDRE \slv_reg15_reg[9] 
        (.C(s_axi_aclk),
         .CE(\slv_reg15[15]_i_1_n_0 ),
         .D(s_axi_wdata[9]),
-        .Q(\axi_rdata_reg[31]_0 [9]),
+        .Q(\axi_rdata_reg[31]_1 [9]),
         .R(SR));
   LUT6 #(
     .INIT(64'h0000000000020000)) 
@@ -19268,193 +19342,193 @@ module System_Zybo_VGA_CharROM_0_1_Zybo_VGA_CharROM_v1_0_S_AXI
        (.C(s_axi_aclk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(s_axi_wdata[0]),
-        .Q(\axi_rdata_reg[31]_1 [0]),
+        .Q(\axi_rdata_reg[31]_0 [0]),
         .R(SR));
   FDRE \slv_reg1_reg[10] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(s_axi_wdata[10]),
-        .Q(\axi_rdata_reg[31]_1 [10]),
+        .Q(\axi_rdata_reg[31]_0 [10]),
         .R(SR));
   FDRE \slv_reg1_reg[11] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(s_axi_wdata[11]),
-        .Q(\axi_rdata_reg[31]_1 [11]),
+        .Q(\axi_rdata_reg[31]_0 [11]),
         .R(SR));
   FDRE \slv_reg1_reg[12] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(s_axi_wdata[12]),
-        .Q(\axi_rdata_reg[31]_1 [12]),
+        .Q(\axi_rdata_reg[31]_0 [12]),
         .R(SR));
   FDRE \slv_reg1_reg[13] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(s_axi_wdata[13]),
-        .Q(\axi_rdata_reg[31]_1 [13]),
+        .Q(\axi_rdata_reg[31]_0 [13]),
         .R(SR));
   FDRE \slv_reg1_reg[14] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(s_axi_wdata[14]),
-        .Q(\axi_rdata_reg[31]_1 [14]),
+        .Q(\axi_rdata_reg[31]_0 [14]),
         .R(SR));
   FDRE \slv_reg1_reg[15] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(s_axi_wdata[15]),
-        .Q(\axi_rdata_reg[31]_1 [15]),
+        .Q(\axi_rdata_reg[31]_0 [15]),
         .R(SR));
   FDRE \slv_reg1_reg[16] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(s_axi_wdata[16]),
-        .Q(\axi_rdata_reg[31]_1 [16]),
+        .Q(\axi_rdata_reg[31]_0 [16]),
         .R(SR));
   FDRE \slv_reg1_reg[17] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(s_axi_wdata[17]),
-        .Q(\axi_rdata_reg[31]_1 [17]),
+        .Q(\axi_rdata_reg[31]_0 [17]),
         .R(SR));
   FDRE \slv_reg1_reg[18] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(s_axi_wdata[18]),
-        .Q(\axi_rdata_reg[31]_1 [18]),
+        .Q(\axi_rdata_reg[31]_0 [18]),
         .R(SR));
   FDRE \slv_reg1_reg[19] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(s_axi_wdata[19]),
-        .Q(\axi_rdata_reg[31]_1 [19]),
+        .Q(\axi_rdata_reg[31]_0 [19]),
         .R(SR));
   FDRE \slv_reg1_reg[1] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(s_axi_wdata[1]),
-        .Q(\axi_rdata_reg[31]_1 [1]),
+        .Q(\axi_rdata_reg[31]_0 [1]),
         .R(SR));
   FDRE \slv_reg1_reg[20] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(s_axi_wdata[20]),
-        .Q(\axi_rdata_reg[31]_1 [20]),
+        .Q(\axi_rdata_reg[31]_0 [20]),
         .R(SR));
   FDRE \slv_reg1_reg[21] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(s_axi_wdata[21]),
-        .Q(\axi_rdata_reg[31]_1 [21]),
+        .Q(\axi_rdata_reg[31]_0 [21]),
         .R(SR));
   FDRE \slv_reg1_reg[22] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(s_axi_wdata[22]),
-        .Q(\axi_rdata_reg[31]_1 [22]),
+        .Q(\axi_rdata_reg[31]_0 [22]),
         .R(SR));
   FDRE \slv_reg1_reg[23] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[23]_i_1_n_0 ),
         .D(s_axi_wdata[23]),
-        .Q(\axi_rdata_reg[31]_1 [23]),
+        .Q(\axi_rdata_reg[31]_0 [23]),
         .R(SR));
   FDRE \slv_reg1_reg[24] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(s_axi_wdata[24]),
-        .Q(\axi_rdata_reg[31]_1 [24]),
+        .Q(\axi_rdata_reg[31]_0 [24]),
         .R(SR));
   FDRE \slv_reg1_reg[25] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(s_axi_wdata[25]),
-        .Q(\axi_rdata_reg[31]_1 [25]),
+        .Q(\axi_rdata_reg[31]_0 [25]),
         .R(SR));
   FDRE \slv_reg1_reg[26] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(s_axi_wdata[26]),
-        .Q(\axi_rdata_reg[31]_1 [26]),
+        .Q(\axi_rdata_reg[31]_0 [26]),
         .R(SR));
   FDRE \slv_reg1_reg[27] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(s_axi_wdata[27]),
-        .Q(\axi_rdata_reg[31]_1 [27]),
+        .Q(\axi_rdata_reg[31]_0 [27]),
         .R(SR));
   FDRE \slv_reg1_reg[28] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(s_axi_wdata[28]),
-        .Q(\axi_rdata_reg[31]_1 [28]),
+        .Q(\axi_rdata_reg[31]_0 [28]),
         .R(SR));
   FDRE \slv_reg1_reg[29] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(s_axi_wdata[29]),
-        .Q(\axi_rdata_reg[31]_1 [29]),
+        .Q(\axi_rdata_reg[31]_0 [29]),
         .R(SR));
   FDRE \slv_reg1_reg[2] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(s_axi_wdata[2]),
-        .Q(\axi_rdata_reg[31]_1 [2]),
+        .Q(\axi_rdata_reg[31]_0 [2]),
         .R(SR));
   FDRE \slv_reg1_reg[30] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(s_axi_wdata[30]),
-        .Q(\axi_rdata_reg[31]_1 [30]),
+        .Q(\axi_rdata_reg[31]_0 [30]),
         .R(SR));
   FDRE \slv_reg1_reg[31] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[31]_i_1_n_0 ),
         .D(s_axi_wdata[31]),
-        .Q(\axi_rdata_reg[31]_1 [31]),
+        .Q(\axi_rdata_reg[31]_0 [31]),
         .R(SR));
   FDRE \slv_reg1_reg[3] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(s_axi_wdata[3]),
-        .Q(\axi_rdata_reg[31]_1 [3]),
+        .Q(\axi_rdata_reg[31]_0 [3]),
         .R(SR));
   FDRE \slv_reg1_reg[4] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(s_axi_wdata[4]),
-        .Q(\axi_rdata_reg[31]_1 [4]),
+        .Q(\axi_rdata_reg[31]_0 [4]),
         .R(SR));
   FDRE \slv_reg1_reg[5] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(s_axi_wdata[5]),
-        .Q(\axi_rdata_reg[31]_1 [5]),
+        .Q(\axi_rdata_reg[31]_0 [5]),
         .R(SR));
   FDRE \slv_reg1_reg[6] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(s_axi_wdata[6]),
-        .Q(\axi_rdata_reg[31]_1 [6]),
+        .Q(\axi_rdata_reg[31]_0 [6]),
         .R(SR));
   FDRE \slv_reg1_reg[7] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[7]_i_1_n_0 ),
         .D(s_axi_wdata[7]),
-        .Q(\axi_rdata_reg[31]_1 [7]),
+        .Q(\axi_rdata_reg[31]_0 [7]),
         .R(SR));
   FDRE \slv_reg1_reg[8] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(s_axi_wdata[8]),
-        .Q(\axi_rdata_reg[31]_1 [8]),
+        .Q(\axi_rdata_reg[31]_0 [8]),
         .R(SR));
   FDRE \slv_reg1_reg[9] 
        (.C(s_axi_aclk),
         .CE(\slv_reg1[15]_i_1_n_0 ),
         .D(s_axi_wdata[9]),
-        .Q(\axi_rdata_reg[31]_1 [9]),
+        .Q(\axi_rdata_reg[31]_0 [9]),
         .R(SR));
   LUT6 #(
     .INIT(64'h0000000000020000)) 

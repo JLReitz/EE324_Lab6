@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2017.3.1 (win64) Build 2035080 Fri Oct 20 14:20:01 MDT 2017
-| Date             : Thu Nov 30 16:49:26 2017
+| Date             : Fri Dec  1 08:55:07 2017
 | Host             : Jensen-Surface running 64-bit major release  (build 9200)
 | Command          : report_power -file System_wrapper_power_routed.rpt -pb System_wrapper_power_summary_routed.pb -rpx System_wrapper_power_routed.rpx
 | Design           : System_wrapper
@@ -30,7 +30,7 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 1.805        |
+| Total On-Chip Power (W)  | 1.806        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
 | Dynamic (W)              | 1.680        |
@@ -53,21 +53,21 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.005 |        6 |       --- |             --- |
-| Slice Logic              |     0.001 |     4964 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |     1532 |     17600 |            8.70 |
+| Slice Logic              |     0.001 |     4967 |       --- |             --- |
+|   LUT as Logic           |    <0.001 |     1529 |     17600 |            8.69 |
 |   LUT as Distributed RAM |    <0.001 |      128 |      6000 |            2.13 |
 |   Register               |    <0.001 |     1985 |     35200 |            5.64 |
 |   CARRY4                 |    <0.001 |      165 |      4400 |            3.75 |
 |   F7/F8 Muxes            |    <0.001 |       98 |     17600 |            0.56 |
 |   LUT as Shift Register  |    <0.001 |       61 |      6000 |            1.02 |
 |   Others                 |     0.000 |      295 |       --- |             --- |
-| Signals                  |     0.002 |     3627 |       --- |             --- |
+| Signals                  |     0.002 |     3616 |       --- |             --- |
 | Block RAM                |    <0.001 |        1 |        60 |            1.67 |
 | MMCM                     |     0.115 |        1 |         2 |           50.00 |
 | I/O                      |    <0.001 |       19 |       100 |           19.00 |
 | PS7                      |     1.556 |        1 |       --- |             --- |
 | Static Power             |     0.126 |          |           |                 |
-| Total                    |     1.805 |          |           |                 |
+| Total                    |     1.806 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -77,7 +77,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) |
 +-----------+-------------+-----------+-------------+------------+
-| Vccint    |       1.000 |     0.016 |       0.008 |      0.007 |
+| Vccint    |       1.000 |     0.016 |       0.009 |      0.007 |
 | Vccaux    |       1.800 |     0.072 |       0.064 |      0.008 |
 | Vcco33    |       3.300 |     0.001 |       0.000 |      0.001 |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |

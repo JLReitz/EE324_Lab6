@@ -1,7 +1,7 @@
 Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2017.3.1 (win64) Build 2035080 Fri Oct 20 14:20:01 MDT 2017
-| Date         : Thu Nov 30 16:46:29 2017
+| Date         : Fri Dec  1 08:51:23 2017
 | Host         : Jensen-Surface running 64-bit major release  (build 9200)
 | Command      : report_utilization -file System_Zybo_VGA_CharROM_0_1_utilization_synth.rpt -pb System_Zybo_VGA_CharROM_0_1_utilization_synth.pb
 | Design       : System_Zybo_VGA_CharROM_0_1
@@ -30,8 +30,8 @@ Table of Contents
 +-------------------------+------+-------+-----------+-------+
 |        Site Type        | Used | Fixed | Available | Util% |
 +-------------------------+------+-------+-----------+-------+
-| Slice LUTs*             | 1016 |     0 |     17600 |  5.77 |
-|   LUT as Logic          | 1016 |     0 |     17600 |  5.77 |
+| Slice LUTs*             | 1019 |     0 |     17600 |  5.79 |
+|   LUT as Logic          | 1019 |     0 |     17600 |  5.79 |
 |   LUT as Memory         |    0 |     0 |      6000 |  0.00 |
 | Slice Registers         |  658 |     0 |     35200 |  1.87 |
 |   Register as Flip Flop |  658 |     0 |     35200 |  1.87 |
@@ -56,8 +56,8 @@ Table of Contents
 | 0     |          Yes |           - |            - |
 | 0     |          Yes |           - |          Set |
 | 0     |          Yes |           - |        Reset |
-| 1     |          Yes |         Set |            - |
-| 657   |          Yes |       Reset |            - |
+| 5     |          Yes |         Set |            - |
+| 653   |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -147,7 +147,7 @@ Table of Contents
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| FDRE     |  657 |        Flop & Latch |
+| FDRE     |  653 |        Flop & Latch |
 | LUT4     |  568 |                 LUT |
 | LUT2     |  379 |                 LUT |
 | LUT6     |  297 |                 LUT |
@@ -156,9 +156,9 @@ Table of Contents
 | MUXF7    |   66 |               MuxFx |
 | LUT3     |   35 |                 LUT |
 | MUXF8    |   32 |               MuxFx |
-| LUT1     |    9 |                 LUT |
+| LUT1     |   12 |                 LUT |
+| FDSE     |    5 |        Flop & Latch |
 | RAMB36E1 |    1 |        Block Memory |
-| FDSE     |    1 |        Flop & Latch |
 +----------+------+---------------------+
 
 

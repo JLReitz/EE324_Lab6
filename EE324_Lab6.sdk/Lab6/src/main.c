@@ -48,6 +48,18 @@ void setConfig()
 	writeValue((u32 *)VGA_V_TB, (u32)0);
 }
 
+void setCharLocation(u32 x_Location, u32 y_Location)
+{
+	//Modify the X and Y locations to place the character in the displayable region
+	writeValue((u32 *)Char_XLoc, (x_Location+144));
+	writeValue((u32 *)Char_YLoc, (y_Location+35));
+}
+
+void setCharValue(u32 value)
+{
+	writeValue((u32 *)Display_Char, value);
+}
+
 void setColor_Black(u32 * colorAddr)
 {
 	writeValue(colorAddr, (u32)0x00000000);
@@ -73,7 +85,118 @@ void setColor_Green(u32 * colorAddr)
 	writeValue(colorAddr, (u32)0x0000FE00);
 }
 
+int msleep(u32 msec)
+{
+    volatile u32 i = 0;
+
+    for(i = 0; i < msec * 1000000; i++);
+}
+
 int main(void)
 {
+	writeValue((u32 *)VGA_Disp_En, 0);
 
+	setConfig();
+
+	setCharValue((u32)' ');
+	setCharLocation(0, 0);
+
+	setColor_White((u32 *)VGA_Back_Color);
+	setColor_Black((u32 *)VGA_Font_Color);
+
+	writeValue((u32 *)VGA_Disp_En, 1);
+
+	volatile int j = 0, k = 0;
+	volatile char c = '\0';
+
+	while(1)
+	{
+		//Black screen for a second
+		setColor_Black((u32 *)VGA_Back_Color);
+		setColor_Black((u32 *)VGA_Font_Color);
+		msleep(100);
+		setColor_White((u32 *)VGA_Back_Color);
+
+		//Display lowercase
+		j = 10;
+		k = 0;
+		setColor_Blue((u32 *)VGA_Font_Color);
+		for(c='a'; c<='z'; c++)
+		{
+			setCharValue((u32)c);
+			setCharLocation(j, k);
+
+			j += 24;
+
+			msleep(50);
+		}
+
+		//Display uppercase
+		j = 10;
+		k = 20;
+		setColor_Red((u32 *)VGA_Font_Color);
+		for(c='A'; c<='Z'; c++)
+		{
+			setCharValue((u32)c);
+			setCharLocation(j, k);
+
+			j += 24;
+
+			msleep(50);
+		}
+
+		//Display numbers and special characters
+		j = 10;
+		k = 40;
+		setColor_Green((u32 *)VGA_Font_Color);
+		for(c='0'; c<='9'; c++)
+		{
+			setCharValue((u32)c);
+			setCharLocation(j, k);
+
+			j += 15;
+
+			msleep(50);
+		}
+
+		for(c='!'; c<='/'; c++)
+		{
+			setCharValue((u32)c);
+			setCharLocation(j, k);
+
+			j += 10;
+
+			msleep(50);
+		}
+
+		for(c=':'; c<='@'; c++)
+		{
+			setCharValue((u32)c);
+			setCharLocation(j, k);
+
+			j += 10;
+
+			msleep(50);
+		}
+
+		for(c='['; c<='`'; c++)
+		{
+			setCharValue((u32)c);
+			setCharLocation(j, k);
+
+			j += 10;
+
+			msleep(50);
+		}
+
+		for(c='{'; c<='~'; c++)
+		{
+			setCharValue((u32)c);
+			setCharLocation(j, k);
+
+			j += 10;
+
+			msleep(50);
+		}
+	}
 }

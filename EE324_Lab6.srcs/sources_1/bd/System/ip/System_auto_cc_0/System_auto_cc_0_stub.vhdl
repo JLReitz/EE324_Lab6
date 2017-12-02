@@ -1,10 +1,10 @@
 -- Copyright 1986-2017 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2017.3.1 (win64) Build 2035080 Fri Oct 20 14:20:01 MDT 2017
--- Date        : Thu Nov 30 16:42:21 2017
+-- Date        : Fri Dec  1 08:48:21 2017
 -- Host        : Jensen-Surface running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ip/System_auto_cc_0/System_auto_cc_0_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top System_auto_cc_0 -prefix
+--               System_auto_cc_0_ System_auto_cc_0_stub.vhdl
 -- Design      : System_auto_cc_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z010clg400-1

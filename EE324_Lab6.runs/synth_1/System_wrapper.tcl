@@ -35,7 +35,6 @@ add_files C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources
 set_property used_in_implementation false [get_files -all c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ip/System_processing_system7_0_0/System_processing_system7_0_0.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ip/System_rst_ps7_0_50M_0/System_rst_ps7_0_50M_0_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ip/System_rst_ps7_0_50M_0/System_rst_ps7_0_50M_0.xdc]
-set_property used_in_implementation false [get_files -all c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ip/System_rst_ps7_0_50M_0/System_rst_ps7_0_50M_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ip/System_clk_wiz_0_1/System_clk_wiz_0_1_board.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ip/System_clk_wiz_0_1/System_clk_wiz_0_1.xdc]
 set_property used_in_implementation false [get_files -all c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ip/System_clk_wiz_0_1/System_clk_wiz_0_1_ooc.xdc]

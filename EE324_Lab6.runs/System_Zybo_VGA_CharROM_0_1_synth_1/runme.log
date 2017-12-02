@@ -11,31 +11,28 @@
 source System_Zybo_VGA_CharROM_0_1.tcl -notrace
 Command: synth_design -top System_Zybo_VGA_CharROM_0_1 -part xc7z010clg400-1 -mode out_of_context
 Starting synth_design
-INFO: [IP_Flow 19-2162] IP 'System_Zybo_VGA_CharROM_0_1' is locked:
-* IP definition 'Zybo_VGA_CharROM_v1.0 (1.0)' for IP 'System_Zybo_VGA_CharROM_0_1' (customized with software release 2017.3.1) has a different revision in the IP Catalog.
-Please select 'Report IP Status' from the 'Tools/Report' menu or run Tcl command 'report_ip_status' for more information.
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
 INFO: Launching helper process for spawning children vivado processes
-INFO: Helper process launched with PID 13148 
+INFO: Helper process launched with PID 15036 
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 352.367 ; gain = 100.398
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 352.820 ; gain = 100.906
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-638] synthesizing module 'System_Zybo_VGA_CharROM_0_1' [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ip/System_Zybo_VGA_CharROM_0_1/synth/System_Zybo_VGA_CharROM_0_1.v:57]
-INFO: [Synth 8-638] synthesizing module 'Zybo_VGA_CharROM_v1_0' [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/hdl/Zybo_VGA_CharROM_v1_0.v:4]
+INFO: [Synth 8-638] synthesizing module 'Zybo_VGA_CharROM_v1_0' [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/hdl/Zybo_VGA_CharROM_v1_0.v:4]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
-INFO: [Synth 8-638] synthesizing module 'Zybo_VGA_CharROM_v1_0_S_AXI' [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/hdl/Zybo_VGA_CharROM_v1_0_S_AXI.v:4]
+INFO: [Synth 8-638] synthesizing module 'Zybo_VGA_CharROM_v1_0_S_AXI' [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/hdl/Zybo_VGA_CharROM_v1_0_S_AXI.v:4]
 	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
 	Parameter C_S_AXI_ADDR_WIDTH bound to: 6 - type: integer 
 	Parameter ADDR_LSB bound to: 2 - type: integer 
 	Parameter OPT_MEM_ADDR_BITS bound to: 3 - type: integer 
-INFO: [Synth 8-226] default block is never used [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/hdl/Zybo_VGA_CharROM_v1_0_S_AXI.v:271]
-INFO: [Synth 8-226] default block is never used [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/hdl/Zybo_VGA_CharROM_v1_0_S_AXI.v:508]
-INFO: [Synth 8-256] done synthesizing module 'Zybo_VGA_CharROM_v1_0_S_AXI' (1#1) [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/hdl/Zybo_VGA_CharROM_v1_0_S_AXI.v:4]
-WARNING: [Synth 8-689] width (7) of port connection 'Character' does not match port width (8) of module 'Zybo_VGA_CharROM_v1_0_S_AXI' [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/hdl/Zybo_VGA_CharROM_v1_0.v:73]
-INFO: [Synth 8-638] synthesizing module 'VGA_Controller' [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/hdl/VGA_Controller.v:1]
-INFO: [Synth 8-638] synthesizing module 'char_rom' [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/src/char_rom.v:23]
+INFO: [Synth 8-226] default block is never used [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/hdl/Zybo_VGA_CharROM_v1_0_S_AXI.v:271]
+INFO: [Synth 8-226] default block is never used [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/hdl/Zybo_VGA_CharROM_v1_0_S_AXI.v:508]
+INFO: [Synth 8-256] done synthesizing module 'Zybo_VGA_CharROM_v1_0_S_AXI' (1#1) [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/hdl/Zybo_VGA_CharROM_v1_0_S_AXI.v:4]
+WARNING: [Synth 8-689] width (7) of port connection 'Character' does not match port width (8) of module 'Zybo_VGA_CharROM_v1_0_S_AXI' [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/hdl/Zybo_VGA_CharROM_v1_0.v:73]
+INFO: [Synth 8-638] synthesizing module 'VGA_Controller' [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/hdl/VGA_Controller.v:1]
+INFO: [Synth 8-638] synthesizing module 'char_rom' [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/src/char_rom.v:23]
 INFO: [Synth 8-638] synthesizing module 'BRAM_SINGLE_MACRO' [C:/Xilinx/Vivado/2017.3/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:30]
 	Parameter BRAM_SIZE bound to: 36Kb - type: string 
 	Parameter DEVICE bound to: 7SERIES - type: string 
@@ -401,9 +398,9 @@ WARNING: [Synth 8-689] width (64) of port connection 'DIADI' does not match port
 WARNING: [Synth 8-689] width (8) of port connection 'DIPADIP' does not match port width (4) of module 'RAMB36E1' [C:/Xilinx/Vivado/2017.3/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:1814]
 WARNING: [Synth 8-689] width (8) of port connection 'WEA' does not match port width (4) of module 'RAMB36E1' [C:/Xilinx/Vivado/2017.3/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:1826]
 INFO: [Synth 8-256] done synthesizing module 'BRAM_SINGLE_MACRO' (3#1) [C:/Xilinx/Vivado/2017.3/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:30]
-INFO: [Synth 8-256] done synthesizing module 'char_rom' (4#1) [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/src/char_rom.v:23]
-INFO: [Synth 8-256] done synthesizing module 'VGA_Controller' (5#1) [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/hdl/VGA_Controller.v:1]
-INFO: [Synth 8-256] done synthesizing module 'Zybo_VGA_CharROM_v1_0' (6#1) [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/hdl/Zybo_VGA_CharROM_v1_0.v:4]
+INFO: [Synth 8-256] done synthesizing module 'char_rom' (4#1) [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/src/char_rom.v:23]
+INFO: [Synth 8-256] done synthesizing module 'VGA_Controller' (5#1) [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/hdl/VGA_Controller.v:1]
+INFO: [Synth 8-256] done synthesizing module 'Zybo_VGA_CharROM_v1_0' (6#1) [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/hdl/Zybo_VGA_CharROM_v1_0.v:4]
 INFO: [Synth 8-256] done synthesizing module 'System_Zybo_VGA_CharROM_0_1' (7#1) [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ip/System_Zybo_VGA_CharROM_0_1/synth/System_Zybo_VGA_CharROM_0_1.v:57]
 WARNING: [Synth 8-3331] design Zybo_VGA_CharROM_v1_0_S_AXI has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design Zybo_VGA_CharROM_v1_0_S_AXI has unconnected port S_AXI_AWPROT[1]
@@ -412,7 +409,7 @@ WARNING: [Synth 8-3331] design Zybo_VGA_CharROM_v1_0_S_AXI has unconnected port 
 WARNING: [Synth 8-3331] design Zybo_VGA_CharROM_v1_0_S_AXI has unconnected port S_AXI_ARPROT[1]
 WARNING: [Synth 8-3331] design Zybo_VGA_CharROM_v1_0_S_AXI has unconnected port S_AXI_ARPROT[0]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 403.965 ; gain = 151.996
+Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 404.977 ; gain = 153.063
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -422,7 +419,7 @@ Report Check Netlist:
 |1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
 +------+------------------+-------+---------+-------+------------------+
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 403.965 ; gain = 151.996
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 404.977 ; gain = 153.063
 ---------------------------------------------------------------------------------
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -436,26 +433,26 @@ Completed Processing XDC Constraints
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.059 . Memory (MB): peak = 711.438 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.128 . Memory (MB): peak = 711.102 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 711.438 ; gain = 459.469
+Finished Constraint Validation : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 711.102 ; gain = 459.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z010clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 711.438 ; gain = 459.469
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 711.102 ; gain = 459.188
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 711.438 ; gain = 459.469
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:30 . Memory (MB): peak = 711.102 ; gain = 459.188
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element Shift_Counter_reg was removed.  [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/hdl/VGA_Controller.v:172]
+WARNING: [Synth 8-6014] Unused sequential element Shift_Counter_reg was removed.  [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/hdl/VGA_Controller.v:172]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 711.438 ; gain = 459.469
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 711.102 ; gain = 459.188
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -537,7 +534,7 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-6014] Unused sequential element Shift_Counter_reg was removed.  [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/532d/hdl/VGA_Controller.v:172]
+WARNING: [Synth 8-6014] Unused sequential element Shift_Counter_reg was removed.  [c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ipshared/9b15/hdl/VGA_Controller.v:172]
 WARNING: [Synth 8-3331] design Zybo_VGA_CharROM_v1_0_S_AXI has unconnected port S_AXI_AWPROT[2]
 WARNING: [Synth 8-3331] design Zybo_VGA_CharROM_v1_0_S_AXI has unconnected port S_AXI_AWPROT[1]
 WARNING: [Synth 8-3331] design Zybo_VGA_CharROM_v1_0_S_AXI has unconnected port S_AXI_AWPROT[0]
@@ -583,7 +580,7 @@ WARNING: [Synth 8-3332] Sequential element (Shift_Counter_reg[29]) is unused and
 WARNING: [Synth 8-3332] Sequential element (Shift_Counter_reg[30]) is unused and will be removed from module VGA_Controller.
 WARNING: [Synth 8-3332] Sequential element (Shift_Counter_reg[31]) is unused and will be removed from module VGA_Controller.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 711.438 ; gain = 459.469
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:00:41 . Memory (MB): peak = 711.102 ; gain = 459.188
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -595,13 +592,13 @@ Report RTL Partitions:
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 761.668 ; gain = 509.699
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 757.883 ; gain = 505.969
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:53 ; elapsed = 00:00:54 . Memory (MB): peak = 764.191 ; gain = 512.223
+Finished Timing Optimization : Time (s): cpu = 00:00:54 ; elapsed = 00:00:56 . Memory (MB): peak = 759.992 ; gain = 508.078
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -613,7 +610,7 @@ Report RTL Partitions:
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:54 ; elapsed = 00:00:55 . Memory (MB): peak = 800.637 ; gain = 548.668
+Finished Technology Mapping : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 795.305 ; gain = 543.391
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -637,7 +634,7 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 800.637 ; gain = 548.668
+Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 795.305 ; gain = 543.391
 ---------------------------------------------------------------------------------
 
 Report Check Netlist: 
@@ -650,7 +647,7 @@ Report Check Netlist:
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 800.637 ; gain = 548.668
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 795.305 ; gain = 543.391
 ---------------------------------------------------------------------------------
 
 Report RTL Partitions: 
@@ -662,25 +659,25 @@ Report RTL Partitions:
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 800.637 ; gain = 548.668
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 795.305 ; gain = 543.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 800.637 ; gain = 548.668
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 795.305 ; gain = 543.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 800.637 ; gain = 548.668
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 795.305 ; gain = 543.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 800.637 ; gain = 548.668
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 795.305 ; gain = 543.391
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -697,7 +694,7 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |CARRY4   |   153|
-|2     |LUT1     |     9|
+|2     |LUT1     |    12|
 |3     |LUT2     |   379|
 |4     |LUT3     |    35|
 |5     |LUT4     |   568|
@@ -706,27 +703,27 @@ Report Cell Usage:
 |8     |MUXF7    |    66|
 |9     |MUXF8    |    32|
 |10    |RAMB36E1 |     1|
-|11    |FDRE     |   657|
-|12    |FDSE     |     1|
+|11    |FDRE     |   653|
+|12    |FDSE     |     5|
 +------+---------+------+
 
 Report Instance Areas: 
 +------+-------------------------------------+----------------------------+------+
 |      |Instance                             |Module                      |Cells |
 +------+-------------------------------------+----------------------------+------+
-|1     |top                                  |                            |  2359|
-|2     |  inst                               |Zybo_VGA_CharROM_v1_0       |  2359|
-|3     |    Zybo_VGA_CharROM_v1_0_S_AXI_inst |Zybo_VGA_CharROM_v1_0_S_AXI |  1695|
-|4     |    controller                       |VGA_Controller              |   659|
+|1     |top                                  |                            |  2362|
+|2     |  inst                               |Zybo_VGA_CharROM_v1_0       |  2362|
+|3     |    Zybo_VGA_CharROM_v1_0_S_AXI_inst |Zybo_VGA_CharROM_v1_0_S_AXI |  1707|
+|4     |    controller                       |VGA_Controller              |   650|
 |5     |      CharROM                        |char_rom                    |    23|
 |6     |        BRAM_SINGLE_MACRO_inst       |BRAM_SINGLE_MACRO           |    23|
 +------+-------------------------------------+----------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:00:57 . Memory (MB): peak = 800.637 ; gain = 548.668
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 795.305 ; gain = 543.391
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 42 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:00:48 . Memory (MB): peak = 800.637 ; gain = 241.195
-Synthesis Optimization Complete : Time (s): cpu = 00:00:56 ; elapsed = 00:00:57 . Memory (MB): peak = 800.637 ; gain = 548.668
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:37 ; elapsed = 00:00:50 . Memory (MB): peak = 795.305 ; gain = 237.266
+Synthesis Optimization Complete : Time (s): cpu = 00:00:57 ; elapsed = 00:00:59 . Memory (MB): peak = 795.305 ; gain = 543.391
 INFO: [Project 1-571] Translating synthesized netlist
 INFO: [Netlist 29-17] Analyzing 252 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
@@ -736,13 +733,13 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
 INFO: [Common 17-83] Releasing license: Synthesis
-34 Infos, 54 Warnings, 0 Critical Warnings and 0 Errors encountered.
+33 Infos, 54 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 800.637 ; gain = 557.008
+synth_design: Time (s): cpu = 00:01:00 ; elapsed = 00:01:03 . Memory (MB): peak = 795.305 ; gain = 550.824
 INFO: [Common 17-1381] The checkpoint 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.runs/System_Zybo_VGA_CharROM_0_1_synth_1/System_Zybo_VGA_CharROM_0_1.dcp' has been generated.
 INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP c:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.srcs/sources_1/bd/System/ip/System_Zybo_VGA_CharROM_0_1/System_Zybo_VGA_CharROM_0_1.xci
 INFO: [Coretcl 2-1174] Renamed 5 cell refs.
 INFO: [Common 17-1381] The checkpoint 'C:/Users/jlrei/Documents/SourceTree/EE324_Lab6/EE324_Lab6.runs/System_Zybo_VGA_CharROM_0_1_synth_1/System_Zybo_VGA_CharROM_0_1.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file System_Zybo_VGA_CharROM_0_1_utilization_synth.rpt -pb System_Zybo_VGA_CharROM_0_1_utilization_synth.pb
-report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.054 . Memory (MB): peak = 800.637 ; gain = 0.000
-INFO: [Common 17-206] Exiting Vivado at Thu Nov 30 16:46:30 2017...
+report_utilization: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.062 . Memory (MB): peak = 795.305 ; gain = 0.000
+INFO: [Common 17-206] Exiting Vivado at Fri Dec  1 08:51:23 2017...
